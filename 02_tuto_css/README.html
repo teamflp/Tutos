@@ -1,0 +1,2269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="h1-style%22text-align-center%22css3-brdu-d%C3%A9butant-au-confirm%C3%A9h1"><h1 style="text-align: center">CSS3 <br>DU DÉBUTANT AU CONFIRMÉ</h1></h1>
+<p>Auteur : <a href="https://gnpinformatique.fr">Paterne Guélablé Gnonzion</a></p>
+<p>Formateur développeur web et mobile : <strong>PHP, Symfony, Rust ...</strong></p>
+<p>Linkedin : <a href="https://www.linkedin.com/in/gnpinformatique/">Paterne G. G.</a></p>
+<p>Github : <a href="https://github.com/teamflp">teamflp</a></p>
+<h2 id="proc%C3%A9dure-pour-utiliser-ce-cours">Procédure pour utiliser ce cours</h2>
+<p>Bienvenue à ce cours sur le CSS ! Pour tirer le meilleur parti de ce contenu et acquérir une compréhension solide de la matière, suivez les étapes recommandées ci-dessous.</p>
+<ol>
+<li>
+<p><strong>Préparation</strong> :</p>
+<ul>
+<li>Assurez-vous d'avoir les prérequis : connaissance basique du HTML.</li>
+<li>Installez un bon éditeur de code (comme <a href="https://code.visualstudio.com/">Visual Studio Code</a>).</li>
+<li>Configurez un navigateur moderne pour les tests (Chrome, Firefox, Safari, etc.).</li>
+</ul>
+</li>
+<li>
+<p><strong>Étude systématique</strong> :</p>
+<ul>
+<li>Commencez par l'<strong>introduction</strong> pour comprendre le contexte du CSS.</li>
+<li>Poursuivez avec les <strong>bases</strong> avant de passer aux concepts avancés.</li>
+<li>Ne sautez pas de sections. Chaque partie est conçue pour s'appuyer sur la précédente.</li>
+</ul>
+</li>
+<li>
+<p><strong>Pratiquez régulièrement</strong> :</p>
+<ul>
+<li>Après chaque section, prenez le temps de coder et de tester ce que vous avez appris.</li>
+<li>Utilisez les exemples fournis et essayez de les modifier ou de les améliorer.</li>
+</ul>
+</li>
+<li>
+<p><strong>Participez à des discussions</strong> :</p>
+<ul>
+<li>Rejoignez des forums ou des groupes dédiés au CSS pour poser des questions, partager vos connaissances ou aider d'autres apprenants.</li>
+<li>Partager vos réalisations ou vos défis vous permettra d'obtenir des retours constructifs.</li>
+</ul>
+</li>
+<li>
+<p><strong>Consultez des ressources supplémentaires</strong> :</p>
+<ul>
+<li>Explorez les <strong>ressources et outils</strong> mentionnés à la fin du cours pour approfondir vos connaissances et améliorer vos compétences.</li>
+</ul>
+</li>
+<li>
+<p><strong>Mettez en pratique</strong> :</p>
+<ul>
+<li>Essayez de créer un petit projet web à partir de zéro, en appliquant tout ce que vous avez appris.</li>
+<li>Cela renforcera votre compréhension et vous donnera une idée des domaines dans lesquels vous pourriez avoir besoin de plus d'entraînement.</li>
+</ul>
+</li>
+<li>
+<p><strong>Revenez régulièrement</strong> :</p>
+<ul>
+<li>La technologie et les normes évoluent. Revenez périodiquement pour mettre à jour vos connaissances ou rafraîchir certains concepts.</li>
+</ul>
+</li>
+<li>
+<p><strong>Évaluez vos progrès</strong> :</p>
+<ul>
+<li>Testez régulièrement vos connaissances. Cela peut être à travers des quiz en ligne, des défis de codage ou des revues de code avec des pairs.</li>
+</ul>
+</li>
+</ol>
+<p>Bonne étude ! Rappelez-vous que l'apprentissage est un voyage, et chaque étape vous rapproche de la maîtrise du CSS.</p>
+<hr>
+<!-- TOC -->
+<ul>
+<li><a href="#apprendre-le-css--du-d%C3%A9butant-au-confirm%C3%A9">APPRENDRE LE CSS : DU DÉBUTANT AU CONFIRMÉ</a>
+<ul>
+<li><a href="#proc%C3%A9dure-pour-utiliser-ce-cours">Procédure pour utiliser ce cours</a></li>
+<li><a href="#introduction-au-css">Introduction au CSS</a></li>
+<li><a href="#positionnement-et-mise-en-page">Positionnement et mise en page</a></li>
+<li><a href="#couleurs-et-fonds">Couleurs et fonds</a></li>
+<li><a href="#typographie">Typographie</a></li>
+<li><a href="#effets-visuels">Effets visuels</a></li>
+<li><a href="#unit%C3%A9s-et-valeurs">Unités et valeurs</a></li>
+<li><a href="#s%C3%A9lecteurs-avanc%C3%A9s">Sélecteurs avancés</a></li>
+<li><a href="#responsivit%C3%A9-et-media-queries">Responsivité et Media Queries</a></li>
+<li><a href="#pr%C3%A9processeurs-css">Préprocesseurs CSS</a></li>
+<li><a href="#m%C3%A9thodologies-css">Méthodologies CSS</a></li>
+<li><a href="#astuces-avanc%C3%A9es-et-optimisation">Astuces avancées et optimisation</a></li>
+<li><a href="#ressources-et-outils">Ressources et outils</a></li>
+<li><a href="#introduction-to-css">Introduction to CSS</a>
+<ul>
+<li><a href="#quest-ce-que-le-css">Qu'est-ce que le CSS?</a></li>
+</ul>
+</li>
+<li><a href="#fonctionnement-fondamental-du-css">Fonctionnement fondamental du CSS</a>
+<ul>
+<li><a href="#comment-int%C3%A9grer-du-css--inline-interne-externe">Comment intégrer du CSS : inline, interne, externe</a></li>
+<li><a href="#s%C3%A9lecteurs-de-base">Sélecteurs de base</a></li>
+<li><a href="#propri%C3%A9t%C3%A9s-et-valeurs">Propriétés et valeurs</a></li>
+</ul>
+</li>
+<li><a href="#la-bo%C3%AEte-mod%C3%A8le-model-box">La boîte modèle (model box)</a></li>
+<li><a href="#mod%C3%A8le-de-bo%C3%AEte-box-model-en-css">Modèle de Boîte (Box Model) en CSS</a>
+<ul>
+<li><a href="#composants-du-mod%C3%A8le-de-bo%C3%AEte-">Composants du Modèle de Boîte :</a>
+<ul>
+<li><a href="#box-sizing">Box Sizing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#positionnement-et-mise-en-page-1">Positionnement et mise en page</a>
+<ul>
+<li><a href="#affichage-display--block-inline-inline-block-none">Affichage (<code>display</code>) : block, inline, inline-block, none</a></li>
+<li><a href="#display-block"><code>display: block</code></a></li>
+<li><a href="#display-inline"><code>display: inline</code></a></li>
+<li><a href="#display-inline-block"><code>display: inline-block</code></a></li>
+<li><a href="#display-none"><code>display: none</code></a></li>
+<li><a href="#positionnement--static-relative-absolute-fixed-sticky">Positionnement : static, relative, absolute, fixed, sticky</a></li>
+<li><a href="#position-static"><code>position: static</code></a></li>
+<li><a href="#position-relative"><code>position: relative</code></a></li>
+<li><a href="#position-absolute"><code>position: absolute</code></a></li>
+<li><a href="#position-fixed"><code>position: fixed</code></a></li>
+<li><a href="#position-sticky"><code>position: sticky</code></a></li>
+<li><a href="#-flottants-float-et-clear-en-css">## Flottants (<code>float</code>) et <code>clear</code> en CSS</a></li>
+<li><a href="#float"><code>float</code></a></li>
+<li><a href="#clear"><code>clear</code></a></li>
+</ul>
+</li>
+<li><a href="#couleurs-et-fonds-1">Couleurs et fonds</a>
+<ul>
+<li><a href="#types-de-couleurs--nomm%C3%A9es-hexad%C3%A9cimales-rgb-rgba-hsl-hsla">Types de couleurs : nommées, hexadécimales, rgb, rgba, hsl, hsla</a></li>
+<li><a href="#couleurs-nomm%C3%A9es">Couleurs nommées</a></li>
+<li><a href="#couleurs-hexad%C3%A9cimales">Couleurs hexadécimales</a></li>
+<li><a href="#couleurs-rvb">Couleurs RVB</a></li>
+<li><a href="#couleurs-rvba">Couleurs RVBA</a></li>
+<li><a href="#couleurs-hsl">Couleurs HSL</a></li>
+<li><a href="#couleurs-hsla">Couleurs HSLA</a></li>
+<li><a href="#background-couleur-image-position-taille-repeat-attachment-origin-clip-blend-mode-object-fit">Background: couleur, image, position, taille, repeat, attachment, origin, clip, blend-mode, object-fit</a></li>
+<li><a href="#background-color"><code>background-color</code></a></li>
+<li><a href="#background-image"><code>background-image</code></a></li>
+<li><a href="#background-position"><code>background-position</code></a></li>
+<li><a href="#background-size"><code>background-size</code></a></li>
+<li><a href="#background-repeat"><code>background-repeat</code></a></li>
+<li><a href="#background-attachment"><code>background-attachment</code></a></li>
+<li><a href="#background-origin"><code>background-origin</code></a></li>
+<li><a href="#background-clip"><code>background-clip</code></a></li>
+<li><a href="#background-blend-mode"><code>background-blend-mode</code></a></li>
+<li><a href="#background"><code>background</code></a></li>
+<li><a href="#object-fit"><code>object-fit</code></a></li>
+</ul>
+</li>
+<li><a href="#typographie-1">Typographie</a>
+<ul>
+<li><a href="#polices-de-caract%C3%A8res-et-font-face">Polices de caractères et @font-face</a></li>
+<li><a href="#poids-style-et-variante-de-fonte">Poids, style et variante de fonte</a></li>
+<li><a href="#espacement-des-lettres-des-mots-et-des-lignes">Espacement des lettres, des mots et des lignes</a></li>
+<li><a href="#alignement-du-texte">Alignement du texte</a></li>
+</ul>
+</li>
+<li><a href="#effets-visuels-1">Effets visuels</a>
+<ul>
+<li><a href="#ombres-box-shadow-text-shadow">Ombres (box-shadow, text-shadow)</a></li>
+<li><a href="#bords-arrondis-border-radius">Bords arrondis (border-radius)</a></li>
+<li><a href="#transitions">Transitions</a></li>
+<li><a href="#transformations">Transformations</a></li>
+</ul>
+</li>
+<li><a href="#unit%C3%A9s-et-valeurs-1">Unités et valeurs</a>
+<ul>
+<li><a href="#unit%C3%A9s-de-longueur">Unités de longueur</a></li>
+<li><a href="#fonctions-calc-var-variables-css">Fonctions calc(), var() (variables CSS)</a></li>
+</ul>
+</li>
+<li><a href="#s%C3%A9lecteurs-avanc%C3%A9s-en-css">Sélecteurs Avancés en CSS</a>
+<ul>
+<li><a href="#s%C3%A9lecteurs-dattributs">Sélecteurs d'attributs</a></li>
+<li><a href="#pseudo-classes">Pseudo-classes</a></li>
+<li><a href="#pseudo-%C3%A9l%C3%A9ments">Pseudo-éléments</a></li>
+<li><a href="#combinateurs">Combinateurs</a></li>
+</ul>
+</li>
+<li><a href="#responsivit%C3%A9-et-media-queries-1">Responsivité et Media Queries</a></li>
+<li><a href="#responsivit%C3%A9-et-media-queries-2">Responsivité et Media Queries</a>
+<ul>
+<li><a href="#cr%C3%A9er-un-design-adaptatif">Créer un design adaptatif</a></li>
+<li><a href="#utilisation-des-points-darr%C3%AAt-breakpoints">Utilisation des points d'arrêt (breakpoints)</a></li>
+</ul>
+</li>
+<li><a href="#pr%C3%A9processeurs-css-1">Préprocesseurs CSS</a>
+<ul>
+<li><a href="#pourquoi-utiliser-un-pr%C3%A9processeur-">Pourquoi utiliser un préprocesseur ?</a></li>
+<li><a href="#pr%C3%A9processeurs-populaires">Préprocesseurs populaires</a></li>
+<li><a href="#exemple-avec-sass">Exemple avec Sass</a></li>
+</ul>
+</li>
+<li><a href="#m%C3%A9thodologies-css-1">Méthodologies CSS</a></li>
+<li><a href="#m%C3%A9thodologies-css-2">Méthodologies CSS</a>
+<ul>
+<li><a href="#bem-block-element-modifier">BEM (Block Element Modifier)</a></li>
+<li><a href="#oocss-object-oriented-css">OOCSS (Object Oriented CSS)</a></li>
+<li><a href="#smacss-scalable-and-modular-architecture-for-css">SMACSS (Scalable and Modular Architecture for CSS)</a></li>
+</ul>
+</li>
+<li><a href="#astuces-avanc%C3%A9es-et-optimisation-1">Astuces avancées et optimisation</a>
+<ul>
+<li><a href="#z-index-et-empilement-contextuel">z-index et empilement contextuel</a></li>
+<li><a href="#variables-css-propri%C3%A9t%C3%A9s-personnalis%C3%A9es">Variables CSS (propriétés personnalisées)</a></li>
+<li><a href="#gestion-des-performances-et-optimisation">Gestion des performances et optimisation</a></li>
+</ul>
+</li>
+<li><a href="#ressources-et-outils-1">Ressources et outils</a>
+_ <a href="#frameworks-css">Frameworks CSS</a>
+_ <a href="#outils-de-post-traitement">Outils de post-traitement</a> * <a href="#outils-de-test-et-de-d%C3%A9bogage">Outils de test et de débogage</a></li>
+</ul>
+<!-- TOC -->
+</li>
+</ul>
+<hr>
+<h2 id="introduction-to-css">Introduction to CSS</h2>
+<p>Le CSS, ou Cascading Style Sheets (Feuilles de style en cascade), est un langage de feuille de style utilisé pour décrire l'apparence et la mise en forme d'un document écrit en HTML ou en XML. Il s'agit de l'un des piliers essentiels du développement web, travaillant en tandem avec HTML pour créer des sites web visuellement attrayants et fonctionnellement robustes.</p>
+<p>L'importance du CSS réside dans sa capacité à séparer le contenu (HTML) de sa présentation. Cette séparation offre plusieurs avantages :</p>
+<ul>
+<li>
+<p><strong>Maintenabilité :</strong> Le CSS permet de centraliser le style d'un site ou d'une application web, ce qui facilite les modifications globales de design sans avoir à retoucher individuellement chaque page.</p>
+</li>
+<li>
+<p><strong>Flexibilité :</strong> Grâce aux sélecteurs et propriétés CSS, vous pouvez cibler spécifiquement des éléments pour les styliser, permettant une grande variété de designs.</p>
+</li>
+<li>
+<p><strong>Réactivité :</strong> En utilisant le CSS, les développeurs peuvent créer des designs qui s'adaptent à différentes tailles d'écran, garantissant une expérience utilisateur optimale sur une variété de dispositifs, du desktop au mobile.</p>
+</li>
+<li>
+<p><strong>Performance :</strong> En évitant le mélange de code HTML et de styles inline, le CSS peut être mis en cache, ce qui améliore les temps de chargement des sites.</p>
+</li>
+</ul>
+<p>Lorsqu'on débute en <code>CSS</code>, il est essentiel de comprendre certains concepts clés comme les sélecteurs, les propriétés, les valeurs et la spécificité. De plus, avec l'évolution du web, le CSS s'est également développé pour inclure des fonctionnalités plus avancées, telles que les animations, les transitions, Flexbox, Grid, et bien d'autres.</p>
+<p>Aujourd'hui, avec l'ascension du mobile et la variété de dispositifs utilisés pour naviguer sur Internet, maîtriser le CSS est plus crucial que jamais pour tout développeur ou designer web souhaitant créer des sites ou des applications web modernes, attractives et fonctionnelles.</p>
+<h3 id="quest-ce-que-le-css">Qu'est-ce que le CSS?</h3>
+<p>Le <strong>CSS</strong> acronyme de <code>Cascading Style Sheets</code>, que l'on pourrait traduire par &quot;Feuilles de style en cascade&quot;, est un langage de feuille de style utilisé pour décrire la présentation d'un document écrit en HTML ou XML. Voici une explication détaillée :</p>
+<h2 id="fonctionnement-fondamental-du-css">Fonctionnement fondamental du CSS</h2>
+<!-- BEGIN: ed8c6549bwf9 -->
+<!-- END: ed8c6549bwf9 -->
+<p>Le CSS agit comme une série d'instructions indiquant à un navigateur web comment afficher un document. Ces instructions peuvent déterminer de nombreux aspects de la présentation, tels que la couleur du texte, la taille de la police, l'espacement entre les éléments, la mise en page des différentes sections d'une page, et bien plus encore.
+Séparation du contenu et de la présentation</p>
+<p>L'une des principales philosophies du CSS est la séparation du contenu et de la présentation. Tandis que le HTML fournit la structure et le contenu d'un document (comme les titres, les paragraphes et les liens), le CSS définit son apparence et sa mise en forme. Cette séparation offre plusieurs avantages, notamment :</p>
+<ul>
+<li>
+<p>Facilité de maintenance : Les styles peuvent être centralisés dans un ou plusieurs fichiers CSS externes, permettant des mises à jour cohérentes et centralisées du design d'un site web entier.</p>
+</li>
+<li>
+<p>Flexibilité : Le même contenu HTML peut être présenté de différentes manières en utilisant différentes feuilles de style. Par exemple, un site pourrait avoir un style pour l'affichage desktop et un autre pour l'affichage mobile.</p>
+</li>
+<li>
+<p>Accessibilité : Les utilisateurs peuvent appliquer leurs propres feuilles de style pour adapter les sites web à leurs besoins, comme augmenter la taille de la police pour une meilleure lisibilité.</p>
+</li>
+</ul>
+<p><strong>La cascade</strong></p>
+<p>La &quot;cascade&quot; dans &quot;Cascading Style Sheets&quot; fait référence à l'ordre de priorité que le navigateur devrait suivre lorsqu'il décide quel style appliquer en cas de conflit. Cette cascade prend en compte la source des styles (par exemple, styles de l'utilisateur vs. styles du développeur) et la spécificité du sélecteur CSS utilisé.
+Évolution du CSS</p>
+<p>Avec le temps, le CSS s'est énormément développé, offrant aux concepteurs et aux développeurs une vaste gamme d'options et de fonctionnalités, telles que les animations, les transitions, Flexbox, Grid, et les variables CSS, pour n'en nommer que quelques-unes.</p>
+<p>En conclusion, le CSS est un outil puissant et essentiel pour quiconque souhaite créer des sites et applications web visuellement attrayants et fonctionnels. C'est le langage qui donne vie et style au contenu structuré par le HTML, permettant de créer des expériences web riches et interactives.</p>
+<h3 id="comment-int%C3%A9grer-du-css--inline-interne-externe">Comment intégrer du CSS : inline, interne, externe</h3>
+<p>Il y a trois manières principales d'intégrer du CSS dans une page web : inline, interne (ou embarqué) et externe. Chaque méthode a ses avantages et ses inconvénients. Voyons ces trois approches en détail :</p>
+<ol>
+<li><strong>Inline CSS</strong></li>
+</ol>
+<p>Le CSS inline est utilisé pour appliquer un <code>style</code> directement sur un élément individuel en utilisant l'attribut style dans la balise HTML.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color: blue; font-size: 16px;"</span>&gt;</span>Ceci est un paragraphe en bleu.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<p>Avantages :</p>
+<ul>
+<li>Facile à mettre en œuvre</li>
+<li>Permet de remplacer les styles par défaut du navigateur</li>
+<li>Utile pour des styles spécifiques et uniques qui n'ont pas besoin d'être réutilisés.</li>
+<li>Garantit que le style s'applique à cet élément particulier, car il a une spécificité élevée.</li>
+</ul>
+<p>Inconvénients :</p>
+<ul>
+<li>Augmente la taille du fichier HTML.</li>
+<li>Rend la maintenance difficile, surtout pour les grands sites.</li>
+<li>Mélange contenu (HTML) et présentation (CSS), ce qui va à l'encontre de la séparation recommandée du contenu et du style.</li>
+</ul>
+<ol start="2">
+<li><strong>CSS Interne (ou embarqué)</strong></li>
+</ol>
+<p>Le CSS interne est défini dans l'en-tête du document HTML à l'aide de la balise <code>&lt;style&gt;</code>. Il s'applique à des éléments sur cette page spécifique.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"fr"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+      <span class="hljs-selector-tag">p</span> {
+        <span class="hljs-attribute">color</span>: red;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;
+      }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Ceci est un paragraphe en rouge.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<p>Avantages :</p>
+<p>Avantages :</p>
+<ul>
+<li>Centralise les styles pour une page spécifique, ce qui peut faciliter certaines tâches de style.</li>
+</ul>
+<p>Inconvénients :</p>
+<ul>
+<li>Si plusieurs pages utilisent le même style, vous devrez répéter le CSS sur chaque page.</li>
+<li>Augmente la taille du fichier HTML.</li>
+</ul>
+<ol start="3">
+<li><strong>CSS Externe</strong></li>
+</ol>
+<p>Le CSS externe est défini dans un fichier séparé (généralement avec une extension <code>.css</code>). Ce fichier est ensuite lié à la page HTML à l'aide de la balise <code>&lt;link&gt;</code>. C'est la méthode recommandée pour la plupart des sites et applications web.</p>
+<p>Exemple :
+Fichier <code>styles.css</code> :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">color</span>: green;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+}
+</div></code></pre>
+<p>Dans le fichier HTML :</p>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"fr"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"styles.css"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Ceci est un paragraphe en vert.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<p>Avantages :</p>
+<ul>
+<li>Sépare complètement le contenu (<code>HTML</code>) de la présentation (<code>CSS</code>).</li>
+<li>Facilite la maintenance et la mise à jour des styles.</li>
+<li>Réduit la redondance car le même fichier CSS peut être utilisé sur plusieurs pages.</li>
+<li>Le navigateur peut mettre en cache le fichier CSS, accélérant le chargement des pages subséquentes.</li>
+</ul>
+<p>Inconvénients :</p>
+<ul>
+<li>Une requête <code>HTTP</code> supplémentaire est nécessaire pour charger le fichier CSS externe, bien que cet impact soit généralement minime, voire inexistant, lorsque le fichier est mis en cache.</li>
+</ul>
+<p><strong>Recommandation :</strong> Pour de grands sites ou des applications, il est généralement recommandé d'utiliser le CSS externe en raison de ses avantages en matière de maintenance, de performance et de clarté.</p>
+<h3 id="s%C3%A9lecteurs-de-base">Sélecteurs de base</h3>
+<p>Les sélecteurs CSS sont des motifs qui déterminent quels éléments de la page seront stylisés par les règles définies. Les sélecteurs de base sont les plus simples à comprendre et à utiliser. Voici une liste des sélecteurs de base avec une brève explication pour chacun :</p>
+<ol>
+<li><strong>Sélecteur universel (<code>*</code>)</strong></li>
+</ol>
+<p>Cible tous les éléments de la page.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div>* {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+}
+</div></code></pre>
+<ol start="2">
+<li><strong>Sélecteur de type ou sélecteur d'élément</strong></li>
+</ol>
+<p>Cible un élément HTML spécifique par son nom de balise.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+}
+</div></code></pre>
+<ol start="3">
+<li><strong>Sélecteur de classe (<code>.</code>)</strong></li>
+</ol>
+<p>Cible un ou plusieurs éléments ayant une classe spécifique. Il est préfixé par un point.</p>
+<p>Exemple : code HTML</p>
+<pre class="hljs"><code><div>Utilisation dans le HTML : <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn"</span>&gt;</span>Cliquer ici<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</div></code></pre>
+<p>Code CSS</p>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.btn</span> {
+  <span class="hljs-attribute">background-color</span>: blue;
+  <span class="hljs-attribute">color</span>: white;
+}
+</div></code></pre>
+<p>Utilisation dans le HTML : <button class="btn">Cliquer ici</button></p>
+<ol start="4">
+<li><strong>Sélecteur d'ID (<code>#</code>)</strong></li>
+</ol>
+<p>Cible un élément spécifique ayant un attribut id particulier. Il est préfixé par un dièse #. Chaque ID doit être unique dans une page.</p>
+<p>Exemple : HTML</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"header"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-id">#header</span> {
+  <span class="hljs-attribute">background-color</span>: gray;
+}
+</div></code></pre>
+<ol start="5">
+<li><strong>Sélecteur de groupe</strong></li>
+</ol>
+<p>Cible plusieurs sélecteurs en même temps et leur applique le même ensemble de styles.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">h1</span>,
+<span class="hljs-selector-tag">h2</span>,
+<span class="hljs-selector-tag">h3</span> {
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">"Arial"</span>, sans-serif;
+}
+</div></code></pre>
+<ol start="6">
+<li><strong>Sélecteur de descendant</strong></li>
+</ol>
+<p>Cible un élément qui est un descendant direct ou indirect d'un autre élément.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">article</span> <span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">color</span>: green;
+}
+</div></code></pre>
+<p>Ce code stylise tous les <code>&lt;p&gt;</code> qui sont à l'intérieur d'un élément <code>&lt;article&gt;</code>, qu'ils soient directs ou nichés plus profondément.</p>
+<ol start="7">
+<li><strong>Sélecteur d'enfant (<code>&gt;</code>)</strong></li>
+</ol>
+<p>Cible un élément qui est un enfant direct d'un autre élément.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">article</span> &gt; <span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">color</span>: red;
+}
+</div></code></pre>
+<p>Ce code stylise uniquement les <code>&lt;p&gt;</code> qui sont des enfants directs de <code>&lt;article&gt;</code>, et non ceux qui sont plus profondément nichés.</p>
+<ol start="8">
+<li><strong>Sélecteur d'attribut</strong></li>
+</ol>
+<p>Les sélecteurs d'attribut en CSS permettent de cibler des éléments en fonction de leurs attributs et des valeurs de ces attributs. Ils peuvent être très utiles pour appliquer des styles à des éléments qui ont des attributs spécifiques ou dont les valeurs d'attributs correspondent à certaines conditions.</p>
+<p>Syntaxe de base</p>
+<p>Pour cibler un élément en fonction de la présence d'un attribut spécifique, quelle que soit la valeur de cet attribut :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-attr">[element[attribute]</span>] {
+  <span class="hljs-comment">/* styles */</span>
+}
+</div></code></pre>
+<p>Exemple :
+Cible tous les éléments <code>&lt;a&gt;</code> ayant un attribut href :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href]</span> {
+  <span class="hljs-attribute">color</span>: blue;
+}
+</div></code></pre>
+<ul>
+<li><strong>Sélecteur d'attribut avec une valeur précise</strong></li>
+</ul>
+<p>Pour cibler un élément dont l'attribut a une valeur précise :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-attr">[element[attribute=<span class="hljs-string">"value"</span>]</span>] {
+  <span class="hljs-comment">/* styles */</span>
+}
+</div></code></pre>
+<p>Exemple :
+Cible tous les éléments <code>&lt;a&gt;</code> dont l'attribut href a la valeur <code>&quot;#&quot;</code>:</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href=<span class="hljs-string">"#"</span>]</span> {
+  <span class="hljs-attribute">color</span>: gray;
+}
+</div></code></pre>
+<ul>
+<li><strong>Autres opérateurs pour les sélecteurs d'attribut</strong></li>
+</ul>
+<ol>
+<li><strong><code>^=</code> (commence par) :</strong> Cible les éléments dont la valeur de l'attribut commence par une chaîne spécifiée.</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href^=<span class="hljs-string">"https://"</span>]</span>
+{
+  <span class="hljs-attribute">font-weight</span>: bold;
+}
+</div></code></pre>
+<ol start="2">
+<li><strong><code>$=</code> (se termine par) :</strong> Cible les éléments dont la valeur de l'attribut se termine par une chaîne spécifiée.</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href$=<span class="hljs-string">".pdf"</span>]</span> {
+  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"pdf-icon.png"</span>) no-repeat;
+}
+</div></code></pre>
+<ol start="3">
+<li><strong><code>*=</code> (contient) :</strong> Cible les éléments dont la valeur de l'attribut contient la chaîne spécifiée.</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href*=<span class="hljs-string">"example"</span>]</span> {
+  <span class="hljs-attribute">color</span>: red;
+}
+</div></code></pre>
+<ol start="4">
+<li><strong><code>~=</code> (contient un mot) :</strong> Cible les éléments dont la valeur de l'attribut contient un mot spécifié.</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[class~=<span class="hljs-string">"warning"</span>]</span> {
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red;
+}
+</div></code></pre>
+<ol start="5">
+<li><strong><code>|=</code> (commence par un mot) :</strong> Cible les éléments dont la valeur de l'attribut commence par un mot spécifié, suivi d'un tiret (<code>-</code>).</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[lang|=<span class="hljs-string">"en"</span>]</span> {
+  <span class="hljs-attribute">font-style</span>: italic;
+}
+</div></code></pre>
+<p>Les sélecteurs d'attribut peuvent offrir une grande flexibilité et précision lors de la stylisation des éléments. Ils peuvent être particulièrement utiles lorsque vous travaillez avec des éléments qui ont des attributs dynamiques ou lorsque vous souhaitez appliquer des styles basés sur des attributs spécifiques plutôt que sur des classes ou des ID.</p>
+<h3 id="propri%C3%A9t%C3%A9s-et-valeurs">Propriétés et valeurs</h3>
+<p>En CSS, les styles sont définis par des paires de propriétés et de valeurs. Ces paires sont utilisées pour spécifier comment un élément doit être présenté dans un navigateur.</p>
+<ul>
+<li>
+<p><strong>Propriété :</strong> C'est la caractéristique que vous souhaitez définir (par exemple, la couleur, la marge, la largeur, la fonte, etc.).</p>
+</li>
+<li>
+<p><strong>Valeur :</strong> C'est la définition spécifique pour cette propriété (par exemple, &quot;rouge&quot;, &quot;20px&quot;, &quot;Arial&quot;, etc.).</p>
+</li>
+</ul>
+<p>Exemple de propriété et valeur :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">color</span>: red;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+}
+</div></code></pre>
+<ul>
+<li><code>color</code> est une propriété et red est sa valeur.</li>
+<li><code>font-size</code> est une propriété et 16px est sa valeur.</li>
+</ul>
+<p>Voici quelques propriétés couramment utilisées avec leurs possibles valeurs:
+color: Définit la couleur du texte.
+Valeurs possibles : red, #FF0000, rgb(255,0,0), etc.</p>
+<table>
+<thead>
+<tr>
+<th>Propriété</th>
+<th>Définition</th>
+<th>Valeurs possibles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>background-color</code></td>
+<td>couleur d'arrière-plan</td>
+<td>yellow, #FFFF00 etc..</td>
+</tr>
+<tr>
+<td><code>font-family</code></td>
+<td>fonte à utiliser</td>
+<td>Arial, 'Times New Roman', sans-serif, etc.</td>
+</tr>
+<tr>
+<td><code>font-size</code></td>
+<td>taille de la fonte</td>
+<td>16px, 1em, 120%, etc.</td>
+</tr>
+<tr>
+<td><code>margin</code> et <code>padding</code></td>
+<td>marge extérieure et intérieure autour d'un élément</td>
+<td>10px, 2em, 10px 5px 15px 5px, etc.</td>
+</tr>
+<tr>
+<td><code>border</code></td>
+<td>bordure autour d'un élément</td>
+<td>1px solid black, 2px dashed red, etc.</td>
+</tr>
+<tr>
+<td><code>width</code> et <code>height</code></td>
+<td>largeur et la hauteur d'un élément</td>
+<td>100px, 50%, auto, etc.</td>
+</tr>
+<tr>
+<td><code>display</code></td>
+<td>comment un élément doit être affiché</td>
+<td>block, inline, flex, grid, none, etc.</td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td>type de positionnement d'un élément</td>
+<td>static, relative, absolute, fixed, sticky, etc.</td>
+</tr>
+</tbody>
+</table>
+<p>Il existe des centaines de propriétés CSS, chacune ayant son propre ensemble de valeurs possibles. Lorsque vous débutez en CSS, il est utile de se familiariser avec les propriétés les plus courantes et d'expérimenter pour voir comment elles affectent la présentation d'une page web. Avec le temps, vous serez plus à l'aise avec un plus grand nombre de propriétés et de valeurs et serez capable de styliser vos pages web avec précision et créativité.</p>
+<h2 id="la-bo%C3%AEte-mod%C3%A8le-model-box">La boîte modèle (model box)</h2>
+<h2 id="mod%C3%A8le-de-bo%C3%AEte-box-model-en-css">Modèle de Boîte (Box Model) en CSS</h2>
+<p>Le modèle de boîte est un concept fondamental en CSS qui décrit comment les éléments sont structurés et dimensionnés sur une page web. Chaque élément est représenté comme une boîte rectangulaire, définie par plusieurs propriétés : marge, bordure, rembourrage et contenu.</p>
+<h3 id="composants-du-mod%C3%A8le-de-bo%C3%AEte">Composants du Modèle de Boîte :</h3>
+<ol>
+<li>
+<p><strong>Contenu (Content) :</strong></p>
+<ul>
+<li>Zone où le texte, les images ou d'autres contenus sont affichés.</li>
+<li>Les propriétés <code>width</code> et <code>height</code> déterminent sa taille.</li>
+</ul>
+</li>
+<li>
+<p><strong>Rembourrage (Padding)</strong>:</p>
+<ul>
+<li>Espace entre le contenu et la bordure.</li>
+<li>Propriétés : <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Bordure (Border)</strong>:</p>
+<ul>
+<li>Contour encadrant le rembourrage et le contenu.</li>
+<li>Propriétés : <code>border-width</code>, <code>border-style</code>, <code>border-color</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Marge (Margin)</strong>:</p>
+<ul>
+<li>Espace extérieur à la boîte.</li>
+<li>Propriétés : <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code>.</li>
+</ul>
+</li>
+</ol>
+<h4 id="box-sizing">Box Sizing</h4>
+<p>Comment la largeur et la hauteur d'un élément sont calculées.</p>
+<ul>
+<li>
+<p><strong>content-box</strong> (valeur par défaut) :</p>
+<ul>
+<li>Largeur et hauteur concernent uniquement le contenu. Rembourrage et bordure s'ajoutent à ces dimensions.</li>
+</ul>
+</li>
+<li>
+<p><strong>border-box</strong> :</p>
+<ul>
+<li>Largeur et hauteur incluent le contenu, le rembourrage et la bordure (pas la marge).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Exemple</strong> :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.box</span> {
+  <span class="hljs-attribute">box-sizing</span>: border-box;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">5px</span> solid black;
+}
+</div></code></pre>
+<h2 id="positionnement-et-mise-en-page">Positionnement et mise en page</h2>
+<p>En CSS, le positionnement et la mise en page sont essentiels pour déterminer où et comment les éléments sont affichés sur la page. Plusieurs propriétés et concepts sont à la base de cette gestion.</p>
+<h3 id="affichage-display--block-inline-inline-block-none">Affichage (<code>display</code>) : block, inline, inline-block, none</h3>
+<p>La propriété <code>display</code> en CSS détermine comment un élément est traité en termes de modèle de boîte. C'est une des propriétés les plus fondamentales pour contrôler la mise en page des éléments sur une page web.</p>
+<h3 id="display-block"><code>display: block</code></h3>
+<ul>
+<li><strong>Description</strong> : Les éléments avec <code>display: block</code> prennent toute la largeur disponible de leur conteneur parent et se positionnent sur une nouvelle ligne.</li>
+<li><strong>Caractéristiques</strong> :
+<ul>
+<li>Crée une nouvelle ligne avant et après lui.</li>
+<li>Accepte des propriétés de largeur (<code>width</code>) et de hauteur (<code>height</code>).</li>
+</ul>
+</li>
+<li><strong>Exemples d'éléments</strong> : <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>, etc.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Je suis un élément block<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">display</span>: block;
+  <span class="hljs-attribute">background-color</span>: lightblue;
+}
+</div></code></pre>
+<h3 id="display-inline"><code>display: inline</code></h3>
+<ul>
+<li><strong>Description</strong> : Les éléments avec <code>display: inline</code> ne prennent que l'espace nécessaire pour afficher leur contenu. Ils ne créent pas de nouvelle ligne avant ou après eux.</li>
+<li><strong>Caractéristiques</strong> :
+<ul>
+<li>Ne crée pas de nouvelle ligne.</li>
+<li>N'accepte pas des propriétés de largeur et de hauteur.</li>
+<li>Les marges et les bordures peuvent ne pas fonctionner comme prévu.</li>
+</ul>
+</li>
+<li><strong>Exemples d'éléments</strong> : <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>, etc.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Je suis<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"display"</span>&gt;</span>un élément inline<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">span</span> <span class="hljs-selector-class">.display</span> {
+  <span class="hljs-attribute">display</span>: inline;
+  <span class="hljs-attribute">background-color</span>: lightblue;
+}
+</div></code></pre>
+<h3 id="display-inline-block"><code>display: inline-block</code></h3>
+<ul>
+<li><strong>Description</strong> : Les éléments avec <code>display: inline-block</code> sont traités comme des éléments inline, mais ils acceptent des propriétés de dimensionnement comme <code>width</code> et <code>height</code>.</li>
+<li><strong>Caractéristiques</strong> :
+<ul>
+<li>Ne crée pas de nouvelle ligne.</li>
+<li>Accepte des propriétés de largeur et de hauteur.</li>
+<li>Comportement hybride entre <code>inline</code> et <code>block</code>.</li>
+</ul>
+</li>
+<li><strong>Utilisation</strong> : Idéal pour des éléments qui doivent être alignés côte à côte mais qui ont également besoin de dimensionnement spécifique.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Je suis un élément inline-block<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">span</span> {
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
+  <span class="hljs-attribute">background-color</span>: lightgreen;
+}
+</div></code></pre>
+<h3 id="display-none"><code>display: none</code></h3>
+<ul>
+<li><strong>Description</strong> : Les éléments avec <code>display: none</code> sont complètement retirés du flux de la page. Ils ne prennent aucun espace et ne sont pas visibles.</li>
+<li><strong>Caractéristiques</strong> :
+<ul>
+<li>L'élément est totalement invisible.</li>
+<li>N'affecte pas la mise en page des autres éléments.</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Vous ne me verrez pas sur la page.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">display</span>: none;
+}
+</div></code></pre>
+<p>Ce <code>&lt;div&gt;</code> ne sera pas visible et ne prendra pas de place sur la page.</p>
+<p>Chaque valeur de la propriété display a ses propres caractéristiques et peut être utilisée pour atteindre différents effets de mise en page.
+En utilisant judicieusement ces valeurs, vous pouvez contrôler efficacement la disposition et le positionnement de vos éléments sur votre page web.</p>
+<h3 id="positionnement--static-relative-absolute-fixed-sticky">Positionnement : static, relative, absolute, fixed, sticky</h3>
+<p>La propriété <code>position</code> en CSS permet de définir le mode de positionnement d'un élément par rapport à son conteneur ou au viewport.</p>
+<h3 id="position-static"><code>position: static</code></h3>
+<p>C'est le comportement par défaut d'un élément. L'élément est positionné selon l'ordre normal du flux de la page.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Je suis un élément avec position static<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">position</span>: static;
+}
+</div></code></pre>
+<h3 id="position-relative"><code>position: relative</code></h3>
+<p>L'élément est positionné par rapport à sa position initiale, sans être retiré du flux normal.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  Je suis décalé de 10px à gauche et 5px vers le haut par rapport à ma position
+  initiale
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">5px</span>;
+}
+</div></code></pre>
+<h3 id="position-absolute"><code>position: absolute</code></h3>
+<p>L'élément est positionné par rapport au conteneur positionné le plus proche (autre que <code>static</code>) ou, à défaut, par rapport au viewport. Il est retiré du flux normal.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  Je suis positionné à 20px du haut et à droite de mon conteneur ou du viewport
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
+}
+</div></code></pre>
+<h3 id="position-fixed"><code>position: fixed</code></h3>
+<p>L'élément est positionné par rapport au viewport et ne bouge pas lors du défilement de la page.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Je suis fixé en bas à gauche du viewport<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">position</span>: fixed;
+  <span class="hljs-attribute">bottom</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">10px</span>;
+}
+</div></code></pre>
+<h3 id="position-sticky"><code>position: sticky</code></h3>
+<p>L'élément est basé sur un mélange entre <code>relative</code> et <code>fixed</code>. Il &quot;colle&quot; à une position donnée lors du défilement.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Je "colle" en haut lorsque vous faites défiler la page<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">position</span>: sticky;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+}
+</div></code></pre>
+<p>Le positionnement en CSS est essentiel pour créer des designs et des mises en page sophistiqués et interactifs. En maîtrisant ces valeurs, vous pourrez réaliser de nombreux effets sur votre site web.</p>
+<h3 id="flottants-float-et-clear-en-css">## Flottants (<code>float</code>) et <code>clear</code> en CSS</h3>
+<p>Les flottants sont utilisés en CSS pour déplacer un élément à gauche ou à droite, permettant ainsi aux autres contenus de s'enrouler autour de lui. C'est une technique qui a été largement utilisée pour la mise en page avant l'avènement de Flexbox et Grid, mais qui est toujours pertinente pour certains designs, notamment la mise en forme de textes autour des images.</p>
+<h3 id="float"><code>float</code></h3>
+<p>La propriété <code>float</code> peut avoir l'une des valeurs suivantes :</p>
+<ul>
+<li><code>left</code>: L'élément flotte à gauche.</li>
+<li><code>right</code>: L'élément flotte à droite.</li>
+<li><code>none</code>: L'élément ne flotte pas (valeur par défaut).</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/image.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Description de l'image"</span> /&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">/* Faire flotter une image à gauche */</span>
+<span class="hljs-selector-tag">img</span> {
+  <span class="hljs-attribute">float</span>: left;
+}
+</div></code></pre>
+<h3 id="clear"><code>clear</code></h3>
+<p>La propriété <code>clear</code> est utilisée pour contrôler le comportement des éléments par rapport aux éléments flottants précédents. Elle est utilisée pour empêcher que des éléments soient positionnés à côté d'éléments flottants précédents.
+Elle peut avoir l'une des valeurs suivantes :</p>
+<ul>
+<li><code>left</code>: L'élément ne sera pas positionné à côté des éléments flottant à gauche.</li>
+<li><code>right</code>: L'élément ne sera pas positionné à côté des éléments flottant à droite.</li>
+<li><code>both</code>: L'élément ne sera pas positionné à côté de tout élément flottant (à gauche ou à droite).</li>
+<li><code>none</code>: L'élément peut être positionné à côté des éléments flottants.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- Flotter à gauche --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"float-left"</span>&gt;</span>Je flotte à gauche<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Empêcher le flottement à droite --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"clear-left"</span>&gt;</span>Je ne flotte pas à côté d'éléments à gauche<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">/* Flotter à gauche */</span>
+<span class="hljs-selector-class">.float-left</span> {
+  <span class="hljs-attribute">float</span>: left;
+}
+</div></code></pre>
+<p>Il est également courant d'utiliser un élément vide avec <code>clear: both;</code> après les éléments flottants pour s'assurer que le conteneur englobe correctement ses enfants flottants :</p>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- Flotter à gauche --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"float-left"</span>&gt;</span>Je flotte à gauche<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Flotter à droite --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"float-right;"</span>&gt;</span>Je flotte à droite<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Clear both pour s'assurer que le conteneur englobe ses enfants flottants --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"clear-both;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">/* Flotter à gauche */</span>
+<span class="hljs-selector-class">.float-left</span> {
+  <span class="hljs-attribute">float</span>: left;
+}
+
+<span class="hljs-comment">/* Flotter à droite */</span>
+<span class="hljs-selector-class">.float-right</span> {
+  <span class="hljs-attribute">float</span>: right;
+}
+
+<span class="hljs-comment">/* Clear both pour s'assurer que le conteneur englobe ses enfants flottants */</span>
+<span class="hljs-selector-class">.clear-both</span> {
+  <span class="hljs-attribute">clear</span>: both;
+}
+</div></code></pre>
+<p>L'utilisation de <code>float</code> peut parfois entraîner des problèmes de débordement où le conteneur ne prend pas en compte la hauteur de ses enfants flottants. Dans ces cas, une technique courante consiste à utiliser un élément avec <code>clear: both</code> pour &quot;nettoyer&quot; après les éléments flottants.</p>
+<p><strong>NB :</strong> <i>Les flottants peuvent être délicats à gérer dans certaines situations, et des techniques telles que <code>Flexbox</code> ou <code>Grid</code> sont maintenant souvent privilégiées pour la mise en page. Cependant, comprendre comment fonctionnent les flottants reste important.</i></p>
+<h2 id="couleurs-et-fonds">Couleurs et fonds</h2>
+<p>Les couleurs et les fonds sont des éléments essentiels de la conception web. En CSS, il existe plusieurs façons de définir la couleur d'un élément, ainsi que de nombreuses propriétés pour contrôler les fonds.</p>
+<h3 id="types-de-couleurs--nomm%C3%A9es-hexad%C3%A9cimales-rgb-rgba-hsl-hsla">Types de couleurs : nommées, hexadécimales, rgb, rgba, hsl, hsla</h3>
+<p>Il existe plusieurs façons de définir la couleur d'un élément en CSS. Chaque méthode a ses avantages et ses inconvénients, et il est important de comprendre les différences entre elles.</p>
+<h3 id="couleurs-nomm%C3%A9es">Couleurs nommées</h3>
+<p>Les couleurs nommées sont des mots-clés prédéfinis qui représentent une couleur spécifique. Elles sont faciles à utiliser et à retenir, mais elles sont limitées à un ensemble de couleurs prédéfinies.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">color</span>: red;
+}
+</div></code></pre>
+<h3 id="couleurs-hexad%C3%A9cimales">Couleurs hexadécimales</h3>
+<p>Les couleurs hexadécimales sont définies par une combinaison de 6 ou 3 valeurs hexadécimales (0-9, A-F) qui représentent les niveaux de rouge, vert et bleu (RVB) de la couleur. Elles sont très couramment utilisées en CSS.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff0000</span>;
+}
+</div></code></pre>
+<h3 id="couleurs-rvb">Couleurs RVB</h3>
+<p>Les couleurs RVB sont définies par une combinaison de 3 valeurs RVB (0-255) qui représentent les niveaux de rouge, vert et bleu de la couleur. Elles sont très couramment utilisées en CSS.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+}
+</div></code></pre>
+<h3 id="couleurs-rvba">Couleurs RVBA</h3>
+<p>Les couleurs RVBA sont définies par une combinaison de 4 valeurs RVB (0-255) qui représentent les niveaux de rouge, vert et bleu de la couleur, ainsi qu'une valeur alpha (0-1) qui représente la transparence de la couleur. Elles sont très couramment utilisées en CSS.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.5</span>);
+}
+</div></code></pre>
+<h3 id="couleurs-hsl">Couleurs HSL</h3>
+<p>Les couleurs HSL sont définies par une combinaison de 3 valeurs HSL (0-360, 0-100%, 0-100%) qui représentent la teinte, la saturation et la luminosité de la couleur. Elles sont très couramment utilisées en CSS.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">hsl</span>(<span class="hljs-number">0</span>, <span class="hljs-number">100%</span>, <span class="hljs-number">50%</span>);
+}
+</div></code></pre>
+<h3 id="couleurs-hsla">Couleurs HSLA</h3>
+<p>Les couleurs HSLA sont définies par une combinaison de 4 valeurs HSL (0-360, 0-100%, 0-100%) qui représentent la teinte, la saturation et la luminosité de la couleur, ainsi qu'une valeur alpha (0-1) qui représente la transparence de la couleur. Elles sont très couramment utilisées en CSS.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">hsla</span>(<span class="hljs-number">0</span>, <span class="hljs-number">100%</span>, <span class="hljs-number">50%</span>, <span class="hljs-number">0.5</span>);
+}
+</div></code></pre>
+<h3 id="background-couleur-image-position-taille-repeat-attachment-origin-clip-blend-mode-object-fit">Background: couleur, image, position, taille, repeat, attachment, origin, clip, blend-mode, object-fit</h3>
+<p>La propriété <code>background</code> en CSS permet de définir la couleur et l'image d'arrière-plan d'un élément. Elle peut avoir plusieurs valeurs, séparées par des virgules, qui définissent différentes propriétés d'arrière-plan.</p>
+<h3 id="background-color"><code>background-color</code></h3>
+<p>Définit la couleur d'arrière-plan d'un élément.</p>
+<p>Les valeurs possibles sont :</p>
+<ul>
+<li><code>color</code> : définit la couleur d'arrière-plan à partir d'un nom de couleur, d'une valeur hexadécimale, d'une valeur RVB, d'une valeur RVBA, d'une valeur HSL ou d'une valeur HSLA</li>
+<li><code>transparent</code> : définit la couleur d'arrière-plan comme transparente</li>
+<li><code>initial</code> : valeur par défaut</li>
+<li><code>inherit</code> : hérite de la valeur de son parent</li>
+<li><code>unset</code> : réinitialise la valeur</li>
+</ul>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">background-color</span>: red;
+}
+</div></code></pre>
+<h3 id="background-image"><code>background-image</code></h3>
+<p>Définit l'image d'arrière-plan d'un élément.</p>
+<p>Les valeurs possibles sont :</p>
+<ul>
+<li><code>url(&quot;path/to/image.jpg&quot;)</code> : définit l'image d'arrière-plan à partir d'un chemin d'accès</li>
+<li><code>none</code> : pas d'image d'arrière-plan</li>
+<li><code>initial</code> : valeur par défaut</li>
+<li><code>inherit</code> : hérite de la valeur de son parent</li>
+<li><code>unset</code> : réinitialise la valeur</li>
+<li><code>linear-gradient()</code> : définit l'image d'arrière-plan à partir d'un dégradé linéaire</li>
+<li><code>radial-gradient()</code> : définit l'image d'arrière-plan à partir d'un dégradé radial</li>
+<li><code>repeating-linear-gradient()</code> : définit l'image d'arrière-plan à partir d'un dégradé linéaire répété</li>
+<li><code>repeating-radial-gradient()</code> : définit l'image d'arrière-plan à partir d'un dégradé radial répété</li>
+</ul>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"path/to/image.jpg"</span>);
+}
+</div></code></pre>
+<h3 id="background-position"><code>background-position</code></h3>
+<p>Définit la position d'arrière-plan d'un élément.</p>
+<p>Les valeurs possibles sont :</p>
+<ul>
+<li><code>left</code> : aligne l'image d'arrière-plan sur la gauche</li>
+<li><code>right</code> : aligne l'image d'arrière-plan sur la droite</li>
+<li><code>top</code> : aligne l'image d'arrière-plan en haut</li>
+<li><code>bottom</code> : aligne l'image d'arrière-plan en bas</li>
+<li><code>center</code> : aligne l'image d'arrière-plan au centre</li>
+<li><code>initial</code> : valeur par défaut</li>
+<li><code>inherit</code> : hérite de la valeur de son parent</li>
+<li><code>unset</code> : réinitialise la valeur</li>
+<li><code>x% y%</code> : définit la position de l'image d'arrière-plan en pourcentage de la zone d'arrière-plan</li>
+</ul>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">background-position</span>: top left;
+}
+</div></code></pre>
+<h3 id="background-size"><code>background-size</code></h3>
+<p>Définit la taille d'arrière-plan d'un élément.</p>
+<p>Les valeurs possibles sont :</p>
+<ul>
+<li><code>auto</code> : taille par défaut</li>
+<li><code>length</code> : définit la largeur et la hauteur de l'image d'arrière-plan en pixels</li>
+<li><code>cover</code> : redimensionne l'image d'arrière-plan pour remplir la zone d'arrière-plan, en conservant le rapport hauteur/largeur et en coupant les bords</li>
+<li><code>contain</code> : redimensionne l'image d'arrière-plan pour s'adapter à la zone d'arrière-plan, en conservant le rapport hauteur/largeur et en ajoutant des espaces vides</li>
+<li><code>initial</code> : valeur par défaut</li>
+<li><code>inherit</code> : hérite de la valeur de son parent</li>
+<li><code>unset</code> : réinitialise la valeur</li>
+<li><code>percentage</code> : définit la largeur et la hauteur de l'image d'arrière-plan en pourcentage de la zone d'arrière-plan</li>
+<li><code>auto length</code> : définit la largeur de l'image d'arrière-plan en pixels et la hauteur en pourcentage de la zone d'arrière-plan</li>
+<li><code>length auto</code> : définit la largeur de l'image d'arrière-plan en pourcentage de la zone d'arrière-plan et la hauteur en pixels</li>
+</ul>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">background-size</span>: <span class="hljs-number">100px</span> <span class="hljs-number">50px</span>;
+}
+</div></code></pre>
+<h3 id="background-repeat"><code>background-repeat</code></h3>
+<p>Définit la répétition d'arrière-plan d'un élément.</p>
+<p>Les valeurs possibles sont :</p>
+<ul>
+<li><code>repeat</code> : l'arrière-plan est répété horizontalement et verticalement</li>
+<li><code>repeat-x</code> : l'arrière-plan est répété horizontalement</li>
+<li><code>repeat-y</code> : l'arrière-plan est répété verticalement</li>
+<li><code>no-repeat</code> : l'arrière-plan n'est pas répété</li>
+<li><code>space</code> : l'arrière-plan est répété horizontalement et verticalement, mais les images sont séparées par un espace</li>
+<li><code>round</code> : l'arrière-plan est répété horizontalement et verticalement, mais les images sont redimensionnées pour s'adapter à l'espace</li>
+<li><code>initial</code> : valeur par défaut</li>
+<li><code>inherit</code> : hérite de la valeur de son parent</li>
+<li><code>unset</code> : réinitialise la valeur</li>
+</ul>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">background-repeat</span>: no-repeat;
+}
+</div></code></pre>
+<h3 id="background-attachment"><code>background-attachment</code></h3>
+<p>Définit l'attachement d'arrière-plan d'un élément.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">background-attachment</span>: fixed;
+}
+</div></code></pre>
+<p>Les valeurs possibles sont :</p>
+<ul>
+<li><code>scroll</code> : l'arrière-plan défiler avec le contenu</li>
+<li><code>fixed</code> : l'arrière-plan reste fixe</li>
+<li><code>local</code> : l'arrière-plan défiler avec le contenu</li>
+<li><code>initial</code> : valeur par défaut</li>
+<li><code>inherit</code> : hérite de la valeur de son parent</li>
+<li><code>unset</code> : réinitialise la valeur</li>
+</ul>
+<h3 id="background-origin"><code>background-origin</code></h3>
+<p>Définit l'origine d'arrière-plan d'un élément.
+Permet de décaler l'image de fond par rapport au contenu</p>
+<p>Les valeurs possibles sont :</p>
+<ul>
+<li><code>border-box</code> : l'arrière-plan est affiché dans la bordure</li>
+<li><code>padding-box</code> : l'arrière-plan est affiché dans le padding</li>
+<li><code>content-box</code> : l'arrière-plan est affiché dans le contenu</li>
+<li><code>initial</code> : valeur par défaut</li>
+<li><code>inherit</code> : hérite de la valeur de son parent</li>
+<li><code>unset</code> : réinitialise la valeur</li>
+<li><code>text</code> : l'arrière-plan est affiché dans le texte</li>
+<li><code>no-clip</code> : l'arrière-plan n'est pas affiché</li>
+</ul>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/*  */</span>
+<span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">background-origin</span>: content-box;
+}
+</div></code></pre>
+<h3 id="background-clip"><code>background-clip</code></h3>
+<p>Définit le clip d'arrière-plan d'un élément. Cette propriété permet de définir la zone d'affichage de l'arrière-plan.</p>
+<p>Les valeurs possibles sont :</p>
+<ul>
+<li><code>border-box</code> : l'arrière-plan est affiché dans la bordure</li>
+<li><code>padding-box</code> : l'arrière-plan est affiché dans le padding</li>
+<li><code>content-box</code> : l'arrière-plan est affiché dans le contenu</li>
+<li><code>initial</code> : valeur par défaut</li>
+<li><code>inherit</code> : hérite de la valeur de son parent</li>
+<li><code>unset</code> : réinitialise la valeur</li>
+<li><code>text</code> : l'arrière-plan est affiché dans le texte</li>
+<li><code>no-clip</code> : l'arrière-plan n'est pas affiché</li>
+</ul>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">background-clip</span>: border-box;
+}
+</div></code></pre>
+<h3 id="background-blend-mode"><code>background-blend-mode</code></h3>
+<p>Les modes de fusion possibles sont :
+Définit le mode de fusion d'arrière-plan d'un élément.</p>
+<p><code>normal</code>, <code>multiply</code>, <code>screen</code>, <code>overlay</code>, <code>darken</code>, <code>lighten</code>, <code>color-dodge</code>, <code>saturation</code>, <code>color</code>, <code>luminosity</code>, <code>difference</code>, <code>exclusion</code>, <code>hue</code>, <code>saturation</code>, <code>color</code>, <code>luminosity</code>, <code>initial</code>, <code>inherit</code>, <code>unset</code>.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">background-blend-mode</span>: multiply;
+}
+</div></code></pre>
+<h3 id="background"><code>background</code></h3>
+<p>La propriété <code>background</code> est un raccourci. Elle peut également être utilisée pour définir plusieurs propriétés d'arrière-plan en même temps.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">background</span>: red <span class="hljs-built_in">url</span>(<span class="hljs-string">"path/to/image.jpg"</span>) no-repeat top left;
+}
+</div></code></pre>
+<ul>
+<li>red : couleur de fond</li>
+<li>url(&quot;path/to/image.jpg&quot;) : image de fond</li>
+<li>no-repeat : pas de répétition</li>
+<li>top : positionnement en haut</li>
+<li>left : positionnement à gauche</li>
+</ul>
+<h3 id="object-fit"><code>object-fit</code></h3>
+<p>La propriété <code>object-fit</code> en CSS permet de définir comment une image ou une vidéo doit s'adapter à son conteneur.</p>
+<p>Les valeurs possibles sont :</p>
+<ul>
+<li><code>fill</code> : l'image remplit le conteneur, en conservant ses proportions d'origine. Cela peut entraîner une déformation de l'image.</li>
+<li><code>contain</code> : l'image s'adapte au conteneur, en conservant ses proportions d'origine. L'image peut ne pas remplir complètement le conteneur.</li>
+<li><code>cover</code> : l'image remplit le conteneur, en conservant ses proportions d'origine. L'image peut être coupée.</li>
+<li><code>none</code> : l'image conserve ses proportions d'origine et ne s'adapte pas au conteneur.</li>
+</ul>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">img</span> {
+  <span class="hljs-attribute">object-fit</span>: cover;
+}
+</div></code></pre>
+<h2 id="typographie">Typographie</h2>
+<p>La typographie est un élément essentiel de la conception web. En CSS, il existe plusieurs propriétés pour contrôler la typographie d'un élément.</p>
+<h3 id="polices-de-caract%C3%A8res-et-font-face">Polices de caractères et @font-face</h3>
+<p>Les polices de caractères sont un élément essentiel de la conception web. En CSS, il existe plusieurs façons de définir la police d'un élément.</p>
+<p><strong>Polices de caractères</strong></p>
+<ul>
+<li>
+<p>Les polices de caractères sont des fichiers de police qui sont chargés sur une page web. Elles peuvent être définies à l'aide de la règle <code>@font-face</code> en CSS.</p>
+</li>
+<li>
+<p>En plus des polices de caractères, il existe également des polices système qui sont installées sur l'ordinateur de l'utilisateur. Elles peuvent être utilisées en CSS en utilisant le nom de la police.</p>
+</li>
+<li>
+<p>En CSS, la propriété <code>font-family</code> est utilisée pour spécifier la police de caractère utilisée pour le texte.</p>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment">/* Polices de caractères */</span>
+<span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">"Times New Roman"</span>, Times, serif;
+}
+</div></code></pre>
+<p><strong><code>@font-face</code></strong></p>
+<ul>
+<li>La règle <code>@font-face</code> en CSS permet de charger des polices de caractères sur une page web.</li>
+<li>Elle peut être utilisée pour charger des polices de caractères personnalisées ou des polices de caractères système qui ne sont pas installées sur l'ordinateur de l'utilisateur.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment">/* Polices de caractères */</span>
+<span class="hljs-keyword">@font-face</span> {
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">"Times New Roman"</span>;
+  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"path/to/font.woff2"</span>) <span class="hljs-built_in">format</span>(<span class="hljs-string">"woff2"</span>), <span class="hljs-built_in">url</span>(<span class="hljs-string">"path/to/font.woff"</span>)
+      <span class="hljs-built_in">format</span>(<span class="hljs-string">"woff"</span>);
+}
+</div></code></pre>
+<p>Il est possible d'utiliser une librairie de polices de caractères comme Google Fonts pour charger des polices de caractères personnalisées sur une page web.</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* Polices de caractères */</span>
+<span class="hljs-keyword">@font-face</span> {
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">"Times New Roman"</span>;
+  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"https://fonts.googleapis.com/css2?family=Roboto:wght@100&amp;display=swap"</span>);
+}
+</div></code></pre>
+<p>Il est aussi possible d'importer la librairie de polices de caractères dans la balise <code>&lt;head&gt;</code>.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">link</span>
+  <span class="hljs-attr">href</span>=<span class="hljs-string">"https://fonts.googleapis.com/css2?family=Roboto:wght@100&amp;display=swap"</span>
+  <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>
+/&gt;</span>
+</div></code></pre>
+<p>Et ensuite de l'utiliser dans le CSS.</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* Polices de caractères */</span>
+<span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">"Roboto"</span>, sans-serif;
+}
+</div></code></pre>
+<h3 id="poids-style-et-variante-de-fonte">Poids, style et variante de fonte</h3>
+<p>Les propriétés CSS liées au poids, au style et à la variante de la fonte permettent de contrôler finement l'apparence du texte sur une page web.</p>
+<ul>
+<li>Poids : <code>font-weight</code></li>
+</ul>
+<p>Cette propriété définit l'épaisseur ou le poids de la fonte. Les valeurs courantes comprennent :</p>
+<ul>
+<li><code>normal</code> : poids normal</li>
+<li><code>bold</code> : texte en gras</li>
+<li><code>bolder</code> : poids plus gras que le poids normal</li>
+<li><code>lighter</code> : poids plus léger ou moins gras que le poids normal</li>
+<li>poids numérique (100, 200, 300, etc.) : Poids spécifiques pour les fontes offrant plusieurs poids.</li>
+<li><code>initial</code> : valeur par défaut</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Je suis un texte en <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bold"</span>&gt;</span>gras<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.bold</span> {
+  <span class="hljs-attribute">font-weight</span>: bold;
+}
+</div></code></pre>
+<p>Résultat :
+Je suis un texte en <strong>gras</strong></p>
+<ul>
+<li>Style : <code>font-style</code></li>
+</ul>
+<p>Cette propriété définit le style de la fonte. Les valeurs courantes comprennent :</p>
+<ul>
+<li><code>normal</code> : style normal</li>
+<li><code>italic</code> : texte italique</li>
+<li><code>oblique</code> : texte incliné</li>
+<li><code>initial</code> : valeur par défaut</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Je suis un texte en <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"italic"</span>&gt;</span>italique<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.italic</span> {
+  <span class="hljs-attribute">font-style</span>: italic;
+}
+</div></code></pre>
+<p>Résultat :
+Je suis un texte en <i>italique</i></p>
+<ul>
+<li>Variante : <code>font-variant</code></li>
+</ul>
+<p>La propriété <code>font-variant</code> permet de contrôler les variantes stylistiques d'une fonte. Elle a principalement été utilisée pour mettre en œuvre des petites majuscules, mais avec l'adoption de CSS3 et des spécifications de fontes, sa fonction s'est étendue pour couvrir d'autres variantes de fontes.</p>
+<p>L'utilisation la plus courante de <code>font-variant</code> est pour les petites majuscules :</p>
+<ul>
+<li><strong><code>normal</code></strong> : Aucune variante spéciale n'est appliquée.</li>
+<li><strong><code>small-caps</code></strong> : Transforme les lettres minuscules en petites majuscules.</li>
+<li><strong><code>all-small-caps</code></strong> : Transforme toutes les lettres en petites majuscules.</li>
+</ul>
+<p>Les valeurs <code>small-caps</code> et <code>all-small-caps</code> sont souvent utilisées pour mettre en évidence des mots ou des phrases dans un texte.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Je suis un texte en <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"small-caps"</span>&gt;</span>petites majuscules<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.small-caps</span> {
+  <span class="hljs-attribute">font-variant</span>: small-caps;
+}
+</div></code></pre>
+<p>Résultat :
+Je suis un texte en <span style="font-variant: small-caps;">petites majuscules</span></p>
+<ul>
+<li>Variante numérique</li>
+</ul>
+<p>Avec l'évolution de CSS, d'autres sous-propriétés liées aux variantes numériques sont apparues, telles que :</p>
+<ul>
+<li><strong><code>font-variant-numeric</code></strong> : permet de contrôler les variantes numériques d'une fonte.</li>
+<li><strong><code>font-variant-east-asian</code></strong> : permet de contrôler les variantes asiatiques d'une fonte.</li>
+<li><strong><code>font-variant-ligatures</code></strong> : permet de contrôler les ligatures d'une fonte.</li>
+<li><strong><code>font-variant-caps</code></strong> : permet de contrôler les capitales d'une fonte.</li>
+<li><strong><code>font-variant-alternates</code></strong> : permet de contrôler les variantes alternatives d'une fonte.</li>
+<li><strong><code>font-variant-position</code></strong> : permet de contrôler la position des variantes d'une fonte.</li>
+<li><strong><code>font-variant-emoji</code></strong> : permet de contrôler les variantes emoji d'une fonte.</li>
+<li><strong><code>font-variant-language</code></strong> : permet de contrôler les variantes linguistiques d'une fonte.</li>
+<li><strong><code>font-variant-numeric</code></strong> : permet de contrôler les variantes numériques d'une fonte.</li>
+</ul>
+<p>Ces sous-propriétés permettent un contrôle plus précis sur différents aspects stylistiques des fontes, tels que la forme des chiffres, les ligatures, les variantes alternées, et plus encore.</p>
+<p>Pour un contrôle maximal, il est souvent recommandé d'utiliser ces sous-propriétés plutôt que la propriété <code>font-variant</code> générale, car elles offrent une plus grande flexibilité et précision.</p>
+<p><strong>Note :</strong> L'utilisation effective de ces variantes dépend de la fonte en question. Si une fonte n'offre pas une variante stylistique spécifique, la spécification sera ignorée.</p>
+<h3 id="espacement-des-lettres-des-mots-et-des-lignes">Espacement des lettres, des mots et des lignes</h3>
+<p>L'espacement entre les lettres, les mots et les lignes joue un rôle crucial dans la lisibilité et l'apparence du texte sur une page web.</p>
+<p><code>letter-spacing</code></p>
+<p>Cette propriété définit l'espace entre les caractères d'un texte.</p>
+<ul>
+<li>Valeur par défaut : <code>normal</code></li>
+<li>Peut être défini en unités comme <code>em</code>, <code>px</code>, <code>pt</code>, etc.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Bonjour<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">20px</span>;
+}
+</div></code></pre>
+<p>Résultat : <p style="letter-spacing: 20px;">Bonjour</p></p>
+<p><code>word-spacing</code></p>
+<p>Cette propriété définit l'espace entre les mots d'un texte.</p>
+<ul>
+<li>Valeur par défaut : <code>normal</code></li>
+<li>Peut être défini en unités comme <code>em</code>, <code>px</code>, <code>pt</code>, etc.</li>
+<li>Les espaces supplémentaires entre les mots sont ajoutés à l'espace normal entre les mots.</li>
+<li>Les espaces négatifs sont autorisés.</li>
+<li>Les espaces supplémentaires ne sont pas ajoutés avant, après ou entre les mots vides.</li>
+<li>Les espaces supplémentaires ne sont pas ajoutés avant ou après les mots qui ont une propriété <code>white-space</code> de <code>pre</code>.</li>
+<li>Les espaces supplémentaires ne sont pas ajoutés avant ou après les mots qui ont une propriété <code>white-space</code> de <code>pre-wrap</code>.</li>
+<li>Les espaces supplémentaires ne sont pas ajoutés avant ou après les mots qui ont une propriété <code>white-space</code> de <code>pre-line</code>.</li>
+<li>Les espaces supplémentaires ne sont pas ajoutés avant ou après les mots qui ont une propriété <code>white-space</code> de <code>nowrap</code>.</li>
+<li>Les espaces supplémentaires ne sont pas ajoutés avant ou après les mots qui ont une propriété <code>white-space</code> de <code>break-spaces</code>.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Bonjour tout le monde<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">word-spacing</span>: <span class="hljs-number">20px</span>;
+}
+</div></code></pre>
+<p>Résultat : <p style="word-spacing: 20px;">Bonjour tout le monde</p></p>
+<p><code>line-height</code></p>
+<p>La propriété line-height détermine la hauteur de ligne du texte. Elle n'affecte pas seulement l'espacement vertical entre les lignes de texte, mais aussi la taille des boîtes de ligne dans lesquelles le texte est placé.</p>
+<ul>
+<li>Valeur par défaut : <code>normal</code></li>
+<li>Peut être défini en unités comme <code>em</code>, <code>px</code>, <code>pt</code>, <code>%</code> etc.</li>
+<li>Les valeurs négatives sont autorisées.</li>
+<li>Les valeurs décimales sont autorisées.</li>
+<li>Les valeurs sans unité sont autorisées.</li>
+<li>Les valeurs de pourcentage sont autorisées.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">2</span>;
+}
+</div></code></pre>
+<h3 id="alignement-du-texte">Alignement du texte</h3>
+<p>L'alignement du texte est un élément essentiel de la conception web. En CSS, il existe plusieurs propriétés pour contrôler l'alignement du texte.</p>
+<p><code>text-align</code></p>
+<p>Cette propriété définit l'alignement horizontal du texte.</p>
+<ul>
+<li>Valeur par défaut : <code>left</code></li>
+<li>Les valeurs possibles sont : <code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code>, <code>initial</code>, <code>inherit</code>, <code>unset</code>.</li>
+<li><code>justify</code> : aligne le texte sur les deux côtés, en ajoutant des espaces supplémentaires entre les mots.</li>
+<li><code>initial</code> : valeur par défaut</li>
+<li><code>inherit</code> : hérite de la valeur de son parent</li>
+<li><code>unset</code> : réinitialise la valeur</li>
+<li><code>start</code> : aligne le texte à gauche</li>
+<li><code>end</code> : aligne le texte à droite</li>
+<li><code>match-parent</code> : aligne le texte sur le parent</li>
+<li><code>justify-all</code> : aligne le texte sur les deux côtés, en ajoutant des espaces supplémentaires entre les mots.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Je suis un texte aligné à <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"right"</span>&gt;</span>droite<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.right</span> {
+  <span class="hljs-attribute">text-align</span>: right; <span class="hljs-comment">/* Le texte est aligné à droite */</span>
+}
+</div></code></pre>
+<p>Résultat : <p>Je suis un texte aligné à <span style="text-align: right;">droite</span></p></p>
+<p><code>text-align-last</code></p>
+<p>Cette propriété définit l'alignement horizontal de la dernière ligne d'un texte.</p>
+<ul>
+<li>Valeur par défaut : <code>auto</code></li>
+<li>Les valeurs possibles sont : <code>auto</code>, <code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code>, <code>start</code>, <code>end</code>, <code>initial</code>, <code>inherit</code>, <code>unset</code>.</li>
+<li><code>justify</code> : aligne le texte sur les deux côtés, en ajoutant des espaces supplémentaires entre les mots.</li>
+<li><code>initial</code> : valeur par défaut</li>
+<li><code>inherit</code> : hérite de la valeur de son parent</li>
+<li><code>unset</code> : réinitialise la valeur</li>
+<li><code>start</code> : aligne le texte à gauche</li>
+<li><code>end</code> : aligne le texte à droite</li>
+<li><code>match-parent</code> : aligne le texte sur le parent</li>
+<li><code>justify-all</code> : aligne le texte sur les deux côtés, en ajoutant des espaces supplémentaires entre les mots.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Je suis un texte aligné à <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"right"</span>&gt;</span>droite<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.right</span> {
+  <span class="hljs-attribute">text-align-last</span>: right; <span class="hljs-comment">/* Le texte est aligné à droite */</span>
+}
+</div></code></pre>
+<h2 id="effets-visuels">Effets visuels</h2>
+<p>Les effets visuels en CSS sont essentiels pour améliorer l'esthétique d'un site web et fournir une expérience utilisateur dynamique. En CSS, il existe plusieurs propriétés pour contrôler les effets visuels d'un élément.</p>
+<h3 id="ombres-box-shadow-text-shadow">Ombres (box-shadow, text-shadow)</h3>
+<p>Permet d'ajouter une ombre à un élément. Vous pouvez spécifier des ombres intérieures et extérieures.</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* Syntaxe */</span>
+<span class="hljs-selector-tag">box-shadow</span>: <span class="hljs-selector-tag">h-shadow</span> <span class="hljs-selector-tag">v-shadow</span> <span class="hljs-selector-tag">blur</span> <span class="hljs-selector-tag">spread</span> <span class="hljs-selector-tag">color</span> <span class="hljs-selector-tag">inset</span>;
+</div></code></pre>
+<ul>
+<li><code>h-shadow</code> : obligatoire. Définit la position horizontale de l'ombre. Une valeur positive place l'ombre à droite de la boîte, une valeur négative place l'ombre à gauche de la boîte.</li>
+<li><code>v-shadow</code> : obligatoire. Définit la position verticale de l'ombre. Une valeur positive place l'ombre en dessous de la boîte, une valeur négative place l'ombre au-dessus de la boîte.</li>
+<li><code>blur</code> : facultatif. Définit le flou de l'ombre. Plus la valeur est élevée, plus l'ombre est floue. La valeur par défaut est 0 (pas de flou).</li>
+<li><code>spread</code> : facultatif. Définit la taille de l'ombre. Une valeur positive augmente la taille de l'ombre, une valeur négative la réduit. La valeur par défaut est 0 (l'ombre est de la même taille que l'élément).</li>
+<li><code>color</code> : facultatif. Définit la couleur de l'ombre. La valeur par défaut est la couleur du texte.</li>
+<li><code>inset</code> : facultatif. Définit si l'ombre est intérieure ou extérieure. La valeur par défaut est extérieure, <code>inset</code> spécifie que l'ombre est intérieure.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Je suis un texte avec une ombre<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">10px</span> <span class="hljs-number">10px</span> <span class="hljs-number">5px</span> grey;
+}
+</div></code></pre>
+<ul>
+<li><code>10px</code> : position horizontale de l'ombre</li>
+<li><code>10px</code> : position verticale de l'ombre</li>
+<li><code>5px</code> : flou de l'ombre</li>
+<li><code>grey</code> : couleur de l'ombre</li>
+</ul>
+<p>Résultat : <div style="background: green; box-shadow: 0 0 5px 2px #ccc;">Je suis un texte avec une ombre</div></p>
+<p><code>text-shadow</code>
+Applique une ombre au texte d'un élément.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Je suis un texte avec une ombre<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">text-shadow</span>: <span class="hljs-number">10px</span> <span class="hljs-number">10px</span> <span class="hljs-number">5px</span> grey;
+}
+</div></code></pre>
+<p>Résultat : <p style="text-shadow: 2px 2px #ff0000;">Je suis un texte avec une ombre</p></p>
+<h3 id="bords-arrondis-border-radius">Bords arrondis (border-radius)</h3>
+<p>Permet de définir les bords arrondis d'un élément.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Je suis un texte avec des bords arrondis<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">25px</span>;
+}
+</div></code></pre>
+<p>Résultat : <div style="background: green; border-radius: 25px; text-align: center">Je suis un texte avec des bords arrondis</div></p>
+<h3 id="transitions">Transitions</h3>
+<p>Permettent de créer des changements fluides entre les valeurs des propriétés sur une durée donnée.</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* Syntaxe */</span>
+<span class="hljs-selector-tag">transition</span>: <span class="hljs-selector-tag">property</span> <span class="hljs-selector-tag">duration</span> <span class="hljs-selector-tag">timing-function</span> <span class="hljs-selector-tag">delay</span>;
+</div></code></pre>
+<ul>
+<li><code>property</code> : obligatoire. Définit la propriété CSS à laquelle la transition doit s'appliquer.</li>
+<li><code>duration</code> : obligatoire. Définit la durée de la transition.</li>
+<li><code>timing-function</code> : facultatif. Définit la vitesse de transition.</li>
+<li><code>delay</code> : facultatif. Définit le délai avant le début de la transition.</li>
+<li><code>initial</code> : valeur par défaut</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Je suis un texte avec une transition<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">transition</span>: background-color <span class="hljs-number">2s</span>;
+}
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">background-color</span>: red;
+}
+</div></code></pre>
+<h3 id="transformations">Transformations</h3>
+<p>Les transformations permettent de modifier la position, l'échelle, et d'autres aspects d'un élément.</p>
+<p>Les propriétés de transformation sont :</p>
+<ul>
+<li><code>transform</code> : définit une transformation 2D ou 3D sur un élément.</li>
+<li><code>transform-origin</code> : définit le point d'origine d'une transformation 2D ou 3D.</li>
+<li><code>transform-style</code> : définit si les enfants d'un élément doivent être positionnés dans l'espace 2D ou 3D.</li>
+<li><code>perspective</code> : définit la perspective d'une transformation 3D.</li>
+<li><code>perspective-origin</code> : définit le point d'origine de la perspective d'une transformation 3D.</li>
+<li><code>backface-visibility</code> : définit si le visage arrière d'un élément doit être visible lorsqu'il est tourné vers l'utilisateur.</li>
+<li><code>translate()</code> : définit une transformation 2D en spécifiant une valeur pour les coordonnées X et Y.</li>
+<li><code>translateX()</code> : définit une transformation 2D en spécifiant une valeur pour la coordonnée X.</li>
+<li><code>translateY()</code> : définit une transformation 2D en spécifiant une valeur pour la coordonnée Y.</li>
+<li><code>translateZ()</code> : définit une transformation 3D en spécifiant une valeur pour la coordonnée Z.</li>
+<li><code>scale()</code> : définit une transformation 2D en spécifiant une valeur pour les coordonnées X et Y.</li>
+<li><code>scaleX()</code> : définit une transformation 2D en spécifiant une valeur pour la coordonnée X.</li>
+<li><code>scaleY()</code> : définit une transformation 2D en spécifiant une valeur pour la coordonnée Y.</li>
+<li><code>scaleZ()</code> : définit une transformation 3D en spécifiant une valeur pour la coordonnée Z.</li>
+<li><code>rotate()</code> : définit une transformation 2D en spécifiant une valeur d'angle.</li>
+<li><code>rotateX()</code> : définit une transformation 3D en spécifiant une valeur d'angle pour l'axe X.</li>
+<li><code>rotateY()</code> : définit une transformation 3D en spécifiant une valeur d'angle pour l'axe Y.</li>
+<li><code>rotateZ()</code> : définit une transformation 3D en spécifiant une valeur d'angle pour l'axe Z.</li>
+<li><code>skew()</code> : définit une transformation 2D en spécifiant une valeur pour les coordonnées X et Y.</li>
+<li><code>skewX()</code> : définit une transformation 2D en spécifiant une valeur pour la coordonnée X.</li>
+<li><code>skewY()</code> : définit une transformation 2D en spécifiant une valeur pour la coordonnée Y.</li>
+<li><code>matrix()</code> : définit une transformation 2D en spécifiant les valeurs d'une matrice 2D à 6 paramètres.</li>
+<li><code>matrixX()</code> : définit une transformation 2D en spécifiant</li>
+<li><code>matrixY()</code> : définit une transformation 2D en spécifiant</li>
+<li><code>matrixZ()</code> : définit une transformation 3D en spécifiant</li>
+<li><code>matrix3d()</code> : définit une transformation 3D en spécifiant les valeurs d'une matrice 3D à 16 paramètres.</li>
+<li><code>translate3d()</code> : définit une transformation 3D en spécifiant une valeur pour les coordonnées X, Y et Z.</li>
+<li><code>scale3d()</code> : définit une transformation 3D en spécifiant une valeur pour les coordonnées X, Y et Z.</li>
+<li><code>rotate3d()</code> : définit une transformation 3D en spécifiant une valeur d'angle pour les coordonnées X, Y et Z.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Je suis un texte avec une transformation<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">20deg</span>);
+}
+</div></code></pre>
+<p>Résultat : <div style="width: 100px; height: 100px ;background: green; transform: rotate(-8deg); text-align: center">Je suis un texte avec une transformation</div><br></p>
+<ul>
+<li>Les transformations 2D et 3D peuvent être combinées.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Je suis un texte avec une transformation<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">20deg</span>) <span class="hljs-built_in">translate</span>(<span class="hljs-number">50px</span>, <span class="hljs-number">50px</span>);
+}
+</div></code></pre>
+<p>Résultat : <div style="width: 100px; height: 100px ;background: green; transform: rotate(8deg) translate(50px, 50px); text-align: center">Je suis un texte avec une transformation</div><br><br><br><br><br></p>
+<ul>
+<li>Les transformations peuvent être animées en utilisant la propriété <code>transition</code>.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Je suis un texte avec une transformation<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">2s</span>;
+}
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">20deg</span>) <span class="hljs-built_in">translate</span>(<span class="hljs-number">50px</span>, <span class="hljs-number">50px</span>);
+}
+</div></code></pre>
+<p>Résultat : <div style="width: 100px; height: 100px ;background: green; transform: rotate(-8deg) translate(50px, 50px); text-align: center">Je suis un texte avec une transformation</div><br><br><br><br></p>
+<p>Les transformations peuvent être animées en utilisant la propriété <code>animation</code> et <code>@keyframes</code>.</p>
+<ul>
+<li>
+<p>La règle <code>@keyframes</code> définit les étapes ou &quot;frames&quot; d'une séquence d'animation. En spécifiant des pourcentages, vous définissez l'état de l'animation à différents points dans le temps.</p>
+</li>
+<li>
+<p>La propriété <code>animation</code> est utilisée pour appliquer une animation à un élément. Vous pouvez spécifier la durée, le timing, le nombre de répétitions, et bien d'autres paramètres.</p>
+</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Je suis un texte avec une transformation<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">animation</span>: rotate <span class="hljs-number">3s</span> linear infinite;
+}
+
+<span class="hljs-keyword">@keyframes</span> rotate {
+  <span class="hljs-selector-tag">from</span> {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">0deg</span>);
+  }
+  <span class="hljs-selector-tag">to</span> {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">360deg</span>);
+  }
+}
+</div></code></pre>
+<p>Dans l'exemple ci-dessus, un élément <div> avec la classe animated sera animé en effectuant une rotation de 360 degrés sur une durée de 3 secondes, et cela de manière infinie.</p>
+<p>Il est important de noter que pour obtenir une animation fluide et continue, la valeur de départ et la valeur finale de la transformation dans <code>@keyframes</code> doivent être cohérentes. Dans l'exemple donné, l'animation commence à 0 degré et se termine à 360 degrés, créant ainsi une rotation complète.</p>
+<p>L'utilisation des animations CSS pour animer les transformations offre de nombreuses possibilités créatives pour améliorer l'expérience utilisateur sur un site web.</p>
+<h2 id="unit%C3%A9s-et-valeurs">Unités et valeurs</h2>
+<p>Les unités et valeurs en CSS sont essentielles pour spécifier la taille, l'espacement, et d'autres aspects stylistiques des éléments</p>
+<h3 id="unit%C3%A9s-de-longueur">Unités de longueur</h3>
+<p>Les unités de longueur sont utilisées pour spécifier la taille d'un élément. Les unités de longueur les plus courantes sont :</p>
+<ul>
+<li><code>px</code> : pixels</li>
+<li><code>em</code> : taille de la police de l'élément</li>
+<li><code>rem</code> : taille de la police de l'élément racine</li>
+<li><code>vw</code> : 1% de la largeur de la fenêtre</li>
+<li><code>vh</code> : 1% de la hauteur de la fenêtre</li>
+<li><code>vmin</code> : 1% de la largeur ou de la hauteur de la fenêtre</li>
+<li><code>vmax</code> : 1% de la largeur ou de la hauteur de la fenêtre</li>
+<li><code>%</code> : pourcentage de la taille de l'élément parent</li>
+</ul>
+<p><code>px</code> : pixels</p>
+<p>Une unité fixe qui représente un point à l'écran. Par exemple, <code>font-size: 16px;</code> définit une taille de police de 16 pixels.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+}
+</div></code></pre>
+<p><code>em</code> : taille de la police de l'élément</p>
+<p>Une unité relative à la taille de police de l'élément parent. Si l'élément parent a une <code>font-size</code> de <code>16px</code>, alors <code>1em</code> équivaut à <code>16px</code>.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1em</span>;
+}
+</div></code></pre>
+<p><code>rem</code> : taille de la police de l'élément racine</p>
+<p>Similaire à <code>em</code>, mais au lieu de se baser sur la taille de police de l'élément parent, elle se base sur la taille de police de l'élément racine (<code>&lt;html&gt;</code>).</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1rem</span>;
+}
+</div></code></pre>
+<p><code>vw</code> et <code>vh</code> : 1% de la largeur de la fenêtre</p>
+<p><code>vw</code> et <code>vh</code> sont des unités relatives à la taille de la fenêtre. <code>1vw</code> équivaut à <code>1%</code> de la largeur de la fenêtre, et <code>1vh</code> équivaut à <code>1%</code> de la hauteur de la fenêtre.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1vw</span>;
+}
+
+<span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1vh</span>;
+}
+</div></code></pre>
+<p><code>vmin</code> et <code>vmax</code> : 1% de la largeur ou de la hauteur de la fenêtre</p>
+<p><code>vmin</code> et <code>vmax</code> sont des unités relatives à la taille de la fenêtre. <code>1vmin</code> équivaut à <code>1%</code> de la largeur ou de la hauteur de la fenêtre, et <code>1vmax</code> équivaut à <code>1%</code> de la largeur ou de la hauteur de la fenêtre, selon la valeur la plus petite ou la plus grande.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1vmin</span>;
+}
+
+<span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1vmax</span>;
+}
+</div></code></pre>
+<p><code>%</code> : pourcentage de la taille de l'élément parent</p>
+<p>Une unité relative à la taille de l'élément parent. <code>100%</code> équivaut à la taille de l'élément parent.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">100%</span>;
+}
+</div></code></pre>
+<h3 id="fonctions-calc-var-variables-css">Fonctions calc(), var() (variables CSS)</h3>
+<p>En CSS, les fonctions <code>calc()</code> et <code>var()</code> sont utilisées pour effectuer des calculs et définir des variables.</p>
+<p><code>calc()</code></p>
+<p>La fonction <code>calc()</code> est utilisée pour effectuer des calculs sur les valeurs CSS. Elle peut être utilisée pour effectuer des calculs sur les valeurs de longueur, les valeurs numériques, et même les valeurs de temps.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">100%</span> - <span class="hljs-number">50px</span>);
+}
+</div></code></pre>
+<p><strong>Explication :</strong></p>
+<p>La propriété <code>width</code> de l'élément <code>&lt;p&gt;</code> est définie à <code>calc(100% - 50px)</code>. Cela signifie que la largeur de l'élément <code>&lt;p&gt;</code> sera égale à <code>100%</code> de la largeur de son parent, moins <code>50px</code>.</p>
+<p><code>var()</code></p>
+<p>Utilisée pour accéder aux valeurs des variables CSS, aussi appelées propriétés personnalisées. Par exemple, si vous avez défini <code>--main-color: #ff5733;</code>, vous pouvez utiliser cette variable comme ceci : <code>color: var(--main-color);</code>.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* Définition de la variable */</span>
+
+<span class="hljs-selector-pseudo">:root</span> {
+  <span class="hljs-attribute">--main-color</span>: <span class="hljs-number">#ff5733</span>;
+}
+
+<span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--main-color);
+}
+</div></code></pre>
+<p>Résultat : <p style="color: #ff5733;">Je suis un texte avec une couleur rouge.</p></p>
+<p><strong>Explication :</strong></p>
+<p>La propriété <code>color</code> de l'élément <code>&lt;p&gt;</code> est définie à <code>var(--main-color)</code>. Cela signifie que la couleur du texte de l'élément <code>&lt;p&gt;</code> sera égale à la valeur de la variable <code>--main-color</code>.</p>
+<p>La définition des variables CSS se met dans le sélecteur <code>:root</code> ou <code>html</code>.</p>
+<p>L'utilisation de ces unités et fonctions permet une grande flexibilité dans la conception des styles CSS, en adaptant le design aux différentes tailles d'écran et en favorisant la réutilisabilité du code.</p>
+<h2 id="s%C3%A9lecteurs-avanc%C3%A9s-en-css">Sélecteurs Avancés en CSS</h2>
+<p>Les sélecteurs avancés en CSS offrent une précision accrue dans le ciblage des éléments, permettant des styles plus complexes et nuancés</p>
+<h3 id="s%C3%A9lecteurs-dattributs">Sélecteurs d'attributs</h3>
+<p>Les sélecteurs d'attributs permettent de cibler des éléments en fonction de leurs attributs et valeurs.</p>
+<ul>
+<li>
+<p><strong>[attribut]</strong> : Sélectionne les éléments avec cet attribut.</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=<span class="hljs-string">"text"</span>]</span> {
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ddd</span>;
+}
+</div></code></pre>
+</li>
+<li>
+<p><strong>[attribut=&quot;valeur&quot;]</strong> : Sélectionne les éléments avec cet attribut et cette valeur exacte.</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=<span class="hljs-string">"submit"</span>]</span> {
+  <span class="hljs-attribute">background-color</span>: blue;
+}
+</div></code></pre>
+</li>
+</ul>
+<h3 id="pseudo-classes">Pseudo-classes</h3>
+<p>Les pseudo-classes permettent de cibler des éléments en fonction de leur état ou de leur position.</p>
+<ul>
+<li>
+<p><strong>:hover</strong> : Cible un élément lorsqu'il est survolé.</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">color</span>: red;
+}
+</div></code></pre>
+</li>
+<li>
+<p><strong>:nth-child(n)</strong> : Cible le n-ème enfant d'un élément.</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:nth-child(odd)</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f2f2f2</span>;
+}
+</div></code></pre>
+</li>
+</ul>
+<h3 id="pseudo-%C3%A9l%C3%A9ments">Pseudo-éléments</h3>
+<p>Les pseudo-éléments permettent de cibler une partie spécifique d'un élément.</p>
+<ul>
+<li>
+<p><strong>::before</strong> : Utilisé pour insérer du contenu avant le contenu de l'élément.</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">::before</span> {
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">"Intro : "</span>;
+}
+</div></code></pre>
+</li>
+<li>
+<p><strong>::after</strong> : Utilisé pour insérer du contenu après le contenu de l'élément.</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">::after</span> {
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">" - Fin"</span>;
+}
+</div></code></pre>
+</li>
+</ul>
+<h3 id="combinateurs">Combinateurs</h3>
+<p>Les combinateurs permettent de définir des relations spécifiques entre les sélecteurs.</p>
+<ul>
+<li>
+<p><strong>Espace ( )</strong> : Cible les descendants.</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">article</span> <span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">color</span>: gray;
+}
+</div></code></pre>
+</li>
+<li>
+<p><strong>&gt;</strong> : Cible les enfants directs.</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">ul</span> &gt; <span class="hljs-selector-tag">li</span> {
+  <span class="hljs-attribute">list-style-type</span>: square;
+}
+</div></code></pre>
+</li>
+<li>
+<p><strong>+</strong> : Cible l'élément immédiatement suivant.</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">h2</span> + <span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.2em</span>;
+}
+</div></code></pre>
+</li>
+</ul>
+<p>En maîtrisant ces sélecteurs avancés, vous pouvez créer des feuilles de style CSS beaucoup plus puissantes et spécifiques, offrant une grande flexibilité dans la conception de votre site web.</p>
+<h2 id="responsivit%C3%A9-et-media-queries">Responsivité et Media Queries</h2>
+<p>La création de designs web adaptatifs est essentielle à l'ère actuelle, où les utilisateurs accèdent à du contenu sur une multitude de dispositifs différents. Les Media Queries et les points d'arrêt sont des outils cruciaux pour réaliser cette adaptabilité.</p>
+<h2 id="responsivit%C3%A9-et-media-queries">Responsivité et Media Queries</h2>
+<p>Le web d'aujourd'hui est consulté depuis une variété d'appareils : ordinateurs de bureau, tablettes, smartphones, et bien d'autres. La conception adaptative, ou &quot;responsive design&quot;, permet de s'assurer que votre site ou application web offre une expérience utilisateur optimale sur tous ces appareils.</p>
+<h3 id="cr%C3%A9er-un-design-adaptatif">Créer un design adaptatif</h3>
+<p>Le design adaptatif repose sur le principe de flexibilité. Cela signifie que votre conception doit s'adapter et se redimensionner en fonction des caractéristiques de l'appareil utilisé.</p>
+<ul>
+<li>
+<p><strong>Grille fluide</strong> : Utilisez des unités relatives, comme les pourcentages, plutôt que des pixels fixes pour les éléments de mise en page.</p>
+</li>
+<li>
+<p><strong>Images flexibles</strong> : Assurez-vous que les images peuvent se redimensionner dans les conteneurs qui les entourent.</p>
+</li>
+<li>
+<p><strong>Media Queries</strong> : Adaptez le style et la mise en page en fonction des capacités de l'appareil.</p>
+</li>
+</ul>
+<h3 id="utilisation-des-points-darr%C3%AAt-breakpoints">Utilisation des points d'arrêt (breakpoints)</h3>
+<p>Les &quot;breakpoints&quot; ou points d'arrêt, définis avec les Media Queries, permettent d'appliquer différents styles CSS en fonction de la taille de l'écran ou d'autres caractéristiques de l'appareil.</p>
+<p>Les points d'arrêt :</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* Style par défaut pour les appareils plus petits (mobiles) */</span>
+<span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+}
+
+<span class="hljs-comment">/* Style pour mobile */</span>
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width:</span> <span class="hljs-number">320px</span>) {
+  <span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+  }
+}
+
+<span class="hljs-comment">/* Style pour les tablettes (paysage) */</span>
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width:</span> <span class="hljs-number">768px</span>) {
+  <span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;
+  }
+}
+
+<span class="hljs-comment">/* Style pour les ordinateurs de bureau */</span>
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width:</span> <span class="hljs-number">1024px</span>) {
+  <span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+  }
+}
+
+<span class="hljs-comment">/* Style pour les grands Écrans (Large Desktop) */</span>
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width:</span> <span class="hljs-number">1200px</span>) {
+  <span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">24px</span>;
+    <span class="hljs-comment">/* Autres styles pour grand écran... */</span>
+  }
+}
+
+<span class="hljs-comment">/* Style pour les imprimantes */</span>
+<span class="hljs-keyword">@media</span> print {
+  <span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+    <span class="hljs-comment">/* Autres styles pour impression... */</span>
+  }
+}
+
+<span class="hljs-comment">/* Style pour les écrans haute résolution */</span>
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">-webkit-min-device-pixel-ratio:</span> <span class="hljs-number">2</span>), (<span class="hljs-attribute">min-resolution:</span> <span class="hljs-number">192dpi</span>) {
+  <span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">24px</span>;
+    <span class="hljs-comment">/* Autres styles pour écrans haute résolution... */</span>
+  }
+}
+
+<span class="hljs-comment">/* Style pour les écrans basse résolution */</span>
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">-webkit-max-device-pixel-ratio:</span> <span class="hljs-number">1.5</span>), (<span class="hljs-attribute">max-resolution:</span> <span class="hljs-number">144dpi</span>) {
+  <span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+    <span class="hljs-comment">/* Autres styles pour écrans basse résolution... */</span>
+  }
+}
+</div></code></pre>
+<p>Media Query pour les Mobiles et Tablettes en Mode Portrait</p>
+<p>Pour cibler des appareils ayant une largeur d'écran comprise entre 320 pixels (généralement la largeur minimale d'un téléphone mobile en mode portrait) et 767 pixels (juste en dessous de la largeur couramment utilisée pour les tablettes en mode paysage), vous pouvez utiliser la media query suivante :</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* Style par défaut pour les appareils plus petits (mobiles) */</span>
+<span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+}
+
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width:</span> <span class="hljs-number">320px</span>) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width:</span> <span class="hljs-number">767px</span>) {
+  <span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+  }
+}
+</div></code></pre>
+<p>Cette media query garantit que le font-size du body sera réglé sur 16px pour les appareils qui correspondent à cette plage de largeur d'écran.</p>
+<p>Media Query pour les Tablettes en Mode Paysage</p>
+<p>Pour cibler des appareils ayant une largeur d'écran comprise entre 768 pixels (généralement la largeur minimale d'une tablette en mode paysage) et 1023 pixels (juste en dessous de la largeur couramment utilisée pour les ordinateurs de bureau), vous pouvez utiliser la media query suivante :</p>
+<p>Il est toujours recommandé de tester le design sur différents appareils pour s'assurer qu'il offre une expérience utilisateur optimale.</p>
+<h2 id="pr%C3%A9processeurs-css">Préprocesseurs CSS</h2>
+<p>Les préprocesseurs CSS offrent une manière d'écrire des styles de manière plus concise, organisée et souvent plus compréhensible. Ils permettent aux développeurs d'utiliser des fonctionnalités de programmation non disponibles en CSS natif et compilent ensuite ce code en CSS standard que les navigateurs peuvent interpréter.</p>
+<h3 id="pourquoi-utiliser-un-pr%C3%A9processeur">Pourquoi utiliser un préprocesseur ?</h3>
+<ol>
+<li><strong>Variables</strong>: Stockez des valeurs fréquemment utilisées (comme des couleurs ou des espacements) et réutilisez-les dans tout le fichier, pour une maintenance plus facile.</li>
+<li><strong>Imbrication</strong>: Organisez vos styles de manière plus logique en imbricant les sélecteurs les uns dans les autres.</li>
+<li><strong>Mixins</strong>: Créez des ensembles réutilisables de styles.</li>
+<li><strong>Héritage</strong>: Partagez un ensemble commun de propriétés entre plusieurs sélecteurs.</li>
+<li><strong>Opérations</strong>: Réalisez des opérations mathématiques pour calculer des valeurs.</li>
+<li><strong>Fonctions</strong>: Utilisez des fonctions pour manipuler des valeurs, par exemple pour changer la luminosité d'une couleur.</li>
+</ol>
+<h3 id="pr%C3%A9processeurs-populaires">Préprocesseurs populaires</h3>
+<p>Voici quelques-uns des préprocesseurs CSS les plus populaires :</p>
+<ul>
+<li><strong>Sass (et SCSS)</strong>: Un préprocesseur riche et stable, largement adopté dans l'industrie.</li>
+<li><strong>Less</strong>: Similaire à Sass, mais avec quelques différences dans la syntaxe et les fonctionnalités.</li>
+<li><strong>Stylus</strong>: Offre une syntaxe très concise et flexible.</li>
+<li><strong>PostCSS</strong>: Un post-processeur qui vous permet d'utiliser des plugins pour transformer votre CSS.</li>
+</ul>
+<h3 id="exemple-avec-sass">Exemple avec Sass</h3>
+<p>Voici un exemple simple de ce que vous pouvez faire avec Sass :</p>
+<pre class="hljs"><code><div><span class="hljs-variable">$primary-color</span>: <span class="hljs-number">#3498db</span>;
+
+<span class="hljs-selector-class">.button</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$primary-color</span>;
+  &amp;<span class="hljs-selector-pseudo">:hover</span> {
+    <span class="hljs-attribute">background-color</span>: darken(<span class="hljs-variable">$primary-color</span>, <span class="hljs-number">10%</span>);
+  }
+}
+</div></code></pre>
+<p>Ce code Sass serait ensuite compilé en CSS standard ressemblant à ceci :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.button</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#3498db</span>;
+}
+
+<span class="hljs-selector-class">.button</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#2980b9</span>;
+}
+</div></code></pre>
+<p>Pour commencer à utiliser un préprocesseur, vous devrez généralement installer un outil de compilation pour transformer le code du préprocesseur en CSS standard. Cela peut être fait à l'aide d'outils tels que <code>Webpack</code>, <code>Gulp</code>, ou même des extensions de navigateur dédiées.</p>
+<p>Pour apprendre à utiliser Sass, consultez la <a href="https://sass-lang.com/documentation">documentation officielle</a>.</p>
+<h2 id="m%C3%A9thodologies-css">Méthodologies CSS</h2>
+<p>Les méthodologies CSS ont été développées pour aider les développeurs à écrire des codes CSS plus organisés, maintenables et compréhensibles. Chaque méthodologie a ses propres principes et recommandations.</p>
+<h2 id="m%C3%A9thodologies-css">Méthodologies CSS</h2>
+<p>Écrire du CSS pour de petites applications ou sites web est souvent simple, mais à mesure que le projet grandit, le CSS peut rapidement devenir désordonné, répétitif et difficile à maintenir. Les méthodologies CSS ont été créées pour résoudre ces problèmes, en offrant des lignes directrices sur la manière d'écrire du CSS de manière efficace et organisée.</p>
+<h3 id="bem-block-element-modifier">BEM (Block Element Modifier)</h3>
+<ul>
+<li>Principes : BEM est une méthodologie qui recommande une convention de nommage pour les classes CSS, ce qui facilite la compréhension de la relation entre le HTML et le CSS.</li>
+</ul>
+<ul>
+<li>
+<p><strong>Syntaxe</strong>: <code>.block__element--modifier</code></p>
+<ul>
+<li><strong>Block</strong>: Représente l'élément principal.</li>
+<li><strong>Element</strong>: Représente un descendant du block.</li>
+<li><strong>Modifier</strong>: Indique une variante ou un état.</li>
+</ul>
+</li>
+<li>
+<p><strong>Exemple</strong>:</p>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.button</span> {
+} <span class="hljs-comment">/* Block */</span>
+<span class="hljs-selector-class">.button__icon</span> {
+} <span class="hljs-comment">/* Element */</span>
+<span class="hljs-selector-class">.button--large</span> {
+} <span class="hljs-comment">/* Modifier */</span>
+</div></code></pre>
+<h3 id="oocss-object-oriented-css">OOCSS (Object Oriented CSS)</h3>
+<ul>
+<li>Principes: OOCSS divise le code en deux catégories principales : structure et skin. Cela permet de réutiliser le code et de maintenir des styles plus cohérents.</li>
+</ul>
+<ul>
+<li><strong>Structure</strong>: Définit la structure de base des éléments, comme les grilles.</li>
+<li><strong>Skin</strong>: Définit l'apparence visuelle des éléments, comme les couleurs.</li>
+<li><strong>Exemple</strong>:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.button</span> {
+} <span class="hljs-comment">/* Structure */</span>
+<span class="hljs-selector-class">.button--red</span> {
+} <span class="hljs-comment">/* Skin */</span>
+</div></code></pre>
+<h3 id="smacss-scalable-and-modular-architecture-for-css">SMACSS (Scalable and Modular Architecture for CSS)</h3>
+<ul>
+<li>Principes: SMACSS divise le design en cinq catégories. Cela encourage la modularité et la scalabilité :</li>
+</ul>
+<ul>
+<li><strong>Base</strong>: Définit les styles de base pour les éléments HTML.</li>
+<li><strong>Layout</strong>: Définit la structure de base de la page.</li>
+<li><strong>Module</strong>: Définit les modules réutilisables.</li>
+<li><strong>State</strong>: Définit les états spécifiques des modules.</li>
+<li><strong>Theme</strong>: Définit les styles spécifiques au thème.</li>
+<li><strong>Exemple</strong>:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.button</span> {
+} <span class="hljs-comment">/* Base */</span>
+<span class="hljs-selector-class">.button--large</span> {
+} <span class="hljs-comment">/* Layout */</span>
+<span class="hljs-selector-class">.button__icon</span> {
+} <span class="hljs-comment">/* Module */</span>
+<span class="hljs-selector-class">.button</span><span class="hljs-selector-class">.is-active</span> {
+} <span class="hljs-comment">/* State */</span>
+<span class="hljs-selector-class">.button--red</span> {
+} <span class="hljs-comment">/* Theme */</span>
+</div></code></pre>
+<p>L'adoption de ces méthodologies n'est pas mutuellement exclusive ; vous pouvez combiner des éléments de chacune pour créer un système qui fonctionne le mieux pour votre projet. L'important est d'assurer une architecture CSS cohérente, maintenable et compréhensible.</p>
+<h2 id="astuces-avanc%C3%A9es-et-optimisation">Astuces avancées et optimisation</h2>
+<p>Alors que vous devenez de plus en plus à l'aise avec le CSS, vous découvrirez certaines subtilités et techniques avancées qui peuvent améliorer la qualité de votre code et les performances de votre site.</p>
+<h3 id="z-index-et-empilement-contextuel">z-index et empilement contextuel</h3>
+<p>Le <code>z-index</code> permet de contrôler l'ordre d'empilement des éléments. Cependant, son comportement peut parfois être déroutant.</p>
+<ul>
+<li>Un élément avec un <code>position</code> différent de <code>static</code> crée un nouveau contexte d'empilement.</li>
+<li><code>z-index</code> n'affecte un élément que si cet élément a une valeur <code>position</code> autre que <code>static</code>.</li>
+<li>Les éléments enfants sont empilés dans le contexte d'empilement de leur parent le plus proche avec une valeur <code>position</code> autre que <code>static</code>.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment">/* Exemple 1 */</span>
+<span class="hljs-selector-class">.parent</span> {
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">z-index</span>: <span class="hljs-number">1</span>;
+}
+<span class="hljs-selector-class">.child</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">z-index</span>: <span class="hljs-number">2</span>;
+}
+</div></code></pre>
+<p>Dans l'exemple ci-dessus, l'élément <code>.child</code> sera empilé au-dessus de l'élément <code>.parent</code>, car il a une valeur <code>position</code> différente de <code>static</code>.</p>
+<h3 id="variables-css-propri%C3%A9t%C3%A9s-personnalis%C3%A9es">Variables CSS (propriétés personnalisées)</h3>
+<p>Les variables CSS, également connues sous le nom de propriétés personnalisées, permettent de définir des valeurs spécifiques à réutiliser dans tout votre CSS.</p>
+<ul>
+<li>Définissez des variables avec une syntaxe <code>--nom-variable: valeur</code>.</li>
+<li>Utilisez <code>var(--nom-variable)</code> pour accéder à la valeur.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-pseudo">:root</span> {
+  <span class="hljs-attribute">--primary-color</span>: <span class="hljs-number">#3498db</span>;
+}
+<span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--primary-color);
+}
+</div></code></pre>
+<h3 id="gestion-des-performances-et-optimisation">Gestion des performances et optimisation</h3>
+<p>Un CSS propre et bien organisé peut améliorer les performances de rendu de votre site. Quelques astuces pour optimiser votre CSS :</p>
+<ul>
+<li>Minimiser le CSS: Utilisez des outils comme <a href="https://cssnano.co/">CSSNano</a> pour réduire la taille de votre fichier CSS.</li>
+<li>Utiliser des préprocesseurs: Utilisez des outils comme <a href="https://sass-lang.com/">Sass</a> pour écrire du CSS plus efficacement.</li>
+<li>Evitez les sélecteurs universels (<code>* {}</code>) car ils peuvent être coûteux en termes de performance.</li>
+<li>Utilisez le chargement non bloquant: Chargez le CSS non essentiel de manière asynchrone pour éviter de bloquer le rendu de la page.</li>
+<li>Testez les performances: Utilisez des outils comme <a href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> pour mesurer et optimiser les performances de votre site.</li>
+</ul>
+<p>Avec ces astuces et techniques, vous serez mieux équipé pour écrire un CSS efficace et performant.</p>
+<h2 id="ressources-et-outils">Ressources et outils</h2>
+<p>Découvrir et maîtriser les ressources et outils disponibles peut grandement améliorer votre efficacité en tant que développeur CSS.
+Le développement CSS est facilité par une multitude de ressources, de frameworks et d'outils conçus pour améliorer l'efficacité, la compatibilité et la performance de votre code.</p>
+<h3 id="frameworks-css">Frameworks CSS</h3>
+<p>Les frameworks CSS fournissent des structures préconçues et des composants stylistiques pour accélérer le développement.</p>
+<ul>
+<li>
+<p><strong>Bootstrap</strong> : Un des frameworks CSS les plus populaires. Il offre un système de grille réactif, des composants prédéfinis et des utilitaires pour un développement rapide. <a href="https://getbootstrap.com/">Site officiel</a></p>
+</li>
+<li>
+<p><strong>Tailwind</strong> : Un framework d'utilitaires en premier, où les classes sont utilisées pour construire des interfaces rapidement sans quitter votre HTML. <a href="https://tailwindcss.com/">Site officiel</a></p>
+</li>
+<li>
+<p><strong>Bulma</strong> : Un framework CSS basé sur des flexbox avec un système de grille moderne et un ensemble de modificateurs. <a href="https://bulma.io/">Site officiel</a></p>
+</li>
+</ul>
+<h3 id="outils-de-post-traitement">Outils de post-traitement</h3>
+<p>Les outils de post-traitement transforment votre CSS, généralement pour ajouter de la compatibilité entre navigateurs ou pour introduire des fonctionnalités que les navigateurs ne supportent pas encore.</p>
+<ul>
+<li>
+<p><strong>PostCSS</strong> : Un outil pour transformer le CSS avec des plugins JavaScript, comme l'ajout de variables ou l'introduction de nouvelles syntaxes. <a href="https://postcss.org/">Site officiel</a></p>
+</li>
+<li>
+<p><strong>Autoprefixer</strong> : Un plugin PostCSS qui ajoute des préfixes aux règles CSS en utilisant les données de Can I Use pour assurer la compatibilité entre navigateurs. <a href="https://github.com/postcss/autoprefixer">Github Repository</a></p>
+</li>
+</ul>
+<h3 id="outils-de-test-et-de-d%C3%A9bogage">Outils de test et de débogage</h3>
+<ul>
+<li>
+<p><strong>DevTools</strong> : Les outils de développement intégrés à la plupart des navigateurs modernes (Chrome, Firefox, Safari) offrent des fonctionnalités puissantes pour inspecter, tester et déboguer le CSS.</p>
+</li>
+<li>
+<p><strong>CSS Lint</strong> : Un outil qui analyse votre CSS pour trouver des erreurs, des incohérences ou des violations des bonnes pratiques. <a href="http://csslint.net/">Site officiel</a></p>
+</li>
+</ul>
+<p>Se tenir au courant des dernières ressources et outils est crucial pour rester compétitif et efficace en tant que développeur. Investissez du temps pour explorer, apprendre et intégrer ces outils dans votre flux de travail.</p>
+
+</body>
+</html>

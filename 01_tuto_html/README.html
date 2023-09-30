@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<!-- TOC -->
+<ul>
+<li><a href="#1-introduction">1. Introduction</a>
+<ul>
+<li><a href="#quest-ce-que-le-html-">Qu'est-ce que le HTML ?</a></li>
+<li><a href="#structure-dun-document-html">Structure d'un document HTML</a></li>
+</ul>
+</li>
+<li><a href="#2-fondamentaux">2. Fondamentaux</a>
+<ul>
+<li><a href="#les-balises">Les balises</a></li>
+<li><a href="#les-attributs">Les attributs</a></li>
+<li><a href="#les-commentaires">Les commentaires</a></li>
+<li><a href="#les-entit%C3%A9s-html">Les entités HTML</a></li>
+</ul>
+</li>
+<li><a href="#3-structure-de-base-et-mise-en-forme">3. Structure de base et mise en forme</a>
+<ul>
+<li><a href="#les-blocs">Les blocs</a></li>
+<li><a href="#les-classes-et-les-identifiants">Les classes et les identifiants</a>
+<ul>
+<li><a href="#classes">Classes</a></li>
+<li><a href="#identifiants">Identifiants</a></li>
+<li><a href="#balises-de-texte">Balises de texte</a></li>
+<li><a href="#%C3%A9l%C3%A9ments-de-base">Éléments de base</a></li>
+<li><a href="#%C3%A9l%C3%A9ments-de-section">Éléments de section</a></li>
+</ul>
+</li>
+<li><a href="#4-les-%C3%A9l%C3%A9ments-interactifs">4. Les éléments interactifs</a>
+<ul>
+<li><a href="#--les-liens-hypertextes--a">* Les liens hypertextes : <code>&lt;a&gt;</code></a></li>
+<li><a href="#les-boutons--button">Les boutons : <code>&lt;button&gt;</code></a></li>
+<li><a href="#les-formulaires">Les formulaires</a></li>
+<li><a href="#les-types-dentr%C3%A9e">Les types d'entrée</a></li>
+</ul>
+</li>
+<li><a href="#5-les-%C3%A9l%C3%A9ments-multim%C3%A9dias">5. Les éléments multimédias</a>
+<ul>
+<li><a href="#les-images--img">Les images : <code>&lt;img&gt;</code></a></li>
+<li><a href="#les-m%C3%A9dias--audio-et-video">Les médias : <code>&lt;audio&gt;</code> et <code>&lt;video&gt;</code></a></li>
+</ul>
+</li>
+<li><a href="#6-s%C3%A9mantique-et-organisation-du-code">6. Sémantique et organisation du code</a>
+<ul>
+<li><a href="#les-balises-de-s%C3%A9mantiques">Les balises de sémantiques</a></li>
+</ul>
+</li>
+<li><a href="#les-balises-de-programmation">Les balises de programmation</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#ressources">Ressources</a></li>
+</ul>
+</li>
+</ul>
+<!-- TOC -->
+<hr>
+<h1 id="1-introduction">1. Introduction</h1>
+<p>Le HTML (HyperText Markup Language) est le langage de balisage standardisé qui forme la structure des pages web. Chaque élément d'une page web, que ce soit du texte, une image, un lien ou même simplement une couleur ou une marge, est en quelque sorte influencé ou contrôlé par le HTML. Dans ce guide, nous allons explorer les fondamentaux du HTML, des balises simples aux éléments interactifs et multimédias, en passant par les balises sémantiques qui aident à donner un sens à la structure de votre contenu.</p>
+<p>Comprendre le HTML est essentiel pour quiconque souhaite créer ou maintenir des sites web. Que vous soyez un débutant total ou que vous ayez besoin d'une remise à niveau, ce guide est conçu pour vous fournir des connaissances pratiques et utiles sur la manière de structurer efficacement vos contenus web à l'aide du HTML.</p>
+<p>Plongez-vous dans cette aventure et découvrez les nombreuses balises, attributs et éléments qui donnent vie à l'internet tel que nous le connaissons aujourd'hui.</p>
+<h2 id="quest-ce-que-le-html">Qu'est-ce que le HTML ?</h2>
+<p>Le HTML est un langage de balisage qui permet de structurer et de présenter le contenu d'une page web. Il est composé d'une série d'éléments qui indiquent au navigateur comment afficher le contenu. Chaque élément est représenté par une balise. Les balises HTML sont des mots entourés de chevrons (par exemple <code>&lt;html&gt;</code>).</p>
+<p>La plupart des balises HTML sont composées d'une balise ouvrante et d'une balise fermante. La balise ouvrante est utilisée pour indiquer le début d'un élément, tandis que la balise fermante indique la fin. Par exemple, la balise <code>&lt;p&gt;</code> est utilisée pour indiquer le début d'un paragraphe, tandis que la balise <code>&lt;/p&gt;</code> indique la fin du paragraphe. Entre les deux balises, vous pouvez placer du texte, des images, des liens et d'autres éléments.</p>
+<p>Il existe également des balises qui n'ont pas de balise fermante, comme la balise <code>&lt;img&gt;</code>. Ces balises sont appelées balises vides ou auto-fermantes. Elles sont utilisées pour insérer des images, des vidéos, des lignes de séparation et d'autres éléments dans une page web.</p>
+<h2 id="structure-dun-document-html">Structure d'un document HTML</h2>
+<p>Un document HTML est composé de deux parties principales : l'en-tête et le corps. L'en-tête contient des informations sur le document, telles que le titre, l'encodage des caractères et les liens vers d'autres ressources (comme les feuilles de style CSS). Le corps contient le contenu de la page web.</p>
+<p>Voici un exemple de document HTML :</p>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Titre de la page<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Titre principal<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Paragraphe<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>La première ligne <code>&lt;!DOCTYPE html&gt;</code> de ce document est une déclaration de type de document (DTD). Il indique au navigateur que le document est un document HTML5. La ligne suivante est la balise <code>&lt;html&gt;</code>. Cette balise indique au navigateur que tout ce qui se trouve entre les balises ouvrante et fermante est un document HTML. La balise <code>&lt;html&gt;</code> est également appelée élément racine.</li>
+<li>La balise <code>&lt;head&gt;</code> contient des informations sur le document, telles que le titre de la page, les liens vers les feuilles de style CSS et les scripts JavaScript, ainsi que les métadonnées. Les métadonnées sont des informations sur le document qui ne sont pas affichées directement dans le navigateur. Par exemple, la balise <code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code> indique au navigateur que le document est encodé en UTF-8, ce qui permet d'afficher correctement les caractères spéciaux.</li>
+<li>La balise <code>&lt;title&gt;</code> est utilisée pour définir le titre de la page. Le titre de la page est affiché dans l'onglet du navigateur et est utilisé par les moteurs de recherche pour déterminer le contenu de la page.</li>
+<li>La balise <code>&lt;body&gt;</code> contient le contenu de la page web. C'est là que vous placez le texte, les images, les liens, les listes et tous les autres éléments que vous souhaitez afficher sur la page.</li>
+<li>La balise <code>&lt;h1&gt;</code> est utilisée pour définir le titre principal de la page. Il existe six niveaux de titres, de <code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code>. Le titre principal est le titre le plus important de la page. Il est généralement placé en haut de la page et est souvent le premier élément que les visiteurs voient lorsqu'ils visitent une page web.</li>
+<li>La balise <code>&lt;p&gt;</code> est utilisée pour définir un paragraphe. Les paragraphes sont généralement utilisés pour afficher de longs blocs de texte. Les paragraphes sont généralement séparés par des lignes vides.</li>
+<li>Les balises <code>&lt;h1&gt;</code> et <code>&lt;p&gt;</code> sont des balises de niveau bloc. Les balises de niveau bloc sont utilisées pour structurer le contenu de la page. Elles sont généralement utilisées pour afficher de grands blocs de contenu, tels que des paragraphes, des listes, des images, etc. Les balises de niveau bloc commencent généralement sur une nouvelle ligne et occupent toute la largeur de la page.</li>
+<li>La balise <code>&lt;/body&gt;</code> indique la fin du corps du document. La balise <code>&lt;/html&gt;</code> indique la fin du document HTML.</li>
+<li>La balise <code>&lt;/html&gt;</code> indique la fin du document HTML.</li>
+</ul>
+<h1 id="2-fondamentaux">2. Fondamentaux</h1>
+<h2 id="les-balises">Les balises</h2>
+<p>En HTML, une balise est un élément qui délimite et définit le contenu et la structure de la page. Les balises sont généralement constituées d'un nom d'élément entouré de chevrons (&lt; et &gt;). La plupart des balises HTML fonctionnent par paire : une balise d'ouverture et une balise de fermeture. Par exemple, pour définir un paragraphe, on utilise la balise d'ouverture <p> suivie du contenu du paragraphe, puis la balise de fermeture </p>. Les balises de fermeture sont identiques aux balises d'ouverture, à l'exception du slash (/) qui précède le nom de l'élément.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<h2 id="les-attributs">Les attributs</h2>
+<p>Les attributs sont utilisés pour fournir des informations supplémentaires sur un élément. Ils sont généralement spécifiés dans la balise d'ouverture et sont composés d'un nom et d'une valeur. Le nom et la valeur sont séparés par un signe égal (=). La valeur est ensuite placée entre guillemets doubles (&quot;&quot;). Par exemple, la balise <code>&lt;img&gt;</code> est utilisée pour insérer une image dans une page web. Elle prend un attribut obligatoire, src, qui spécifie l'emplacement de l'image. L'attribut src est composé d'un nom (src) et d'une valeur (&quot;image.jpg&quot;).</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"image.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+</div></code></pre>
+<h2 id="les-commentaires">Les commentaires</h2>
+<p>Les commentaires sont utilisés pour ajouter des notes à un document HTML. Ils sont généralement utilisés pour fournir des informations supplémentaires sur le code HTML, ce qui peut être utile lors de la modification du code. Les commentaires sont ignorés par le navigateur et ne sont donc pas affichés sur la page web. Les commentaires sont généralement placés entre les balises <code>&lt;!--</code> et <code>--&gt;</code>.</p>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- Commentaire --&gt;</span>
+</div></code></pre>
+<h2 id="les-entit%C3%A9s-html">Les entités HTML</h2>
+<p>Les entités HTML sont utilisées pour afficher des caractères spéciaux dans une page web. Par exemple, si vous souhaitez afficher un signe de dollar ($), vous devez utiliser l'entité HTML <code>&amp;dollar;</code>. Voici quelques-unes des entités HTML les plus courantes :</p>
+<pre class="hljs"><code><div><span class="hljs-symbol">&amp;dollar;</span> : $
+<span class="hljs-symbol">&amp;cent;</span> : ¢
+<span class="hljs-symbol">&amp;euro;</span> : €
+<span class="hljs-symbol">&amp;copy;</span> : ©
+<span class="hljs-symbol">&amp;reg;</span> : ®
+<span class="hljs-symbol">&amp;trade;</span> : ™
+</div></code></pre>
+<h1 id="3-structure-de-base-et-mise-en-forme">3. Structure de base et mise en forme</h1>
+<h2 id="les-blocs">Les blocs</h2>
+<p>Les balises de niveau bloc sont utilisées pour structurer le contenu de la page. Elles sont généralement utilisées pour afficher de grands blocs de contenu, tels que des paragraphes, des listes, des images, etc. Les balises de niveau bloc commencent généralement sur une nouvelle ligne et occupent toute la largeur de la page. Voici quelques-unes des balises de niveau bloc les plus courantes :</p>
+<ul>
+<li><code>&lt;div&gt;</code> : La balise <code>&lt;div&gt;</code> est utilisée pour créer une division ou une section dans une page web. Elle est généralement utilisée pour créer des sections de contenu qui peuvent être stylisées à l'aide de CSS.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Contenu de la division<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;span&gt;</code> : La balise <code>&lt;span&gt;</code> est utilisée pour créer une division ou une section dans une page web. Elle est généralement utilisée pour créer des sections de contenu qui peuvent être stylisées à l'aide de CSS.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Contenu de la division<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;header&gt;</code> : La balise <code>&lt;header&gt;</code> est utilisée pour définir l'en-tête d'une page web ou d'une section. Elle est généralement utilisée pour afficher le titre ou le logo d'une page web.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>Contenu de l'en-tête<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;footer&gt;</code> : La balise <code>&lt;footer&gt;</code> est utilisée pour définir le pied de page d'une page web ou d'une section. Elle est généralement utilisée pour afficher les informations de contact, les liens vers les médias sociaux, les informations de copyright.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>Contenu du pied de page<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;main&gt;</code> : La balise <code>&lt;main&gt;</code> est utilisée pour définir le contenu principal d'une page web. Elle est généralement utilisée pour afficher le contenu principal d'une page web.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>Contenu principal<span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;article&gt;</code> : La balise <code>&lt;article&gt;</code> est utilisée pour définir un article autonome dans une page web. Elle est généralement utilisée pour afficher des articles de blog, des commentaires, des messages de forum, etc.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>Contenu de l'article<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;section&gt;</code> : La balise <code>&lt;section&gt;</code> est utilisée pour définir une section dans une page web. Elle est généralement utilisée pour afficher des sections de contenu qui peuvent être stylisées à l'aide de CSS.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>Contenu de la section<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;aside&gt;</code> : La balise <code>&lt;aside&gt;</code> est utilisée pour définir un contenu à part dans une page web. Elle est généralement utilisée pour afficher des contenus qui sont séparés du contenu principal de la page.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">aside</span>&gt;</span>Contenu à part<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;nav&gt;</code> : La balise <code>&lt;nav&gt;</code> est utilisée pour définir une section de navigation dans une page web. Elle est généralement utilisée pour afficher des liens vers d'autres pages web.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>Contenu de la navigation<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;address&gt;</code> : La balise <code>&lt;address&gt;</code> est utilisée pour définir les informations de contact dans une page web. Elle est généralement utilisée pour afficher les informations de contact, telles que l'adresse, le numéro de téléphone, l'adresse e-mail, etc.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">address</span>&gt;</span>Contenu de l'adresse<span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;blockquote&gt;</code> : La balise <code>&lt;blockquote&gt;</code> est utilisée pour définir une longue citation dans une page web. Elle est généralement utilisée pour afficher des longues citations.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">blockquote</span>&gt;</span>Contenu de la citation longue<span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;cite&gt;</code> : La balise <code>&lt;cite&gt;</code> est utilisée pour définir une référence à une source dans une page web. Elle est généralement utilisée pour afficher des références à des livres, des articles, etc.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">cite</span>&gt;</span>Contenu de la référence<span class="hljs-tag">&lt;/<span class="hljs-name">cite</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;details&gt;</code> : La balise <code>&lt;details&gt;</code> est utilisée pour définir des détails supplémentaires dans une page web. Elle est généralement utilisée pour afficher des informations supplémentaires qui peuvent être masquées ou affichées sur demande.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">details</span>&gt;</span>Contenu des détails<span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;summary&gt;</code> : La balise <code>&lt;summary&gt;</code> est utilisée pour définir un résumé dans une page web. Elle est généralement utilisée pour afficher un résumé des détails.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Contenu du résumé<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;figure&gt;</code> : La balise <code>&lt;figure&gt;</code> est utilisée pour définir une figure dans une page web. Elle est généralement utilisée pour afficher des images, des diagrammes, des illustrations, etc.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span>Contenu de la figure<span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;figcaption&gt;</code> : La balise <code>&lt;figcaption&gt;</code> est utilisée pour définir une légende pour une figure dans une page web. Elle est généralement utilisée pour afficher une légende pour une figure.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>Contenu de la légende<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;time&gt;</code> : La balise <code>&lt;time&gt;</code> est utilisée pour définir une date ou une heure dans une page web. Elle est généralement utilisée pour afficher une date ou une heure.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">time</span>&gt;</span>Contenu de la date ou de l'heure<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;code&gt;</code> : La balise <code>&lt;code&gt;</code> est utilisée pour définir du code informatique dans une page web. Elle est généralement utilisée pour afficher du code informatique.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>Contenu du code informatique<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;pre&gt;</code> : La balise <code>&lt;pre&gt;</code> est utilisée pour définir du texte préformaté dans une page web. Elle est généralement utilisée pour afficher du texte préformaté.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span>Contenu du texte préformaté<span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;kbd&gt;</code> : La balise <code>&lt;kbd&gt;</code> est utilisée pour définir du texte préformaté dans une page web. Elle est généralement utilisée pour afficher du texte préformaté.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">kbd</span>&gt;</span>Contenu du texte préformaté<span class="hljs-tag">&lt;/<span class="hljs-name">kbd</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;samp&gt;</code> : La balise <code>&lt;samp&gt;</code> est utilisée pour définir du texte préformaté dans une page web. Elle est généralement utilisée pour afficher du texte préformaté.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">samp</span>&gt;</span>Contenu du texte préformaté<span class="hljs-tag">&lt;/<span class="hljs-name">samp</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;var&gt;</code> : La balise <code>&lt;var&gt;</code> est utilisée pour définir une variable dans une page web. Elle est généralement utilisée pour afficher des variables.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">var</span>&gt;</span>Contenu de la variable<span class="hljs-tag">&lt;/<span class="hljs-name">var</span>&gt;</span>
+</div></code></pre>
+<h2 id="les-classes-et-les-identifiants">Les classes et les identifiants</h2>
+<p>Les classes et les identifiants sont utilisés pour identifier des éléments spécifiques dans une page web. Ils sont généralement utilisés pour appliquer des styles CSS à des éléments spécifiques. Les classes et les identifiants sont spécifiés dans la balise d'ouverture et sont composés d'un nom et d'une valeur. Le nom et la valeur sont séparés par un signe égal (=). La valeur est ensuite placée entre guillemets doubles (&quot;&quot;). Les classes sont spécifiées à l'aide de l'attribut class, tandis que les identifiants sont spécifiés à l'aide de l'attribut id. Voici quelques exemples de classes et d'identifiants :</p>
+<h3 id="classes">Classes</h3>
+<p><strong>Définition</strong> : Une classe est un attribut qui peut être ajouté à n'importe quel élément HTML pour le marquer comme faisant partie d'un groupe d'éléments ayant des caractéristiques communes.</p>
+<p><strong>Usage</strong> : Les classes sont souvent utilisées pour appliquer un style CSS ou un comportement JavaScript à plusieurs éléments à la fois.</p>
+<p><strong>Syntaxe</strong> : <code>class=&quot;nomDeLaClasse&quot;</code></p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"classe"</span>&gt;</span>Contenu de la division<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"classe"</span>&gt;</span>Contenu de l'en-tête<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+</div></code></pre>
+<h3 id="identifiants">Identifiants</h3>
+<p><strong>Définition :</strong> L'identifiant est un attribut qui peut être ajouté à n'importe quel élément HTML pour le marquer comme unique sur la page.</p>
+<p><strong>Usage :</strong> Les identifiants sont utilisés pour cibler un élément spécifique, que ce soit pour lui appliquer un style, un comportement ou pour le référencer via des fragments d'URL.</p>
+<p><strong>Syntaxe :</strong> <code>id=&quot;nomDeLIdentifiant&quot;</code></p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"identifiant"</span>&gt;</span>Contenu de la division<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<h3 id="balises-de-texte">Balises de texte</h3>
+<p>Les balises de texte sont utilisées pour afficher du texte sur une page web. Elles sont généralement utilisées pour afficher des paragraphes, des titres, des listes, des liens, etc. Voici quelques-unes des balises de texte les plus courantes :</p>
+<ul>
+<li><code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code> : Les balises de titre sont utilisées pour définir les titres et les sous-titres de la page. Il existe six niveaux de titres, de <code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code>. Le titre principal de la page est généralement défini avec la balise <code>&lt;h1&gt;</code>. Les balises de titre sont des balises de niveau bloc, ce qui signifie qu'elles commencent généralement sur une nouvelle ligne et occupent toute la largeur de la page.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Titre principal<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Sous-titre<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Sous-titre<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Sous-titre<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span>Sous-titre<span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span>Sous-titre<span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;p&gt;</code> : La balise <code>&lt;p&gt;</code> est utilisée pour définir un paragraphe. Les paragraphes sont généralement utilisés pour afficher de longs blocs de texte. Les paragraphes sont généralement séparés par des lignes vides.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;br&gt;</code> : La balise <code>&lt;br&gt;</code> est utilisée pour insérer un saut de ligne. Elle est généralement utilisée pour insérer un saut de ligne dans un paragraphe.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>Contenu du paragraphe<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;hr&gt;</code> : La balise <code>&lt;hr&gt;</code> est utilisée pour insérer une ligne de séparation. Elle est généralement utilisée pour séparer les sections d'une page web.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;strong&gt;</code> : La balise <code>&lt;strong&gt;</code> est utilisée pour mettre en évidence le texte. Elle est généralement utilisée pour mettre en évidence les mots ou les phrases importantes.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec un <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>mot important<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;b&gt;</code> : La balise <code>&lt;b&gt;</code> est utilisée pour mettre en gras le texte. Elle est généralement utilisée pour mettre en gras le texte.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec du <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>texte en gras<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;strong&gt;</code> : La balise <code>&lt;strong&gt;</code> est utilisée pour mettre en gras le texte. Elle est généralement utilisée pour mettre en gras le texte.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec du <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>texte en gras<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;i&gt;</code> : La balise <code>&lt;i&gt;</code> est utilisée pour mettre en italique le texte. Elle est généralement utilisée pour mettre en italique le texte.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec du <span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>texte en italique<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;em&gt;</code> : La balise <code>&lt;em&gt;</code> est utilisée pour mettre en italique le texte. Elle est généralement utilisée pour mettre en italique le texte.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec du <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>texte en italique<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;u&gt;</code> : La balise <code>&lt;u&gt;</code> est utilisée pour souligner le texte. Elle est généralement utilisée pour souligner le texte.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec du <span class="hljs-tag">&lt;<span class="hljs-name">u</span>&gt;</span>texte souligné<span class="hljs-tag">&lt;/<span class="hljs-name">u</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;s&gt;</code> : La balise <code>&lt;s&gt;</code> est utilisée pour barrer le texte. Elle est généralement utilisée pour barrer le texte.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec du <span class="hljs-tag">&lt;<span class="hljs-name">s</span>&gt;</span>texte barré<span class="hljs-tag">&lt;/<span class="hljs-name">s</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;small&gt;</code> : La balise <code>&lt;small&gt;</code> est utilisée pour afficher le texte en plus petit. Elle est généralement utilisée pour afficher le texte en plus petit.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec du <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>texte plus petit<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;mark&gt;</code> : La balise <code>&lt;mark&gt;</code> est utilisée pour mettre en évidence le texte. Elle est généralement utilisée pour mettre en évidence les mots ou les phrases importantes.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec un <span class="hljs-tag">&lt;<span class="hljs-name">mark</span>&gt;</span>mot important<span class="hljs-tag">&lt;/<span class="hljs-name">mark</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;del&gt;</code> : La balise <code>&lt;del&gt;</code> est utilisée pour barrer le texte. Elle est généralement utilisée pour indiquer que le texte a été supprimé.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec un <span class="hljs-tag">&lt;<span class="hljs-name">del</span>&gt;</span>mot supprimé<span class="hljs-tag">&lt;/<span class="hljs-name">del</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;ins&gt;</code> : La balise <code>&lt;ins&gt;</code> est utilisée pour souligner le texte. Elle est généralement utilisée pour indiquer que le texte a été ajouté.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec un <span class="hljs-tag">&lt;<span class="hljs-name">ins</span>&gt;</span>mot ajouté<span class="hljs-tag">&lt;/<span class="hljs-name">ins</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;sub&gt;</code> : La balise <code>&lt;sub&gt;</code> est utilisée pour afficher le texte en exposant. Elle est généralement utilisée pour afficher les indices chimiques et les formules mathématiques.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec un <span class="hljs-tag">&lt;<span class="hljs-name">sub</span>&gt;</span>indice<span class="hljs-tag">&lt;/<span class="hljs-name">sub</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;sup&gt;</code> : La balise <code>&lt;sup&gt;</code> est utilisée pour afficher le texte en exposant. Elle est généralement utilisée pour afficher les indices chimiques et les formules mathématiques.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec un <span class="hljs-tag">&lt;<span class="hljs-name">sup</span>&gt;</span>exposant<span class="hljs-tag">&lt;/<span class="hljs-name">sup</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;q&gt;</code> : La balise <code>&lt;q&gt;</code> est utilisée pour afficher une courte citation. Elle est généralement utilisée pour afficher des courtes citations.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec une <span class="hljs-tag">&lt;<span class="hljs-name">q</span>&gt;</span>courte citation<span class="hljs-tag">&lt;/<span class="hljs-name">q</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;blockquote&gt;</code> : La balise <code>&lt;blockquote&gt;</code> est utilisée pour afficher une longue citation. Elle est généralement utilisée pour afficher des longues citations.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">blockquote</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu de la citation longue<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;abbr&gt;</code> : La balise <code>&lt;abbr&gt;</code> est utilisée pour afficher une abréviation. Elle est généralement utilisée pour afficher des abréviations.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec une <span class="hljs-tag">&lt;<span class="hljs-name">abbr</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"HyperText Markup Language"</span>&gt;</span>HTML<span class="hljs-tag">&lt;/<span class="hljs-name">abbr</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;cite&gt;</code> : La balise <code>&lt;cite&gt;</code> est utilisée pour afficher une référence à une source. Elle est généralement utilisée pour afficher des références à des livres, des articles, etc.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec une <span class="hljs-tag">&lt;<span class="hljs-name">cite</span>&gt;</span>référence<span class="hljs-tag">&lt;/<span class="hljs-name">cite</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;code&gt;</code> : La balise <code>&lt;code&gt;</code> est utilisée pour afficher du code informatique. Elle est généralement utilisée pour afficher du code informatique.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec du <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>code informatique<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;pre&gt;</code> : La balise <code>&lt;pre&gt;</code> est utilisée pour afficher du texte préformaté. Elle est généralement utilisée pour afficher du texte préformaté.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span>Contenu du paragraphe avec du texte préformaté<span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;kbd&gt;</code> : La balise <code>&lt;kbd&gt;</code> est utilisée pour afficher du texte préformaté. Elle est généralement utilisée pour afficher du texte préformaté.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec du <span class="hljs-tag">&lt;<span class="hljs-name">kbd</span>&gt;</span>texte préformaté<span class="hljs-tag">&lt;/<span class="hljs-name">kbd</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;samp&gt;</code> : La balise <code>&lt;samp&gt;</code> est utilisée pour afficher du texte préformaté. Elle est généralement utilisée pour afficher du texte préformaté.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec du <span class="hljs-tag">&lt;<span class="hljs-name">samp</span>&gt;</span>texte préformaté<span class="hljs-tag">&lt;/<span class="hljs-name">samp</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;var&gt;</code> : La balise <code>&lt;var&gt;</code> est utilisée pour afficher une variable. Elle est généralement utilisée pour afficher des variables.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec une <span class="hljs-tag">&lt;<span class="hljs-name">var</span>&gt;</span>variable<span class="hljs-tag">&lt;/<span class="hljs-name">var</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;a&gt;</code> : La balise <code>&lt;a&gt;</code> est utilisée pour créer un lien hypertexte. Elle est généralement utilisée pour créer des liens vers d'autres pages web, des fichiers, des adresses e-mail, des emplacements dans la même page, etc.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.example.com"</span>&gt;</span>Lien hypertexte<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</div></code></pre>
+<p><strong>Les listes non ordonnées et ordonnées</strong></p>
+<p><strong>Non ordonnées</strong></p>
+<p>Les listes non ordonnées sont utilisées pour créer des listes d'éléments qui n'ont pas besoin d'être ordonnés. Elles sont généralement utilisées pour créer des listes d'éléments qui n'ont pas besoin d'être ordonnés.</p>
+<p><code>&lt;ul&gt;</code> : La balise <code>&lt;ul&gt;</code> est utilisée pour créer une liste non ordonnée. Elle est généralement utilisée pour créer des listes d'éléments qui n'ont pas besoin d'être ordonnés.</p>
+<pre class="hljs"><code><div>    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Élément de liste<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Élément de liste<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Élément de liste<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</div></code></pre>
+<p><strong>Ordonnées</strong></p>
+<p>Les listes ordonnées sont utilisées pour créer des listes d'éléments qui doivent être ordonnés. Elles sont généralement utilisées pour créer des listes d'éléments qui doivent être ordonnés.
+<code>&lt;ol&gt;</code> : La balise <code>&lt;ol&gt;</code> est utilisée pour créer une liste ordonnée. Elle est généralement utilisée pour créer des listes d'éléments qui doivent être ordonnés.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Élément de liste<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Élément de liste<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Élément de liste<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
+</div></code></pre>
+<p><code>&lt;dl&gt;</code> : La balise <code>&lt;dl&gt;</code> est utilisée pour créer une liste de définitions. Elle est généralement utilisée pour créer des listes de termes et de définitions.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">dl</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>Terme<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>Définition<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>Terme<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>Définition<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>Terme<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>Définition<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span>
+</div></code></pre>
+<p><code>&lt;dt&gt;</code> : La balise <code>&lt;dt&gt;</code> est utilisée pour définir un terme dans une liste de définitions. Elle est généralement utilisée avec la balise <code>&lt;dl&gt;</code>.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">dl</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>Terme<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>Définition<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>Terme<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>Définition<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>Terme<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>Définition<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span>
+</div></code></pre>
+<p><code>&lt;dd&gt;</code> : La balise <code>&lt;dd&gt;</code> est utilisée pour définir une définition dans une liste de définitions. Elle est généralement utilisée avec la balise <code>&lt;dl&gt;</code>.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">dl</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>Terme<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>Définition<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>Terme<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>Définition<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>Terme<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>Définition<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span>
+</div></code></pre>
+<p><strong>Les tableaux</strong></p>
+<p>Les tableaux sont utilisés pour afficher des données dans une page web. Ils sont généralement utilisés pour afficher des données tabulaires, telles que des listes de noms, des prix, des dates, etc.
+Bien qu'ils soient parfois utilisés à des fins de mise en page, cette pratique est déconseillée. Les tableaux devraient principalement être utilisés pour afficher des données, comme des feuilles de calcul ou des résultats. Voici quelques-unes des balises de tableau les plus courantes :</p>
+<h3 id="%C3%A9l%C3%A9ments-de-base">Éléments de base</h3>
+<ul>
+<li><code>&lt;table&gt;</code> : La balise <code>&lt;table&gt;</code> est utilisée pour créer un tableau.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;tr&gt;</code> : La balise <code>&lt;tr&gt;</code> représente une ligne du tableau. Chaque tableau contient une ou plusieurs lignes.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;td&gt;</code> : La balise <code>&lt;td&gt;</code> Définit une cellule de données dans le tableau. Elle représente les données proprement dites. Chaque ligne du tableau contient une ou plusieurs cellules de données.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Le contenu<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;th&gt;</code> : La balise <code>&lt;th&gt;</code> est utilisée pour définir une cellule d'en-tête dans un tableau. Elle représente les en-têtes de colonne ou de ligne. Chaque ligne du tableau contient une ou plusieurs cellules d'en-tête. Le texte dans un <code>&lt;th&gt;</code> est généralement en gras et centré.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Titre de l'en-tête<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;thead&gt;</code> : La balise <code>&lt;thead&gt;</code> utilisée pour regrouper les en-têtes de colonne dans un tableau. Il peut contenir plusieurs lignes <code>&lt;tr&gt;</code> d'en-têtes <code>&lt;th&gt;</code>.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Entête de la colonne<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Entête de la colonne<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Entête de la colonne<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;tbody&gt;</code> : La balise <code>&lt;tbody&gt;</code> est utilisée pour regrouper le corps du tableau dans un tableau. Il peut contenir plusieurs lignes <code>&lt;tr&gt;</code> de cellules <code>&lt;td&gt;</code>.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Contenu de la cellule<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Contenu de la cellule<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Contenu de la cellule<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Contenu de la cellule<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Contenu de la cellule<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Contenu de la cellule<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;tfoot&gt;</code> : La balise <code>&lt;tfoot&gt;</code> est utilisée pour regrouper le pied de page du tableau dans un tableau. Il peut contenir plusieurs lignes <code>&lt;tr&gt;</code> de cellules <code>&lt;td&gt;</code>.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">tfoot</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Pied de page de la cellule<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Pied de page de la cellule<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Pied de page de la cellule<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tfoot</span>&gt;</span>
+</div></code></pre>
+<p>Exemple de tableau complet :</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span> Définition du tableau
+    <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Nom<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Age<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Alice<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>28<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Bob<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>32<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tfoot</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Moyenne d'âge<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>30<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tfoot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</div></code></pre>
+<h3 id="%C3%A9l%C3%A9ments-de-section">Éléments de section</h3>
+<ul>
+<li><code>&lt;caption&gt;</code> : La balise <code>&lt;caption&gt;</code> est utilisée pour définir le titre du tableau. Elle est généralement utilisée pour afficher le titre du tableau.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">caption</span>&gt;</span>Titre du tableau<span class="hljs-tag">&lt;/<span class="hljs-name">caption</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;col&gt;</code> : La balise <code>&lt;col&gt;</code> est utilisée pour définir les attributs de colonne pour chaque colonne du tableau. Elle est généralement utilisée pour définir la largeur, la couleur et d'autres attributs de colonne.
+Cet élément est souvent omis dans les explications basiques sur les tableaux en HTML, mais il peut être très utile pour appliquer des styles à des colonnes entières sans avoir à cibler chaque cellule individuellement.</li>
+</ul>
+<p>L'élément <code>&lt;col&gt;</code> est utilisé en conjonction avec l'élément <colgroup> pour spécifier des propriétés pour une ou plusieurs colonnes dans un tableau.</p>
+<p><strong>Comment ça marche ?</strong></p>
+<p><code>&lt;colgroup&gt; :</code> Cet élément enveloppe les éléments <code>&lt;col&gt;</code>. Chaque <code>&lt;col&gt;</code> à l'intérieur de <code>&lt;colgroup&gt;</code> représente une colonne du tableau.</p>
+<p><code>&lt;col&gt;</code> : Il définit les propriétés d'une colonne. Habituellement, on l'utilise pour appliquer des styles CSS à une colonne entière.</p>
+<p><strong>Exemple d'utilisation</strong></p>
+<p>Disons que vous avez un tableau avec trois colonnes, et que vous voulez que la première colonne ait une largeur de 50px, et la deuxième colonne une couleur de fond jaune. Vous pouvez le faire comme ceci :</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">colgroup</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">col</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 50px;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">col</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background-color: yellow;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">colgroup</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Colonne 1<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Colonne 2<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Colonne 3<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Data 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Data 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Data 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</div></code></pre>
+<p>Dans cet exemple, la première colonne du tableau aura une largeur de 50px et la deuxième colonne aura une couleur de fond jaune. La troisième colonne n'a pas de styles spécifiques définis.</p>
+<p><strong>Remarques</strong></p>
+<ol>
+<li>
+<ul>
+<li>Vous pouvez utiliser l'attribut <code>span</code> avec <code>&lt;col&gt;</code> pour indiquer que le style doit s'appliquer à plusieurs colonnes. Par exemple, <code>&lt;col span=&quot;2&quot; style=&quot;background-color: yellow;&quot;&gt;</code> appliquera un fond jaune aux deux prochaines colonnes du tableau.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Le <code>&lt;colgroup&gt;</code> peut également être utilisé sans <code>&lt;col&gt;</code> pour styliser des groupes de colonnes, mais l'utilisation de <code>&lt;col&gt;</code> offre une granularité plus fine.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Le HTML5 a limité le nombre d'attributs que l'on peut utiliser avec <code>&lt;col&gt;</code>. Auparavant, des attributs comme width, <code>align</code> et <code>valign</code> étaient couramment utilisés avec <code>&lt;col&gt;</code>, mais maintenant, il est recommandé d'utiliser CSS pour styliser les colonnes.</li>
+</ul>
+</li>
+</ol>
+<p>En somme, <code>&lt;col&gt;</code> et <code>&lt;colgroup&gt;</code> offrent une manière élégante de styliser des colonnes dans les tableaux HTML sans avoir à intervenir sur chaque cellule ou en-tête individuellement.</p>
+<ul>
+<li><code>&lt;colgroup&gt;</code> : La balise <code>&lt;colgroup&gt;</code> est utilisée pour définir un groupe de colonnes dans un tableau. Elle est généralement utilisée pour définir les attributs de colonne pour chaque colonne du tableau.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">colgroup</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">col</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 50px;"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">col</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background-color: yellow;"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">col</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">colgroup</span>&gt;</span>
+</div></code></pre>
+<h2 id="4-les-%C3%A9l%C3%A9ments-interactifs">4. Les éléments interactifs</h2>
+<h3 id="les-liens-hypertextes--a">* Les liens hypertextes : <code>&lt;a&gt;</code></h3>
+<p>La balise <code>&lt;a&gt;</code> est utilisée pour créer un lien hypertexte. Elle est généralement utilisée pour créer des liens vers d'autres pages web, des fichiers, des adresses e-mail, des emplacements dans la même page, etc.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.gnpinformatique.fr"</span>&gt;</span>GNP-INFORMATIQUE<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</div></code></pre>
+<h3 id="les-boutons--button">Les boutons : <code>&lt;button&gt;</code></h3>
+<p>La balise <code>&lt;button&gt;</code> est utilisée pour créer un bouton cliquable. Elle est généralement utilisée pour créer des boutons cliquables.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Contenu du bouton<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</div></code></pre>
+<h3 id="les-formulaires">Les formulaires</h3>
+<p>Les formulaires sont utilisés pour collecter des données auprès des utilisateurs. Ils sont généralement utilisés pour collecter des données telles que les noms, les adresses, les numéros de téléphone, les adresses e-mail, etc. Voici quelques-unes des balises de formulaire les plus courantes :</p>
+<p><strong>Les éléments de base :</strong></p>
+<ul>
+<li><code>&lt;form&gt;</code> : La balise <code>&lt;form&gt;</code> est utilisée pour créer un formulaire. Elle est généralement utilisée pour collecter des données auprès des utilisateurs.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input&gt;</code> : La balise <code>&lt;input&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les noms, les adresses, les numéros de téléphone, les adresses e-mail, etc.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;textarea&gt;</code> : La balise <code>&lt;textarea&gt;</code> est utilisée pour créer un champ de texte multiligne. Elle est utilisée pour collecter des données telles que les commentaires, les messages, etc.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;select&gt;</code> et <code>&lt;option&gt;</code> :
+<ul>
+<li>La balise <code>&lt;select&gt;</code> est utilisée pour créer une liste déroulante. Elle est généralement utilisée pour collecter des données telles que les pays, les villes, les langues, etc.</li>
+<li>La balise <code>&lt;option&gt;</code> est utilisée pour définir une option dans une liste déroulante. Elle est généralement utilisée avec la balise <code>&lt;select&gt;</code>.</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;label&gt;</code> : La balise <code>&lt;label&gt;</code> est utilisée pour définir une étiquette pour un élément de formulaire. Elle est généralement utilisée pour définir une étiquette pour un champ de saisie.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Étiquette du champ de saisie<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;fieldset&gt;</code> et <code>&lt;legend&gt;</code> :
+<ul>
+<li>La balise <code>&lt;fieldset&gt;</code> est utilisée pour regrouper les éléments de formulaire. Elle est généralement utilisée pour regrouper les éléments de formulaire.</li>
+<li>La balise <code>&lt;legend&gt;</code> est utilisée pour définir un titre pour un groupe de champs de formulaire. Elle est généralement utilisée avec la balise <code>&lt;fieldset&gt;</code>.</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Titre du groupe<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Étiquette du champ de saisie<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Étiquette du champ de saisie<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;legend&gt;</code> :</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Titre du groupe<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Étiquette du champ de saisie<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Étiquette du champ de saisie<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;datalist&gt;</code> et <code>&lt;option&gt;</code> :
+<ul>
+<li>La balise <code>&lt;datalist&gt;</code> est utilisée pour créer une liste déroulante. Elle est généralement utilisée pour collecter des données telles que les pays, les villes, les langues, etc.</li>
+<li>La balise <code>&lt;option&gt;</code> est utilisée pour définir une option dans une liste déroulante. Elle est généralement utilisée avec la balise <code>&lt;datalist&gt;</code>.</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">list</span>=<span class="hljs-string">"liste"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">datalist</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"liste"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">datalist</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;output&gt;</code> : La balise <code>&lt;output&gt;</code> est utilisée pour afficher le résultat d'un script. Elle est généralement utilisée pour afficher le résultat d'un script.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">output</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">output</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;progress&gt;</code> : La balise <code>&lt;progress&gt;</code> est utilisée pour afficher la progression d'une tâche. Elle est généralement utilisée pour afficher la progression d'une tâche.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">progress</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">progress</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;meter&gt;</code> : La balise <code>&lt;meter&gt;</code> est utilisée pour afficher une mesure scalaire dans une barre de progression. Elle est généralement utilisée pour afficher une mesure scalaire dans une barre de progression.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">meter</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">meter</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;button&gt;</code> : La balise <code>&lt;button&gt;</code> est utilisée pour créer un bouton cliquable. Elle est généralement utilisée pour créer des boutons cliquables.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Contenu du bouton<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</div></code></pre>
+<h3 id="les-types-dentr%C3%A9e">Les types d'entrée</h3>
+<ul>
+<li><code>&lt;input type=&quot;text&quot;&gt;</code> : La balise <code>&lt;input type=&quot;text&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les noms, les adresses, les numéros de téléphone, les adresses e-mail, etc.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;password&quot;&gt;</code> : La balise <code>&lt;input type=&quot;password&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les mots de passe.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;email&quot;&gt;</code> : La balise <code>&lt;input type=&quot;email&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les adresses e-mail.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"email"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;tel&quot;&gt;</code> : La balise <code>&lt;input type=&quot;tel&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les numéros de téléphone.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tel"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;url&quot;&gt;</code> : La balise <code>&lt;input type=&quot;url&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les URL.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"url"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;search&quot;&gt;</code> : La balise <code>&lt;input type=&quot;search&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les termes de recherche.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"search"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;number&quot;&gt;</code> : La balise <code>&lt;input type=&quot;number&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les nombres.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;range&quot;&gt;</code> : La balise <code>&lt;input type=&quot;range&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les nombres.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;date&quot;&gt;</code> : La balise <code>&lt;input type=&quot;date&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les dates.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"date"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;month&quot;&gt;</code> : La balise <code>&lt;input type=&quot;month&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les mois.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"month"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;week&quot;&gt;</code> : La balise <code>&lt;input type=&quot;week&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les semaines.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"week"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;time&quot;&gt;</code> : La balise <code>&lt;input type=&quot;time&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les heures.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"time"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;datetime-local&quot;&gt;</code> : La balise <code>&lt;input type=&quot;datetime-local&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les dates et les heures.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"datetime-local"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;color&quot;&gt;</code> : La balise <code>&lt;input type=&quot;color&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les couleurs.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"color"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;file&quot;&gt;</code> : La balise <code>&lt;input type=&quot;file&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les fichiers.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"file"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;hidden&quot;&gt;</code> : La balise <code>&lt;input type=&quot;hidden&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les données cachées.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"hidden"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;submit&quot;&gt;</code> : La balise <code>&lt;input type=&quot;submit&quot;&gt;</code> est utilisée pour créer un bouton cliquable. Elle est généralement utilisée pour créer des boutons cliquables.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;checkbox&quot;&gt;</code> : La balise <code>&lt;input type=&quot;checkbox&quot;&gt;</code> est utilisée pour créer une case à cocher. Elle est généralement utilisée pour collecter des données telles que les cases à cocher.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;radio&quot;&gt;</code> : La balise <code>&lt;input type=&quot;radio&quot;&gt;</code> est utilisée pour créer un bouton radio. Elle est généralement utilisée pour collecter des données telles que les boutons radio.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;range&quot;&gt;</code> : La balise <code>&lt;input type=&quot;range&quot;&gt;</code> est utilisée pour créer un champ de saisie. Elle est généralement utilisée pour collecter des données telles que les nombres.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;submit&quot;&gt;</code> : La balise <code>&lt;input type=&quot;submit&quot;&gt;</code> est utilisée pour créer un bouton cliquable. Elle est généralement utilisée pour créer des boutons cliquables.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;input type=&quot;reset&quot;&gt;</code> : La balise <code>&lt;input type=&quot;reset&quot;&gt;</code> est utilisée pour créer un bouton cliquable. Elle est généralement utilisée pour créer des boutons cliquables.</li>
+</ul>
+<pre class="hljs"><code><div>
+### Les iframes : `<span class="hljs-tag">&lt;<span class="hljs-name">iframe</span>&gt;</span>`
+La balise `<span class="hljs-tag">&lt;<span class="hljs-name">iframe</span>&gt;</span>` est utilisée pour créer un cadre intégré. Elle est utilisée pour afficher une page web dans une page web.
+```html
+<span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://www.gnpinformatique.fr"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span>
+</div></code></pre>
+<p>Exemple de formulaire de contact complet :</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Nom<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Prénom<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Email<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"email"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Message<span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">cols</span>=<span class="hljs-string">"8"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Envoyer<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</div></code></pre>
+<h2 id="5-les-%C3%A9l%C3%A9ments-multim%C3%A9dias">5. Les éléments multimédias</h2>
+<h3 id="les-images--img">Les images : <code>&lt;img&gt;</code></h3>
+<p>La balise <code>&lt;img&gt;</code> est utilisée pour insérer une image dans une page web. Elle est généralement utilisée pour insérer des images dans une page web.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"image.jpg"</span>&gt;</span>
+</div></code></pre>
+<h3 id="les-m%C3%A9dias--audio-et-video">Les médias : <code>&lt;audio&gt;</code> et <code>&lt;video&gt;</code></h3>
+<ul>
+<li>La balise <code>&lt;audio&gt;</code> est utilisée pour insérer un fichier audio dans une page web. Elle est généralement utilisée pour insérer des fichiers audio dans une page web.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"audio.mp3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>La balise <code>&lt;video&gt;</code> est utilisée pour insérer un fichier vidéo dans une page web. Elle est généralement utilisée pour insérer des fichiers vidéo dans une page web.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"video.mp4"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span>
+</div></code></pre>
+<h2 id="6-s%C3%A9mantique-et-organisation-du-code">6. Sémantique et organisation du code</h2>
+<h3 id="les-balises-de-s%C3%A9mantiques">Les balises de sémantiques</h3>
+<ul>
+<li><code>&lt;header&gt;</code> : La balise <code>&lt;header&gt;</code> est utilisée pour définir l'en-tête d'une page web ou d'une section. Elle est généralement utilisée pour afficher le titre ou le logo d'une page web.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>Contenu de l'en-tête<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;footer&gt;</code> : La balise <code>&lt;footer&gt;</code> est utilisée pour définir le pied de page d'une page web ou d'une section. Elle est généralement utilisée pour afficher les informations de contact, les droits d'auteur, etc.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>Contenu du pied de page<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;main&gt;</code> : La balise <code>&lt;main&gt;</code> est utilisée pour définir le contenu principal d'une page web. Elle est généralement utilisée pour afficher le contenu principal d'une page web.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>Contenu principal<span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;article&gt;</code> : La balise <code>&lt;article&gt;</code> est utilisée pour définir un contenu indépendant dans une page web. Elle est généralement utilisée pour afficher des articles, des blogs, des commentaires, etc.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>Contenu de l'article<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;section&gt;</code> : La balise <code>&lt;section&gt;</code> est utilisée pour définir une section dans une page web. Elle est généralement utilisée pour afficher des sections dans une page web.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>Contenu de la section<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;aside&gt;</code> : La balise <code>&lt;aside&gt;</code> est utilisée pour définir un contenu à part dans une page web. Elle est généralement utilisée pour afficher des contenus qui sont séparés du contenu principal de la page.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">aside</span>&gt;</span>Contenu à part<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;nav&gt;</code> : La balise <code>&lt;nav&gt;</code> est utilisée pour définir une section de navigation dans une page web. Elle est généralement utilisée pour afficher des liens vers d'autres pages web.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>Contenu de la navigation<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;details&gt;</code> : La balise <code>&lt;details&gt;</code> est utilisée pour définir des détails supplémentaires dans une page web. Elle est généralement utilisée pour afficher des informations supplémentaires qui peuvent être masquées ou affichées sur demande.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">details</span>&gt;</span>Contenu des détails<span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;summary&gt;</code> : La balise <code>&lt;summary&gt;</code> est utilisée pour définir un résumé dans une page web. Elle est généralement utilisée pour afficher un résumé des détails.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Contenu du résumé<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;figure&gt;</code> : La balise <code>&lt;figure&gt;</code> est utilisée pour définir une figure dans une page web. Elle est généralement utilisée pour afficher des images, des diagrammes, des illustrations, etc.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span>Contenu de la figure<span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;figcaption&gt;</code> : La balise <code>&lt;figcaption&gt;</code> est utilisée pour définir une légende pour une figure dans une page web. Elle est généralement utilisée pour afficher une légende pour une figure.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>Contenu de la légende<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;time&gt;</code> : La balise <code>&lt;time&gt;</code> est utilisée pour définir une date ou une heure dans une page web. Elle est généralement utilisée pour afficher une date ou une heure.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">time</span>&gt;</span>Contenu de la date ou de l'heure<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;code&gt;</code> : La balise <code>&lt;code&gt;</code> est utilisée pour définir du code informatique dans une page web. Elle est généralement utilisée pour afficher du code informatique.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>Contenu du code informatique<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;pre&gt;</code> : La balise <code>&lt;pre&gt;</code> est utilisée pour définir du texte préformaté dans une page web. Elle est généralement utilisée pour afficher du texte préformaté.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span>Contenu du texte préformaté<span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;kbd&gt;</code> : La balise <code>&lt;kbd&gt;</code> est utilisée pour définir du texte préformaté dans une page web. Elle est généralement utilisée pour afficher du texte préformaté.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">kbd</span>&gt;</span>Contenu du texte préformaté<span class="hljs-tag">&lt;/<span class="hljs-name">kbd</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;samp&gt;</code> : La balise <code>&lt;samp&gt;</code> est utilisée pour définir du texte préformaté dans une page web. Elle est généralement utilisée pour afficher du texte préformaté.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">samp</span>&gt;</span>Contenu du texte préformaté<span class="hljs-tag">&lt;/<span class="hljs-name">samp</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;var&gt;</code> : La balise <code>&lt;var&gt;</code> est utilisée pour définir une variable dans une page web. Elle est généralement utilisée pour afficher des variables.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">var</span>&gt;</span>Contenu de la variable<span class="hljs-tag">&lt;/<span class="hljs-name">var</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;mark&gt;</code> : La balise <code>&lt;mark&gt;</code> est utilisée pour mettre en évidence le texte. Elle est généralement utilisée pour mettre en évidence les mots ou les phrases importantes.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec un <span class="hljs-tag">&lt;<span class="hljs-name">mark</span>&gt;</span>mot important<span class="hljs-tag">&lt;/<span class="hljs-name">mark</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;del&gt;</code> : La balise <code>&lt;del&gt;</code> est utilisée pour barrer le texte. Elle est généralement utilisée pour indiquer que le texte a été supprimé.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec un <span class="hljs-tag">&lt;<span class="hljs-name">del</span>&gt;</span>mot supprimé<span class="hljs-tag">&lt;/<span class="hljs-name">del</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;ins&gt;</code> : La balise <code>&lt;ins&gt;</code> est utilisée pour souligner le texte. Elle est généralement utilisée pour indiquer que le texte a été ajouté.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec un <span class="hljs-tag">&lt;<span class="hljs-name">ins</span>&gt;</span>mot ajouté<span class="hljs-tag">&lt;/<span class="hljs-name">ins</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;sub&gt;</code> : La balise <code>&lt;sub&gt;</code> est utilisée pour afficher le texte en exposant. Elle est généralement utilisée pour afficher les indices chimiques et les formules mathématiques.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec un <span class="hljs-tag">&lt;<span class="hljs-name">sub</span>&gt;</span>indice<span class="hljs-tag">&lt;/<span class="hljs-name">sub</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;sup&gt;</code> : La balise <code>&lt;sup&gt;</code> est utilisée pour afficher le texte en exposant. Elle est généralement utilisée pour afficher les indices chimiques et les formules mathématiques.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec un <span class="hljs-tag">&lt;<span class="hljs-name">sup</span>&gt;</span>exposant<span class="hljs-tag">&lt;/<span class="hljs-name">sup</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;q&gt;</code> : La balise <code>&lt;q&gt;</code> est utilisée pour afficher une courte citation. Elle est généralement utilisée pour afficher des courtes citations.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec une <span class="hljs-tag">&lt;<span class="hljs-name">q</span>&gt;</span>courte citation<span class="hljs-tag">&lt;/<span class="hljs-name">q</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;blockquote&gt;</code> : La balise <code>&lt;blockquote&gt;</code> est utilisée pour afficher une longue citation. Elle est généralement utilisée pour afficher des longues citations.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">blockquote</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu de la citation longue<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;abbr&gt;</code> : La balise <code>&lt;abbr&gt;</code> est utilisée pour afficher une abréviation. Elle est généralement utilisée pour afficher des abréviations.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec une <span class="hljs-tag">&lt;<span class="hljs-name">abbr</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"HyperText Markup Language"</span>&gt;</span>HTML<span class="hljs-tag">&lt;/<span class="hljs-name">abbr</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;cite&gt;</code> : La balise <code>&lt;cite&gt;</code> est utilisée pour afficher une référence à une source. Elle est généralement utilisée pour afficher des références à des livres, des articles, etc.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Contenu du paragraphe avec une <span class="hljs-tag">&lt;<span class="hljs-name">cite</span>&gt;</span>référence<span class="hljs-tag">&lt;/<span class="hljs-name">cite</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<h2 id="les-balises-de-programmation">Les balises de programmation</h2>
+<ul>
+<li><code>&lt;script&gt;</code> : La balise <code>&lt;script&gt;</code> est utilisée pour définir un script client side. Elle est généralement utilisée pour définir un script client side.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;noscript&gt;</code> : La balise <code>&lt;noscript&gt;</code> est utilisée pour définir un contenu alternatif pour les utilisateurs qui n'ont pas activé les scripts dans leur navigateur. Elle est généralement utilisée pour définir un contenu alternatif pour les utilisateurs qui n'ont pas activé les scripts dans leur navigateur.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">noscript</span>&gt;</span>Contenu alternatif<span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;canvas&gt;</code> : La balise <code>&lt;canvas&gt;</code> est utilisée pour dessiner des graphiques, des graphiques, des images, etc. Elle est généralement utilisée pour dessiner des graphiques, des graphiques, des images, etc.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;svg&gt;</code> : La balise <code>&lt;svg&gt;</code> est utilisée pour dessiner des graphiques vectoriels. Elle est généralement utilisée pour dessiner des graphiques vectoriels.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;math&gt;</code> : La balise <code>&lt;math&gt;</code> est utilisée pour afficher des formules mathématiques. Elle est généralement utilisée pour afficher des formules mathématiques.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">math</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">math</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;iframe&gt;</code> : La balise <code>&lt;iframe&gt;</code> est utilisée pour créer un cadre intégré. Elle est utilisée pour afficher une page web dans une page web.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://www.gnpinformatique.fr"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;object&gt;</code> : La balise <code>&lt;object&gt;</code> est utilisée pour insérer un objet dans une page web. Elle est généralement utilisée pour insérer des objets dans une page web.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">object</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">object</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;param&gt;</code> : La balise <code>&lt;param&gt;</code> est utilisée pour définir un paramètre pour un objet dans une page web. Elle est généralement utilisée avec la balise <code>&lt;object&gt;</code>.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">object</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">param</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"name"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"value"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">object</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;embed&gt;</code> : La balise <code>&lt;embed&gt;</code> est utilisée pour insérer un contenu externe dans une page web. Elle est généralement utilisée pour insérer des contenus externes dans une page web.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">embed</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://www.gnpinformatique.fr"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><code>&lt;applet&gt;</code> : La balise <code>&lt;applet&gt;</code> est utilisée pour insérer un applet Java dans une page web. Elle est généralement utilisée pour insérer des applets Java dans une page web.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">applet</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">applet</span>&gt;</span>
+</div></code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>Le HTML, pierre angulaire du web, nous offre une panoplie d'éléments et d'outils pour structurer et représenter du contenu. Que ce soit à travers des balises basiques, des tableaux ou des spécificateurs comme les classes et les identifiants, chaque composant joue un rôle essentiel dans la création de pages web robustes et interactives. Toutefois, il ne s'agit que de la couche fondamentale. Pour créer des expériences utilisateur riches et attrayantes, il est essentiel d'intégrer d'autres technologies comme le CSS pour la mise en forme et le JavaScript pour la dynamique.</p>
+<p>Gardez toujours à l'esprit que la maîtrise du HTML est la première étape vers le développement de compétences avancées en matière de conception web. Avec la pratique, la patience et une quête continue d'apprentissage, vous pouvez transformer ces balises et ces attributs en pages web fascinantes qui captivent vos utilisateurs.</p>
+<p>Bonne continuation dans votre parcours d'apprentissage et de découverte du monde du développement web !</p>
+<p>Ce cours est terminé, vous avez appris les bases du HTML. Vous pouvez maintenant passer à la pratique en créant votre première page web. Vous pouvez également consulter notre cours sur le CSS pour apprendre à styliser votre page web.</p>
+<h2 id="ressources">Ressources</h2>
+<ul>
+<li><a href="https://www.w3schools.com/html/default.asp">w3schools</a></li>
+<li><a href="https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3">openclassrooms</a></li>
+<li><a href="https://developer.mozilla.org/fr/docs/Web/HTML">developer.mozilla</a></li>
+<li><a href="https://www.grafikart.fr/formations/apprendre-html5">grafikart</a></li>
+<li><a href="https://www.codecademy.com/learn/learn-html">codecademy</a></li>
+</ul>
+
+</body>
+</html>
