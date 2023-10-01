@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="h1-style%22text-align-center%22css3---flexboxbrdu-d%C3%A9butant-au-confirm%C3%A9h1"><h1 style="text-align: center">CSS3 - Flexbox<br>DU DÉBUTANT AU CONFIRMÉ</h1></h1>
+<p>Auteur : <a href="https://gnpinformatique.fr">Paterne Guélablé Gnonzion</a></p>
+<p>Formateur développeur web et mobile : <strong>PHP, Symfony, Rust ...</strong></p>
+<p>Linkedin : <a href="https://www.linkedin.com/in/gnpinformatique/">Paterne G. G.</a></p>
+<p>Github : <a href="https://github.com/teamflp">teamflp</a></p>
+<h2 id="proc%C3%A9dure-pour-utiliser-ce-cours">Procédure pour utiliser ce cours</h2>
+<p>Bienvenue à ce cours sur le CSS ! Pour tirer le meilleur parti de ce contenu et acquérir une compréhension solide de la matière, suivez les étapes recommandées ci-dessous.</p>
+<ol>
+<li><strong>Préparation</strong> :</li>
+</ol>
+<ul>
+<li>Assurez-vous d'avoir les prérequis : connaissance basique du HTML et CSS.</li>
+<li>Installez un bon éditeur de code (comme <a href="https://code.visualstudio.com/">Visual Studio Code</a>).</li>
+<li>Configurez un navigateur moderne pour les tests (Chrome, Firefox, Safari, etc.).</li>
+</ul>
+<ol start="2">
+<li><strong>Étude systématique</strong> :</li>
+</ol>
+<ul>
+<li>Commencez par l'<strong>introduction</strong> pour comprendre le contexte du CSS.</li>
+<li>Poursuivez avec les <strong>bases</strong> avant de passer aux concepts avancés.</li>
+<li>Ne sautez pas de sections. Chaque partie est conçue pour s'appuyer sur la précédente.</li>
+</ul>
+<ol start="3">
+<li><strong>Pratiquez régulièrement</strong> :</li>
+</ol>
+<ul>
+<li>Après chaque section, prenez le temps de coder et de tester ce que vous avez appris.</li>
+<li>Utilisez les exemples fournis et essayez de les modifier ou de les améliorer.</li>
+</ul>
+<ol start="4">
+<li><strong>Participez à des discussions</strong> :</li>
+</ol>
+<ul>
+<li>Rejoignez des forums ou des groupes dédiés au CSS pour poser des questions, partager vos connaissances ou aider d'autres apprenants.</li>
+<li>Partager vos réalisations ou vos défis vous permettra d'obtenir des retours constructifs.</li>
+</ul>
+<ol start="5">
+<li><strong>Consultez des ressources supplémentaires</strong> :</li>
+</ol>
+<ul>
+<li>Explorez les <strong>ressources et outils</strong> mentionnés à la fin du cours pour approfondir vos connaissances et améliorer vos compétences.</li>
+</ul>
+<ol start="6">
+<li><strong>Mettez en pratique</strong> :</li>
+</ol>
+<ul>
+<li>Essayez de créer un petit projet web à partir de zéro, en appliquant tout ce que vous avez appris.</li>
+<li>Cela renforcera votre compréhension et vous donnera une idée des domaines dans lesquels vous pourriez avoir besoin de plus d'entraînement.</li>
+</ul>
+<ol start="7">
+<li><strong>Revenez régulièrement</strong> :</li>
+</ol>
+<ul>
+<li>La technologie et les normes évoluent. Revenez périodiquement pour mettre à jour vos connaissances ou rafraîchir certains concepts.</li>
+</ul>
+<ol start="8">
+<li><strong>Évaluez vos progrès</strong> :</li>
+</ol>
+<ul>
+<li>Testez régulièrement vos connaissances. Cela peut être à travers des quiz en ligne, des défis de codage ou des revues de code avec des pairs.</li>
+</ul>
+<p>Bonne étude ! Rappelez-vous que l'apprentissage est un voyage, et chaque étape vous rapproche de la maîtrise du CSS.</p>
+<hr>
+<!-- TOC -->
+<ul>
+<li><a href="#flexbox-en-css">Flexbox en CSS</a>
+<ul>
+<li><a href="#introduction-%C3%A0-flexbox">Introduction à Flexbox</a></li>
+<li><a href="#bases-de-flexbox">Bases de Flexbox</a></li>
+<li><a href="#direction-et-ordre">Direction et ordre</a></li>
+<li><a href="#alignement-et-justification">Alignement et justification</a></li>
+<li><a href="#taille-des-%C3%A9l%C3%A9ments-flex">Taille des éléments flex</a></li>
+<li><a href="#autres-propri%C3%A9t%C3%A9s">Autres propriétés</a></li>
+<li><a href="#exemples-pratiques">Exemples pratiques</a></li>
+<li><a href="#avantages-et-inconv%C3%A9nients">Avantages et inconvénients</a></li>
+<li><a href="#ressources-et-outils">Ressources et outils</a></li>
+<li><a href="#introduction-%C3%A0-flexbox-1">Introduction à Flexbox</a>
+<ul>
+<li><a href="#quest-ce-que-flexbox">Qu'est-ce que Flexbox?</a></li>
+<li><a href="#pourquoi-utiliser-flexbox">Pourquoi utiliser Flexbox?</a></li>
+</ul>
+</li>
+<li><a href="#bases-de-flexbox-1">Bases de Flexbox</a>
+<ul>
+<li><a href="#conteneur-flex-flex-container-vs-%C3%A9l%C3%A9ment-flex-flex-item">Conteneur flex (flex container) vs Élément flex (flex item)</a></li>
+<li><a href="#d%C3%A9finir-un-conteneur-flex-display-flex-ou-display-inline-flex">Définir un conteneur flex: <code>display: flex</code> ou <code>display: inline-flex</code></a></li>
+</ul>
+</li>
+<li><a href="#direction-et-ordre-1">Direction et ordre</a>
+<ul>
+<li><a href="#flex-direction-row-row-reverse-column-column-reverse"><code>flex-direction</code>: row, row-reverse, column, column-reverse</a></li>
+<li><a href="#flex-wrap-nowrap-wrap-wrap-reverse"><code>flex-wrap</code>: nowrap, wrap, wrap-reverse</a></li>
+<li><a href="#flex-flow-combinaison-de-flex-direction-et-flex-wrap"><code>flex-flow</code>: combinaison de flex-direction et flex-wrap</a></li>
+<li><a href="#order-d%C3%A9finir-lordre-des-%C3%A9l%C3%A9ments-flex"><code>order</code>: définir l'ordre des éléments flex</a></li>
+</ul>
+</li>
+<li><a href="#alignement-et-justification-1">Alignement et justification</a>
+<ul>
+<li><a href="#justify-content-flex-start-flex-end-center-space-between-space-around-space-evenly"><code>justify-content</code>: flex-start, flex-end, center, space-between, space-around, space-evenly</a></li>
+<li><a href="#align-items-flex-start-flex-end-center-baseline-stretch"><code>align-items</code>: flex-start, flex-end, center, baseline, stretch</a></li>
+<li><a href="#align-content-flex-start-flex-end-center-space-between-space-around-stretch"><code>align-content</code>: flex-start, flex-end, center, space-between, space-around, stretch</a></li>
+<li><a href="#align-self--auto-flex-start-flex-end-center-baseline-stretch">align-self : auto, flex-start, flex-end, center, baseline, stretch</a></li>
+</ul>
+</li>
+<li><a href="#taille-des-%C3%A9l%C3%A9ments-flex-1">Taille des éléments flex</a>
+<ul>
+<li><a href="#flex-grow-0-1-2-3-4-5--d%C3%A9finit-la-capacit%C3%A9-dun-%C3%A9l%C3%A9ment-%C3%A0-grandir"><code>flex-grow</code>: 0, 1, 2, 3, 4, 5 : Définit la capacité d'un élément à grandir</a></li>
+<li><a href="#flex-shrink-d%C3%A9finit-la-capacit%C3%A9-dun-%C3%A9l%C3%A9ment-%C3%A0-r%C3%A9tr%C3%A9cir"><code>flex-shrink</code>: Définit la capacité d'un élément à rétrécir</a></li>
+<li><a href="#flex-basis-d%C3%A9finit-la-taille-de-base-dun-%C3%A9l%C3%A9ment"><code>flex-basis</code>: Définit la taille de base d'un élément</a></li>
+<li><a href="#flex-raccourci-pour-flex-grow-flex-shrink-et-flex-basis"><code>flex</code>: raccourci pour flex-grow, flex-shrink et flex-basis</a></li>
+</ul>
+</li>
+<li><a href="#autres-propri%C3%A9t%C3%A9s-1">Autres propriétés</a>
+<ul>
+<li><a href="#gap-d%C3%A9finit-lespace-entre-les-%C3%A9l%C3%A9ments"><code>gap</code>: Définit l'espace entre les éléments</a></li>
+</ul>
+</li>
+<li><a href="#exemples-pratiques-1">Exemples pratiques</a>
+<ul>
+<li><a href="#centrer-un-%C3%A9l%C3%A9ment-dans-un-conteneur-flex">Centrer un élément dans un conteneur flex</a></li>
+<li><a href="#mise-en-page-den-t%C3%AAte-avec-logo-et-navigation">Mise en page d'en-tête avec logo et navigation</a></li>
+<li><a href="#mise-en-page-dun-formulaire">Mise en page d'un formulaire</a></li>
+<li><a href="#grille-de-cartes-responsive">Grille de cartes responsive</a></li>
+</ul>
+</li>
+<li><a href="#avantages-et-inconv%C3%A9nients-1">Avantages et inconvénients</a>
+<ul>
+<li><a href="#avantages">Avantages</a></li>
+<li><a href="#inconv%C3%A9nients-">Inconvénients :</a></li>
+</ul>
+</li>
+<li><a href="#quand-utiliser-flexbox-vs-dautres-m%C3%A9thodes-comme-grid-ou-floats">Quand utiliser Flexbox vs d'autres méthodes (comme Grid ou Floats)</a>
+<ul>
+<li><a href="#flexbox">Flexbox:</a></li>
+<li><a href="#css-grid">CSS Grid:</a></li>
+<li><a href="#floats">Floats:</a></li>
+</ul>
+</li>
+<li><a href="#limitations-de-flexbox">Limitations de Flexbox</a></li>
+<li><a href="#ressources-et-outils-1">Ressources et outils</a>
+_ <a href="#outils-de-visualisation-flexbox-en-ligne">Outils de visualisation Flexbox en ligne</a>
+_ <a href="#astuces-et-mod%C3%A8les-flexbox-courants">Astuces et modèles Flexbox courants</a> * <a href="#biblioth%C3%A8ques-et-frameworks-utilisant-flexbox">Bibliothèques et frameworks utilisant Flexbox</a></li>
+</ul>
+<!-- TOC -->
+</li>
+</ul>
+<hr>
+<h2 id="introduction-%C3%A0-flexbox">Introduction à Flexbox</h2>
+<h3 id="quest-ce-que-flexbox">Qu'est-ce que Flexbox?</h3>
+<p>Flexbox, ou &quot;Flexible Box Layout&quot;, est un modèle de mise en page moderne dans CSS3. Contrairement aux méthodes traditionnelles où on s'appuie souvent sur des flottants et des positionnements, Flexbox facilite la conception de structures de mise en page complexes avec une syntaxe plus simple et prévisible. C'est un mode unidimensionnel, ce qui signifie qu'il traite soit la colonne, soit la ligne à la fois, contrairement à la grille CSS qui traite les deux simultanément.</p>
+<p>Flexbox permet d'aligner, centrer, ordonner et répartir l'espace entre les éléments d'un conteneur, même lorsque les tailles de vos éléments sont inconnues ou dynamiques.</p>
+<h3 id="pourquoi-utiliser-flexbox">Pourquoi utiliser Flexbox?</h3>
+<ol>
+<li><strong>Flexibilité</strong>: Comme son nom l'indique, Flexbox est incroyablement flexible, ce qui permet de créer des mises en page dynamiques qui s'adaptent à différentes tailles d'écran et résolutions d'appareil.</li>
+<li><strong>Moins de hacks et de solutions de contournement</strong>: Avant Flexbox, le centrage vertical, par exemple, nécessitait des astuces et des solutions de contournement. Avec Flexbox, c'est simple et direct.</li>
+<li><strong>Mise en page unidimensionnelle</strong>: Idéale pour les composants de l'interface utilisateur et les petites mises en page où vous souhaitez organiser des éléments sur une colonne ou une ligne.</li>
+<li><strong>Réorganisation</strong>: Avec les propriétés <code>order</code>, vous pouvez facilement réorganiser les éléments sans changer le HTML.</li>
+<li><strong>Alignement et justification</strong>: Les propriétés <code>align-items</code>, <code>align-content</code>, <code>align-self</code>, <code>justify-content</code> permettent un contrôle précis de l'alignement et de la justification des éléments.</li>
+<li><strong>Gestion des espaces</strong>: Avec Flexbox, il est facile de répartir l'espace entre les éléments, même si leurs tailles sont inconnues.</li>
+<li><strong>Source de cohérence</strong>: Flexbox est supporté par tous les navigateurs modernes, ce qui en fait une option fiable pour la conception web moderne.</li>
+</ol>
+<p>En somme, Flexbox offre une solution plus propre, plus robuste et plus cohérente pour concevoir des mises en page complexes, tout en offrant une meilleure adaptabilité aux différents appareils et tailles d'écran. Pour les développeurs qui ont lutté avec les limitations des modèles de mise en page précédents, Flexbox est un véritable soulagement.</p>
+<h2 id="bases-de-flexbox">Bases de Flexbox</h2>
+<h3 id="conteneur-flex-flex-container-vs-%C3%A9l%C3%A9ment-flex-flex-item">Conteneur flex (flex container) vs Élément flex (flex item)</h3>
+<p>Flexbox est basé sur un modèle de conteneur et d'élément. Le conteneur est l'élément parent qui contient les éléments enfants, ou éléments flex. Les éléments flex sont les enfants directs du conteneur flex. Les éléments flex peuvent être des éléments HTML ou des éléments générés par CSS, tels que des pseudo-éléments.</p>
+<h3 id="d%C3%A9finir-un-conteneur-flex-display-flex-ou-display-inline-flex">Définir un conteneur flex: <code>display: flex</code> ou <code>display: inline-flex</code></h3>
+<p>Pour définir un conteneur flex, on utilise la propriété <code>display</code> avec la valeur <code>flex</code> ou <code>inline-flex</code>. La valeur <code>flex</code> crée un conteneur de type bloc, tandis que la valeur <code>inline-flex</code> crée un conteneur de type ligne.</p>
+<p><code>display: flex</code> est la valeur par défaut de la propriété <code>display</code> pour les éléments <code>&lt;flex&gt;</code>.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex; <span class="hljs-comment">/* ou inline-flex */</span>
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid black; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>display: flex</code></p>
+<div class="container" style="display: flex; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 3</div>
+</div>
+<p><code>display: inline-flex</code> est la valeur par défaut de la propriété <code>display</code> pour les éléments <code>&lt;inline-flex&gt;</code>.</p>
+<p>La propriété <code>display: inline-flex</code> fonctionne de la même manière que <code>display: flex</code>, sauf que le conteneur lui-même est traité comme un élément en ligne (semblable à un <code>&lt;span&gt;</code>) plutôt que comme un bloc (semblable à un <code>&lt;div&gt;</code>). Cela signifie qu'il s'alignera avec d'autres éléments en ligne et n'occupera que l'espace nécessaire pour son contenu, au lieu de prendre toute la largeur de son conteneur parent comme le ferait un élément de type block.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: inline-flex;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>display: inline-flex</code></p>
+<div class="container" style="display: inline-flex; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 3</div>
+</div>
+<h2 id="direction-et-ordre">Direction et ordre</h2>
+<h3 id="flex-direction-row-row-reverse-column-column-reverse"><code>flex-direction</code>: row, row-reverse, column, column-reverse</h3>
+<p>La propriété <code>flex-direction</code> définit la direction principale dans laquelle les éléments flex sont affichés dans le conteneur flex. Il existe quatre valeurs possibles pour <code>flex-direction</code>:</p>
+<ul>
+<li><code>row</code>: Les éléments flex sont affichés horizontalement, de gauche à droite. C'est la valeur par défaut.</li>
+<li><code>row-reverse</code>: Les éléments flex sont affichés horizontalement, de droite à gauche.</li>
+<li><code>column</code>: Les éléments flex sont affichés verticalement, de haut en bas.</li>
+<li><code>column-reverse</code>: Les éléments flex sont affichés verticalement, de bas en haut.</li>
+</ul>
+<p>La valeur <code>row</code></p>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: row;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: row;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>flex-direction: row</code></p>
+<div class="container" style="display: flex; flex-direction: row; width: 50%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 3</div>
+</div>
+<p>La valeur <code>row-reverse</code></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: row-reverse;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>flex-direction: row-reverse</code></p>
+<div class="container" style="display: flex; flex-direction: row-reverse; width: 50%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 3</div>
+</div>
+<p>La valeur <code>column</code></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>flex-direction: column</code></p>
+<div class="container" style="display: flex; flex-direction: column; width: 50%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 3</div>
+</div>
+<p>La valeur <code>column-reverse</code></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column-reverse;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>flex-direction: column-reverse</code></p>
+<div class="container" style="display: flex; flex-direction: column-reverse; width: 50%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 3</div>
+</div>
+<h3 id="flex-wrap-nowrap-wrap-wrap-reverse"><code>flex-wrap</code>: nowrap, wrap, wrap-reverse</h3>
+<p>La propriété <code>flex-wrap</code> définit si les éléments flex doivent être affichés sur une seule ligne ou plusieurs lignes. Il existe trois valeurs possibles pour <code>flex-wrap</code>:</p>
+<ul>
+<li><code>nowrap</code>: Les éléments flex sont affichés sur une seule ligne (ce qui est la valeur par défaut).</li>
+<li><code>wrap</code>: Les éléments flex sont affichés sur plusieurs lignes, de haut en bas.</li>
+<li><code>wrap-reverse</code>: Les éléments flex sont affichés sur plusieurs lignes, de bas en haut.</li>
+</ul>
+<p>La valeur <code>nowrap</code></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: nowrap;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>flex-wrap: nowrap</code></p>
+<div class="container" style="display: flex; flex-wrap: nowrap; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 3</div>
+</div>
+<p>La valeur <code>wrap</code></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>flex-wrap: wrap</code></p>
+<div class="container" style="display: flex; flex-wrap: wrap; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 3</div>
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 4</div>
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 5</div>
+</div>
+<p>La valeur <code>wrap-reverse</code></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap-reverse;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>flex-wrap: wrap-reverse</code></p>
+<div class="container" style="display: flex; flex-wrap: wrap-reverse; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 3</div>
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 4</div>
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 5</div>
+</div>
+<h3 id="flex-flow-combinaison-de-flex-direction-et-flex-wrap"><code>flex-flow</code>: combinaison de flex-direction et flex-wrap</h3>
+<p>La propriété <code>flex-flow</code> est une propriété raccourcie qui combine les propriétés <code>flex-direction</code> et <code>flex-wrap</code>. La valeur par défaut de <code>flex-flow</code> est <code>row nowrap</code>.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-flow</span>: row wrap;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>flex-flow: row wrap</code></p>
+<div class="container" style="display: flex; flex-flow: row wrap; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 3</div>
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 4</div>
+    <div class="item" style="padding: 10px; border: 1px solid red; width: 100px;">Item 5</div>
+</div>
+<h3 id="order-d%C3%A9finir-lordre-des-%C3%A9l%C3%A9ments-flex"><code>order</code>: définir l'ordre des éléments flex</h3>
+<p>La propriété <code>order</code> définit l'ordre dans lequel les éléments flex sont affichés dans le conteneur flex. La valeur par défaut de <code>order</code> est <code>0</code>. Les valeurs négatives sont autorisées.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+
+<span class="hljs-selector-class">.item</span><span class="hljs-selector-pseudo">:nth-child(1)</span> {
+  <span class="hljs-attribute">order</span>: <span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.item</span><span class="hljs-selector-pseudo">:nth-child(2)</span> {
+  <span class="hljs-attribute">order</span>: <span class="hljs-number">1</span>;
+}
+</div></code></pre>
+<p>Résultat: <code>order: 1</code></p>
+<div class="container" style="display: flex; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red; order: 2;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red; order: 1;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 3</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 4</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 5</div>
+</div>
+<p>Avec cette configuration, <code>Item 2</code> apparaîtra avant <code>Item 1</code> dans le conteneur.</p>
+<h2 id="alignement-et-justification">Alignement et justification</h2>
+<h3 id="justify-content-flex-start-flex-end-center-space-between-space-around-space-evenly"><code>justify-content</code>: flex-start, flex-end, center, space-between, space-around, space-evenly</h3>
+<p>La propriété <code>justify-content</code> définit l'alignement des éléments flex le long de l'axe principal (main axis). Il existe six valeurs possibles pour <code>justify-content</code>:</p>
+<ul>
+<li><code>flex-start</code>: Les éléments flex sont alignés au début du conteneur flex. C'est la valeur par défaut.</li>
+<li><code>flex-end</code>: Les éléments flex sont alignés à la fin du conteneur flex.</li>
+<li><code>center</code>: Les éléments flex sont centrés dans le conteneur flex.</li>
+<li><code>space-between</code>:</li>
+<li><code>space-around</code>:</li>
+<li><code>space-evenly</code>:</li>
+</ul>
+<ul>
+<li>La valeur <code>flex-start</code></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: flex-start;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>justify-content: flex-start</code></p>
+<div class="container" style="display: flex; justify-content: flex-start; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 3</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 4</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 5</div>
+</div>
+<p>Avec cette configuration, tous les éléments flex seront alignés au début du conteneur flex.</p>
+<ul>
+<li>La valeur <code>flex-end</code></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: flex-end;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>justify-content: flex-end</code></p>
+<div class="container" style="display: flex; justify-content: flex-end; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 3</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 4</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 5</div>
+</div>
+<p>Avec cette configuration, tous les éléments flex seront alignés à la fin du conteneur flex.</p>
+<ul>
+<li>La valeur <code>center</code></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>justify-content: center</code></p>
+<div class="container" style="display: flex; justify-content: center; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 3</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 4</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 5</div>
+</div>
+<p>Avec cette configuration, tous les éléments flex seront centrés dans le conteneur flex.</p>
+<ul>
+<li>La valeur <code>space-between</code></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: space-between;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>justify-content: space-between</code></p>
+<div class="container" style="display: flex; justify-content: space-between; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 3</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 4</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 5</div>
+</div>
+<p>Dans cet exemple, vous verrez que le premier élément est aligné avec le début du conteneur, le dernier élément est aligné avec la fin du conteneur, et l'espace restant est réparti également entre les éléments.</p>
+<p>Il faut savoir que si vous n'avez que deux éléments dans votre conteneur flex, space-between aura le même effet que si vous aviez utilisé <code>flex-start</code> pour le premier élément et <code>flex-end</code> pour le second.</p>
+<ul>
+<li>La valeur <code>space-around</code></li>
+</ul>
+<p>Lorsque vous utilisez la valeur space-around pour la propriété justify-content, chaque élément flex reçoit un espace égal de part et d'autre. Cela signifie que l'espace entre deux éléments adjacents sera le double de l'espace entre l'un de ces éléments et le bord du conteneur. En d'autres termes, les éléments flex bénéficient d'un espace égal avant et après eux.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: space-around;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>justify-content: space-around</code></p>
+<div class="container" style="display: flex; justify-content: space-around; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 3</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 4</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 5</div>
+</div>
+<p>Dans cet exemple, l'espace autour de chaque élément est réparti de manière égale. Par conséquent, l'espace entre deux éléments consécutifs sera toujours égal au double de l'espace entre un élément et le bord du conteneur.</p>
+<p>C'est une propriété utile lorsque vous voulez que vos éléments soient répartis uniformément, tout en ayant une certaine marge autour d'eux par rapport aux bords du conteneur.</p>
+<ul>
+<li>La valeur <code>space-evenly</code></li>
+</ul>
+<p>La valeur space-evenly pour la propriété <code>justify-content</code> répartit uniformément l'espace entre les éléments flex et aussi entre les éléments et les bords du conteneur. C'est une distribution très équilibrée de l'espace, différente de <code>space-around</code> et <code>space-between</code>.</p>
+<p>En utilisant <code>space-evenly</code>, l'espace entre deux éléments adjacents est le même que l'espace entre le premier élément et le bord du conteneur, ainsi que l'espace entre le dernier élément et le bord du conteneur.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: space-evenly;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>justify-content: space-evenly</code></p>
+<div class="container" style="display: flex; justify-content: space-evenly; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 3</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 4</div>
+    <div class="item" style="padding: 10px; border: 1px solid red;">Item 5</div>
+</div>
+<p>Avec cette configuration, l'espace est réparti de la manière la plus uniforme possible, tant entre les éléments eux-mêmes qu'entre les éléments et les bords du conteneur. C'est une excellente option si vous souhaitez une distribution totalement égale de l'espace dans votre conteneur flex.</p>
+<h3 id="align-items-flex-start-flex-end-center-baseline-stretch"><code>align-items</code>: flex-start, flex-end, center, baseline, stretch</h3>
+<p>La propriété <code>align-items</code> est utilisée en CSS Flexbox pour aligner les éléments flex le long de l'axe transversal (cross axis), c'est-à-dire perpendiculairement à l'axe principal. Cette propriété a plusieurs valeurs possibles :</p>
+<ul>
+<li><code>flex-start</code>: Les éléments flex sont alignés au début du conteneur flex. C'est la valeur par défaut.</li>
+<li><code>flex-end</code>: Les éléments flex sont alignés à la fin du conteneur flex.</li>
+<li><code>center</code>: Les éléments flex sont centrés dans le conteneur flex.</li>
+<li><code>baseline</code>: Les éléments flex sont alignés sur leur ligne de base commune. Cela signifie que les éléments flex sont alignés en fonction de leur texte.</li>
+<li><code>stretch</code>: Les éléments flex sont étirés pour remplir le conteneur flex.</li>
+</ul>
+<ul>
+<li>La valeur <code>flex-start</code></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: flex-start;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>align-items: flex-start</code></p>
+<div class="container" style="display: flex; align-items: flex-start; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 3</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 4</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 5</div>
+</div>
+<p>Avec cette configuration, tous les éléments flex seront alignés au haut du conteneur flex.</p>
+<ul>
+<li>La valeur <code>flex-end</code></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: flex-end;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>align-items: flex-end</code></p>
+<div class="container" style="display: flex; align-items: flex-end; height: 200px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 3</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 4</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 5</div>
+</div>
+<p>Avec cette configuration, tous les éléments flex seront alignés au bas du conteneur flex.</p>
+<ul>
+<li>La valeur <code>center</code></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>align-items: center</code></p>
+<div class="container" style="display: flex; align-items: center; height: 200px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 3</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 4</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 5</div>
+</div>
+<p>Avec cette configuration, tous les éléments flex seront alignés au centre du conteneur flex.</p>
+<ul>
+<li>La valeur <code>baseline</code></li>
+</ul>
+<p>La valeur <code>baseline</code> pour la propriété <code>align-items</code> aligne les éléments flex sur leur ligne de base commune. Cela signifie que les éléments flex sont alignés en fonction de leur texte.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"font-size: 20px;"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"font-size: 30px;"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"font-size: 40px;"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"font-size: 50px;"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: baseline;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>align-items: baseline</code></p>
+<div class="container" style="display: flex; align-items: baseline; height: 200px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="font-size: 10px; padding: 20px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="font-size: 20px; padding: 20px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="font-size: 30px; padding: 20px; border: 1px solid red;">Item 3</div>
+    <div class="item" style="font-size: 40px; padding: 20px; border: 1px solid red;">Item 4</div>
+    <div class="item" style="font-size: 50px; padding: 20px; border: 1px solid red;">Item 5</div>
+</div>
+<p>Avec cette configuration, tous les éléments flex seront alignés sur leur ligne de base commune. Cela signifie que les éléments flex sont alignés en fonction de leur texte.</p>
+<ul>
+<li>La valeur <code>stretch</code></li>
+</ul>
+<p>La valeur <code>stretch</code> pour la propriété <code>align-items</code> étire les éléments flex pour remplir le conteneur flex. C'est la valeur par défaut de <code>align-items</code>.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: stretch;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>align-items: stretch</code></p>
+<div class="container" style="display: flex; align-items: stretch; height: 200px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="height: 50px; padding: 20px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="height: 50px; padding: 20px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="height: 50px; padding: 20px; border: 1px solid red;">Item 3</div>
+    <div class="item" style="height: 50px; padding: 20px; border: 1px solid red;">Item 4</div>
+    <div class="item" style="height: 50px; padding: 20px; border: 1px solid red;">Item 5</div>
+</div>
+<p>Avec cette configuration, tous les éléments flex seront étirés pour remplir le conteneur flex.</p>
+<h3 id="align-content-flex-start-flex-end-center-space-between-space-around-stretch"><code>align-content</code>: flex-start, flex-end, center, space-between, space-around, stretch</h3>
+<p>La propriété <code>align-content</code> définit l'alignement des lignes de l'axe transversal (cross axis) dans un conteneur flex. Cette propriété a plusieurs valeurs possibles :</p>
+<ul>
+<li><code>flex-start</code>: Les lignes sont alignées au début du conteneur flex. C'est la valeur par défaut.</li>
+<li><code>flex-end</code>: Les lignes sont alignées à la fin du conteneur flex.</li>
+<li><code>center</code>: Les lignes sont centrées dans le conteneur flex.</li>
+<li><code>space-between</code>: Les lignes sont réparties uniformément dans le conteneur flex. L'espace entre deux lignes consécutives est le même que l'espace entre le premier et le dernier élément.</li>
+<li><code>space-around</code>: Les lignes sont réparties uniformément dans le conteneur flex. L'espace entre deux lignes consécutives est le double de l'espace entre le premier et le dernier élément.</li>
+<li><code>stretch</code>: Les lignes sont étirées pour remplir le conteneur flex.</li>
+</ul>
+<ul>
+<li>La valeur <code>flex-start</code></li>
+</ul>
+<p>La propriété align-content détermine la manière dont les lignes d'un conteneur flex sont réparties lorsque l'espace restant sur l'axe transversal (cross axis) est supérieur à celui requis pour afficher ces lignes. Elle est surtout pertinente lorsqu'il y a plusieurs lignes d'éléments, c'est-à-dire lorsque flex-wrap est réglé sur wrap.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">align-content</span>: flex-end;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>; <span class="hljs-comment">/* Hauteur fixe pour bien montrer l'effet de align-content */</span>
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">70%</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-comment">/* Permet de forcer l'enveloppement des éléments */</span>
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>align-content: flex-start</code></p>
+<div class="container" style="display: flex; flex-wrap: wrap; align-content: flex-start; height: 300px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 3</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 4</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 5</div>
+</div>
+<p>Les lignes sont emballées vers le haut du conteneur. L'espace excédentaire est placé sous la dernière ligne.</p>
+<ul>
+<li>La valeur <code>flex-end</code></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">align-content</span>: flex-end;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>; <span class="hljs-comment">/* Hauteur fixe pour bien montrer l'effet de align-content */</span>
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">70%</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-comment">/* Permet de forcer l'enveloppement des éléments */</span>
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>align-content: flex-end</code></p>
+<div class="container" style="display: flex; flex-wrap: wrap; align-content: flex-end; height: 300px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 3</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 4</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 5</div>
+</div>
+<p>Avec cette configuration, les éléments s'envelopperont (grâce à flex-wrap: wrap) et l'espace excédentaire sera placé au-dessus des lignes d'éléments (grâce à align-content: flex-end).</p>
+<ul>
+<li>La valeur <code>center</code></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">align-content</span>: center;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>; <span class="hljs-comment">/* Hauteur fixe pour bien montrer l'effet de align-content */</span>
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">70%</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-comment">/* Permet de forcer l'enveloppement des éléments */</span>
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>align-content: center</code></p>
+<div class="container" style="display: flex; flex-wrap: wrap; align-content: center; height: 200px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 3</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 4</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 5</div>
+</div>
+<p>Les lignes sont centrées verticalement dans le conteneur, avec un espace égal au-dessus et en dessous.</p>
+<ul>
+<li>La valeur <code>space-between</code></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">align-content</span>: space-between;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>; <span class="hljs-comment">/* Hauteur fixe pour bien montrer l'effet de align-content */</span>
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">70%</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">30%</span>; <span class="hljs-comment">/* Permet de forcer l'enveloppement des éléments */</span>
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>align-content: space-between</code></p>
+<div class="container" style="display: flex; flex-wrap: nowrap; align-content: space-between; height: 100px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="width: 30%; padding: 20px; border: 1px solid red; height: 50px;">Item 1</div>
+    <div class="item" style="width: 30%; padding: 20px; border: 1px solid red; height: 50px;">Item 2</div>
+    <div class="item" style="width: 30%; padding: 20px; border: 1px solid red; height: 50px;">Item 3</div>
+    <div class="item" style="width: 30%; padding: 20px; border: 1px solid red; height: 50px;">Item 4</div>
+    <div class="item" style="width: 30%; padding: 20px; border: 1px solid red; height: 50px;">Item 5</div>
+</div>
+<p>Lorsque plusieurs lignes sont présentes dans un conteneur flex, la propriété align-content: space-between répartit uniformément l'espace entre les lignes. Cela signifie qu'il n'y a pas d'espace excédentaire au-dessus de la première ligne ni en dessous de la dernière ligne, mais l'espace est réparti également entre les lignes intermédiaires.</p>
+<ul>
+<li>La valeur <code>space-around</code></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">align-content</span>: space-around;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>; <span class="hljs-comment">/* Hauteur fixe pour bien montrer l'effet de align-content */</span>
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">70%</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">30%</span>; <span class="hljs-comment">/* Permet de forcer l'enveloppement des éléments */</span>
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>align-content: space-around</code></p>
+<div class="container" style="display: flex; flex-wrap: wrap; align-content: space-around; height: 200px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="width: 30%; padding: 20px; border: 1px solid red; height: 50px;">Item 1</div>
+    <div class="item" style="width: 30%; padding: 20px; border: 1px solid red; height: 50px;">Item 2</div>
+    <div class="item" style="width: 30%; padding: 20px; border: 1px solid red; height: 50px;">Item 3</div>
+</div>
+<p>Lorsque plusieurs lignes sont présentes dans un conteneur flex, la propriété align-content: space-around répartit uniformément l'espace entre les lignes. Cela signifie qu'il n'y a pas d'espace excédentaire au-dessus de la première ligne ni en dessous de la dernière ligne, mais l'espace est réparti également entre les lignes intermédiaires.</p>
+<ul>
+<li>La valeur <code>stretch</code></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 50px;"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">align-content</span>: stretch;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>; <span class="hljs-comment">/* Hauteur fixe pour bien montrer l'effet de align-content */</span>
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">70%</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>align-content: stretch</code></p>
+<div class="container" style="display: flex; flex-wrap: wrap; align-content: stretch; height: 100px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 20px; border: 1px solid red; height: 50px;">Item 1</div>
+    <div class="item" style="padding: 20px; border: 1px solid red; height: 50px;">Item 2</div>
+    <div class="item" style="padding: 20px; border: 1px solid red; height: 50px;">Item 3</div>
+</div>
+<p>Lorsque plusieurs lignes sont présentes dans un conteneur flex, la propriété align-content: stretch étire les lignes pour remplir le conteneur flex. C'est la valeur par défaut de align-content.</p>
+<h3 id="align-self--auto-flex-start-flex-end-center-baseline-stretch">align-self : auto, flex-start, flex-end, center, baseline, stretch</h3>
+<p>La propriété CSS align-self permet d'ajuster l'alignement d'un élément individuel à l'intérieur d'un conteneur flex ou grid. Cette propriété est très utile lorsque nous voulons spécifiquement changer l'alignement d'un élément particulier sans affecter les autres éléments du conteneur. Elle possède plusieurs valeurs possibles :</p>
+<ul>
+<li><code>auto</code>: La valeur par défaut. L'élément hérite de la valeur de align-items de son parent, ou de stretch si l'élément n'a pas de parent.</li>
+<li><code>flex-start</code>: L'élément est aligné au début du conteneur flex.</li>
+<li><code>flex-end</code>: L'élément est aligné à la fin du conteneur flex.</li>
+<li><code>center</code>: L'élément est centré dans le conteneur flex.</li>
+<li><code>baseline</code>: L'élément est aligné sur sa ligne de base commune. Cela signifie que l'élément est aligné en fonction de son texte.</li>
+<li><code>stretch</code>: L'élément est étiré pour remplir le conteneur flex.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item default"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item special"</span>&gt;</span>Item 2 (special)<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item default"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center; <span class="hljs-comment">/* Alignement par défaut pour tous les éléments */</span>
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+
+<span class="hljs-selector-class">.special</span> {
+  <span class="hljs-attribute">align-self</span>: flex-start; <span class="hljs-comment">/* Cet élément sera aligné au début du conteneur */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>align-self: flex-start</code></p>
+<div class="container" style="display: flex; align-items: center; height: 200px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item default" style="padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item special" style="align-self: flex-start; padding: 10px; border: 1px solid red;">Item 2 (special)</div>
+    <div class="item default" style="padding: 10px; border: 1px solid red;">Item 3</div>
+</div>
+<p>L'élément &quot;Item 2 (special)&quot; est aligné au début du conteneur grâce à align-self: flex-start, alors que les autres éléments sont centrés à cause de <code>align-items: center</code> sur le conteneur.</p>
+<h2 id="taille-des-%C3%A9l%C3%A9ments-flex">Taille des éléments flex</h2>
+<p>Lors de la conception de mises en page flexibles avec Flexbox, il est souvent nécessaire d'ajuster la taille des éléments en fonction de l'espace disponible. Pour cela, Flexbox offre plusieurs propriétés pour contrôler la capacité des éléments à grandir, rétrécir, ou définir leur taille de base.</p>
+<h3 id="flex-grow-0-1-2-3-4-5--d%C3%A9finit-la-capacit%C3%A9-dun-%C3%A9l%C3%A9ment-%C3%A0-grandir"><code>flex-grow</code>: 0, 1, 2, 3, 4, 5 : Définit la capacité d'un élément à grandir</h3>
+<p>La propriété <code>flex-grow</code> définit la capacité d'un élément à grandir pour remplir l'espace disponible dans un conteneur flex. Cette propriété a plusieurs valeurs possibles :</p>
+<ul>
+<li><code>0</code>: L'élément ne grandira pas pour remplir l'espace disponible. C'est la valeur par défaut.</li>
+<li><code>1</code>: L'élément grandira pour remplir l'espace disponible.</li>
+<li><code>2</code>: L'élément grandira deux fois plus que les autres éléments.</li>
+<li><code>3</code>: L'élément grandira trois fois plus que les autres éléments.</li>
+<li><code>4</code>: L'élément grandira quatre fois plus que les autres éléments.</li>
+<li><code>5</code>: L'élément grandira cinq fois plus que les autres éléments.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item grow-1"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item grow-2"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item grow-3"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+
+<span class="hljs-selector-class">.grow-1</span> {
+  <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-selector-class">.grow-2</span> {
+  <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.grow-3</span> {
+  <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">3</span>;
+}
+</div></code></pre>
+<p>Résultat: <code>flex-grow: 1</code></p>
+<div class="container" style="display: flex; height: 200px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item grow-1" style="flex-grow: 1; padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item grow-2" style="flex-grow: 1; padding: 10px; border: 1px solid red;">Item 2</div>
+    <div class="item grow-3" style="flex-grow: 1; padding: 10px; border: 1px solid red;">Item 3</div>
+</div>
+<p>Avec cette configuration, tous les éléments flex grandiront pour remplir l'espace disponible dans le conteneur flex. Comme tous les éléments ont la même valeur de flex-grow, ils grandiront tous de la même quantité.</p>
+<h3 id="flex-shrink-d%C3%A9finit-la-capacit%C3%A9-dun-%C3%A9l%C3%A9ment-%C3%A0-r%C3%A9tr%C3%A9cir"><code>flex-shrink</code>: Définit la capacité d'un élément à rétrécir</h3>
+<p>La propriété <code>flex-shrink</code> fonctionne de la même manière que <code>flex-grow</code>, mais dans le sens inverse. Elle détermine la capacité d'un élément à rétrécir lorsque l'espace est limité. La valeur par défaut est <code>1</code>, ce qui signifie que l'élément se réduira pour éviter un débordement.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item shrink-1"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item shrink-2"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item shrink-3"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>flex-shrink: 1</code></p>
+<div class="container" style="display: flex; height: 200px; width: 30%; border: 1px solid green; padding: 15px">
+    <div class="item shrink-1" style="flex-shrink: 1; padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item shrink-2" style="flex-shrink: 1; padding: 10px; border: 1px solid red;">Item 2</div>
+    <div class="item shrink-3" style="flex-shrink: 1; padding: 10px; border: 1px solid red;">Item 3</div>
+</div>
+<p>Cela signifie que l'élément a une capacité de croissance (flex-grow) de 1, une capacité de rétrécissement (<code>flex-shrink</code>) de <code>0</code>, et une taille de base (<code>flex-basis</code>) de <code>200px</code>.</p>
+<p>L'utilisation de ces propriétés permet d'obtenir une grande flexibilité et un contrôle précis sur la manière dont les éléments s'ajustent et se répartissent dans un conteneur flex.</p>
+<h3 id="flex-basis-d%C3%A9finit-la-taille-de-base-dun-%C3%A9l%C3%A9ment"><code>flex-basis</code>: Définit la taille de base d'un élément</h3>
+<p>La propriété <code>flex-basis</code> définit la taille de base d'un élément avant qu'il ne grandisse ou ne rétrécisse en fonction des propriétés <code>flex-grow</code> et <code>flex-shrink</code>. Elle peut accepter des valeurs en <code>%, px, em, etc</code>., ou la valeur <code>auto</code>, qui utilise la taille intrinsèque de l'élément ou sa valeur <code>width</code> ou <code>height</code>.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item basis-1"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item basis-2"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item basis-3"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">flex-basis</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>flex-basis: 100px</code></p>
+<div class="container" style="display: flex; height: 200px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item basis-1" style="flex-basis: 100px; padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item basis-2" style="flex-basis: 100px; padding: 10px; border: 1px solid red;">Item 2</div>
+    <div class="item basis-3" style="flex-basis: 100px; padding: 10px; border: 1px solid red;">Item 3</div>
+</div>
+<p>Cela signifie que l'élément a une capacité de croissance (flex-grow) de 1, une capacité de rétrécissement (<code>flex-shrink</code>) de <code>1</code>, et une taille de base (<code>flex-basis</code>) de <code>100px</code>.</p>
+<h3 id="flex-raccourci-pour-flex-grow-flex-shrink-et-flex-basis"><code>flex</code>: raccourci pour flex-grow, flex-shrink et flex-basis</h3>
+<p>La propriété flex est un raccourci pour définir flex-grow, flex-shrink, et flex-basis en une seule déclaration. La syntaxe générale est : flex: [flex-grow] [flex-shrink] [flex-basis]</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item flex-1"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item flex-2"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item flex-3"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>flex: 1 1 100px</code></p>
+<div class="container" style="display: flex; height: 200px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item flex-1" style="flex: 1 1 100px; padding: 10px; border: 1px solid red;">Item 1</div>
+    <div class="item flex-2" style="flex: 1 1 100px; padding: 10px; border: 1px solid red;">Item 2</div>
+    <div class="item flex-3" style="flex: 1 1 100px; padding: 10px; border: 1px solid red;">Item 3</div>
+</div>
+<p>Cela signifie que l'élément a une capacité de croissance (flex-grow) de 1, une capacité de rétrécissement (<code>flex-shrink</code>) de <code>1</code>, et une taille de base (<code>flex-basis</code>) de <code>100px</code>.</p>
+<h2 id="autres-propri%C3%A9t%C3%A9s">Autres propriétés</h2>
+<h3 id="gap-d%C3%A9finit-lespace-entre-les-%C3%A9l%C3%A9ments"><code>gap</code>: Définit l'espace entre les éléments</h3>
+<p>La propriété <code>gap</code> est utilisée pour définir l'espacement entre les éléments <code>flex</code> au sein d'un conteneur flex. Elle est particulièrement utile car elle permet d'ajouter de l'espacement entre les éléments sans affecter les marges extérieures du conteneur. Cette propriété était initialement associée aux grilles (<code>Grid Layout</code>), mais elle est maintenant applicable aux conteneurs flex (Flexbox) dans les navigateurs modernes.</p>
+<p>La propriété gap peut accepter une ou deux valeurs :</p>
+<ol>
+<li>Une seule valeur (par exemple, <code>gap: 20px;</code>) : Cette valeur s'appliquera à la fois horizontalement (entre les éléments sur une ligne) et verticalement (entre les lignes).</li>
+<li>Deux valeurs (par exemple, gap: <code>20px 30px;</code>) : La première valeur s'applique verticalement (entre les lignes) et la seconde horizontalement (entre les éléments sur une ligne).</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex-container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.flex-container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">gap</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>gap: 20px</code></p>
+<div class="flex-container" style="display: flex; gap: 20px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 1</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 2</div>
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 3</div>
+</div>
+<p>Dans cet exemple, un espacement de <code>20px</code> sera ajouté entre chaque élément flex du conteneur.</p>
+<p>L'utilisation de <code>gap</code> avec Flexbox simplifie la gestion de l'espacement entre les éléments, car il n'est plus nécessaire d'utiliser des marges complexes et des pseudo-éléments pour gérer l'espacement sans affecter les marges extérieures du conteneur.</p>
+<h2 id="exemples-pratiques">Exemples pratiques</h2>
+<h3 id="centrer-un-%C3%A9l%C3%A9ment-dans-un-conteneur-flex">Centrer un élément dans un conteneur flex</h3>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item"</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>justify-content: center; align-items: center;</code></p>
+<div class="container" style="display: flex; justify-content: center; align-items: center; height: 200px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="item" style="padding: 20px; border: 1px solid red;">Item 1</div>
+</div>
+<h3 id="mise-en-page-den-t%C3%AAte-avec-logo-et-navigation">Mise en page d'en-tête avec logo et navigation</h3>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"header"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"logo"</span>&gt;</span>Logo<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Accueil<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>À propos<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Contact<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.header</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: space-between;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-class">.logo</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.5rem</span>;
+  <span class="hljs-attribute">font-weight</span>: bold;
+}
+
+<span class="hljs-selector-class">.nav</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">gap</span>: <span class="hljs-number">20px</span>;
+}
+
+<span class="hljs-selector-class">.nav</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">text-decoration</span>: none;
+  <span class="hljs-attribute">color</span>: black;
+}
+</div></code></pre>
+<p>Résultat: <code>justify-content: space-between; align-items: center;</code></p>
+<header class="header" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: black;">
+    <div class="logo" style="font-weight: bold; font-size: 1.5rem; color: white">Logo</div>
+    <nav class="nav" style="display: flex; gap: 20px;">
+        <a href="#" style="text-decoration: none; color: red; margin-left: 20px;">Accueil</a>
+        <a href="#" style="text-decoration: none; color: red; margin-left: 20px;">À propos</a>
+        <a href="#" style="text-decoration: none; color: red; margin-left: 20px;">Contact</a>
+    </nav>
+</header>
+<h3 id="mise-en-page-dun-formulaire">Mise en page d'un formulaire</h3>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"name"</span>&gt;</span>Nom :<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"name"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"name"</span> /&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"email"</span>&gt;</span>E-mail :<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"email"</span> /&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"message"</span>&gt;</span>Message :<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"message"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"message"</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">"4"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>Envoyer<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">form</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+  <span class="hljs-attribute">gap</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green; <span class="hljs-comment">/* Juste pour visualiser le conteneur */</span>
+}
+
+<span class="hljs-selector-tag">label</span> {
+  <span class="hljs-attribute">font-weight</span>: bold;
+}
+
+<span class="hljs-selector-tag">input</span>,
+<span class="hljs-selector-tag">textarea</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+
+<span class="hljs-selector-tag">button</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red; <span class="hljs-comment">/* Juste pour visualiser les éléments */</span>
+}
+</div></code></pre>
+<p>Résultat: <code>flex-direction: column; gap: 20px;</code></p>
+<form action="#" method="post" style="display: flex; flex-direction: column; gap: 15px; width: 300px;">
+    <label for="name" style="font-weight: bold;">Nom :</label>
+    <input type="text" id="name" name="name" style="padding: 8px; border: 1px solid #ccc; border-radius: 5px; background-color: #C9AE75">
+</form>
+<form action="#" method="post" style="display: flex; flex-direction: column; gap: 15px; width: 300px;">
+    <label for="email" style="font-weight: bold;">E-mail :</label>
+    <input type="email" id="email" name="email" style="padding: 8px; border: 1px solid #ccc; border-radius: 5px; background-color: #C9AE75">
+</form>
+<form action="#" method="post" style="display: flex; flex-direction: column; gap: 15px; width: 300px;">
+    <label for="message" style="font-weight: bold;">Message :</label>
+    <textarea id="message" name="message" rows="4" style="padding: 8px; border: 1px solid #ccc; border-radius: 5px; background-color: #C9AE75"></textarea>
+</form><br>
+<form action="#" method="post" style="display: flex; flex-direction: column; gap: 15px; width: 300px;">
+    <button type="submit" style="padding: 10px 15px; border: none; border-radius: 5px; background-color: #007BFF; color: #fff; cursor: pointer;">Envoyer</button>
+</form>
+<h3 id="grille-de-cartes-responsive">Grille de cartes responsive</h3>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card-grid"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card"</span>&gt;</span>Carte 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card"</span>&gt;</span>Carte 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card"</span>&gt;</span>Carte 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card"</span>&gt;</span>Carte 4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.card-grid</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">gap</span>: <span class="hljs-number">20px</span>;
+}
+
+<span class="hljs-selector-class">.card</span> {
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-built_in">calc</span>(<span class="hljs-number">25%</span> - <span class="hljs-number">20px</span>); <span class="hljs-comment">/* 25% moins le gap de 20px */</span>
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid black;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+}
+
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width:</span> <span class="hljs-number">768px</span>) {
+  <span class="hljs-selector-class">.card</span> {
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-built_in">calc</span>(<span class="hljs-number">50%</span> - <span class="hljs-number">20px</span>); <span class="hljs-comment">/* Sur les écrans plus petits, utilise 2 cartes par ligne */</span>
+  }
+}
+
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width:</span> <span class="hljs-number">480px</span>) {
+  <span class="hljs-selector-class">.card</span> {
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">100%</span>; <span class="hljs-comment">/* Sur les écrans encore plus petits, une carte par ligne */</span>
+  }
+}
+</div></code></pre>
+<p>Résultat: <code>flex-wrap: wrap; gap: 20px;</code></p>
+<div class="card-grid" style="display: flex; flex-wrap: wrap; gap: 20px; width: 70%; border: 1px solid green; padding: 15px">
+    <div class="card" style="flex: 1 1 300px; padding: 20px; border: 1px solid red;">Carte 1</div>
+    <div class="card" style="flex: 1 1 300px; padding: 20px; border: 1px solid red;">Carte 2</div>
+    <div class="card" style="flex: 1 1 300px; padding: 20px; border: 1px solid red;">Carte 3</div>
+    <div class="card" style="flex: 1 1 300px; padding: 20px; border: 1px solid red;">Carte 4</div>
+</div>
+<p>Avec ces exemples, vous pouvez voir comment Flexbox offre une grande flexibilité et facilite la création de diverses mises en page.</p>
+<h2 id="avantages-et-inconv%C3%A9nients">Avantages et inconvénients</h2>
+<h3 id="avantages">Avantages</h3>
+<ul>
+<li>
+<p><strong>Simplicité:</strong> Flexbox rend la mise en page, l'alignement et la distribution des espaces entre les éléments bien plus simples, notamment dans les situations où les tailles des éléments sont inconnues ou dynamiques.</p>
+</li>
+<li>
+<p><strong>Unidirectionnel:</strong> Contrairement à CSS Grid, qui fonctionne sur deux axes (colonnes et lignes), Flexbox est axé principalement sur un seul axe à la fois, ce qui le rend plus intuitif dans certaines situations.</p>
+</li>
+<li>
+<p><strong>Adaptabilité :</strong> Flexbox s'adapte bien aux différentes tailles d'écran, ce qui en fait une excellente option pour les designs responsives.</p>
+</li>
+<li>
+<p><strong>Alignement:</strong> Flexbox offre des solutions simples pour aligner des éléments verticalement, une tâche qui était plutôt compliquée avec les techniques de mise en page plus anciennes.</p>
+</li>
+<li>
+<p><strong>Ordre des éléments:</strong> Avec la propriété order, Flexbox permet de changer l'ordre visuel des éléments sans toucher à l'ordre du DOM, ce qui est pratique pour la responsivité.</p>
+</li>
+</ul>
+<h3 id="inconv%C3%A9nients">Inconvénients :</h3>
+<ul>
+<li>
+<p><strong>Navigateurs :</strong> Même si la prise en charge de Flexbox est désormais solide sur tous les navigateurs modernes, certains navigateurs plus anciens ne supportent pas toutes les fonctionnalités de Flexbox ou nécessitent des préfixes de fournisseur.</p>
+</li>
+<li>
+<p><strong>Complexité pour certains layouts:</strong> Pour des mises en page plus complexes, comme les grilles à deux dimensions, CSS Grid est plus approprié.</p>
+</li>
+</ul>
+<h2 id="quand-utiliser-flexbox-vs-dautres-m%C3%A9thodes-comme-grid-ou-floats">Quand utiliser Flexbox vs d'autres méthodes (comme Grid ou Floats)</h2>
+<h3 id="flexbox">Flexbox:</h3>
+<ul>
+<li>Lorsque vous travaillez avec des layouts linéaires (dans une seule direction).</li>
+<li>Pour aligner des éléments dans des barres de navigation, des en-têtes ou des pieds de page.</li>
+<li>Pour des composants d'interface utilisateur comme des listes, des groupes de boutons, etc.</li>
+</ul>
+<h3 id="css-grid">CSS Grid:</h3>
+<ul>
+<li>Pour des mises en page à deux dimensions (avec des colonnes et des lignes).</li>
+<li>Lorsque vous construisez des grilles complexes, comme des mises en page de magazine ou de portfolio.</li>
+</ul>
+<h3 id="floats">Floats:</h3>
+<ul>
+<li>Même si floats ont été largement remplacés par Flexbox et Grid pour la mise en page, ils peuvent encore être utiles pour des cas spécifiques comme faire flotter une image à l'intérieur d'un paragraphe de texte.</li>
+</ul>
+<h2 id="limitations-de-flexbox">Limitations de Flexbox</h2>
+<ol>
+<li>
+<p><strong>Unidirectionnel:</strong> Bien que cela puisse être vu comme un avantage dans certains cas, cela limite aussi Flexbox en termes de capacité à gérer des layouts complexes à deux dimensions.</p>
+</li>
+<li>
+<p><strong>Gestion des espaces:</strong> Dans certaines situations, il peut être un peu complexe de comprendre comment Flexbox répartit l'espace lorsque flex-grow et flex-shrink sont utilisés.</p>
+</li>
+<li>
+<p><strong>Limitation avec l'ancien contenu:</strong> Intégrer Flexbox dans un site existant avec de l'ancien CSS (comme des floats) peut entraîner des comportements inattendus.</p>
+</li>
+</ol>
+<p>En conclusion, Flexbox est un outil puissant pour la mise en page web et est parfait pour des designs linéaires. Cependant, pour des grilles plus complexes, CSS Grid est souvent une meilleure option. Il est aussi essentiel de toujours considérer les besoins du projet et les navigateurs cibles avant de choisir une méthode de mise en page.</p>
+<h2 id="ressources-et-outils">Ressources et outils</h2>
+<h3 id="outils-de-visualisation-flexbox-en-ligne">Outils de visualisation Flexbox en ligne</h3>
+<ul>
+<li><a href="https://codepen.io/enxaneta/full/adLPwv">Flexbox Playground</a></li>
+<li><a href="https://flexboxfroggy.com/">Flexbox Froggy</a></li>
+<li><a href="http://www.flexboxdefense.com/">Flexbox Defense</a></li>
+<li><a href="https://mastery.games/flexboxzombies/">Flexbox Zombies</a></li>
+<li><a href="https://yoksel.github.io/flex-cheatsheet/">Flexbox Cheatsheet</a></li>
+<li><a href="https://www.flexboxpatterns.com/home">Flexbox Patterns</a></li>
+<li><a href="http://www.flexboxdefense.com/">Flexbox Defense</a></li>
+<li><a href="https://codepen.io/enxaneta/full/adLPwv">Flexbox Playground</a></li>
+</ul>
+<h3 id="astuces-et-mod%C3%A8les-flexbox-courants">Astuces et modèles Flexbox courants</h3>
+<ul>
+<li><a href="https://www.flexboxpatterns.com/home">Flexbox Patterns</a></li>
+<li><a href="https://yoksel.github.io/flex-cheatsheet/">Flexbox Cheatsheet</a></li>
+<li><a href="http://flexboxgrid.com/">Flexbox Grid</a></li>
+<li><a href="https://flexbox-grid-generator.netlify.app/">Flexbox Grid Generator</a></li>
+</ul>
+<h3 id="biblioth%C3%A8ques-et-frameworks-utilisant-flexbox">Bibliothèques et frameworks utilisant Flexbox</h3>
+<ul>
+<li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+<li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
+<li><a href="https://bulma.io/">Bulma</a></li>
+<li><a href="https://materializecss.com/">Materialize</a></li>
+<li><a href="https://get.foundation/">Foundation</a></li>
+<li><a href="https://semantic-ui.com/">Semantic UI</a></li>
+<li><a href="https://purecss.io/">Pure CSS</a></li>
+<li><a href="http://getskeleton.com/">Skeleton</a></li>
+<li><a href="https://milligram.io/">Milligram</a></li>
+</ul>
+
+</body>
+</html>
