@@ -31,7 +31,7 @@ Bienvenue à ce cours sur le CSS ! Pour tirer le meilleur parti de ce contenu et
 
 4. **Participez à des discussions** :
 
-- Rejoignez des forums ou des groupes dédiés au CSS pour poser des questions, partager vos connaissances ou aider d'autres apprenants.
+- Rejoignez des forums ou des groupes dédiés au JavaScript pour poser des questions, partager vos connaissances ou aider d'autres apprenants.
 - Partager vos réalisations ou vos défis vous permettra d'obtenir des retours constructifs.
 
 5. **Consultez des ressources supplémentaires** :
