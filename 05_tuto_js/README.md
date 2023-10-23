@@ -10,7 +10,7 @@ Github : [teamflp](https://github.com/teamflp)
 
 ## Procédure pour utiliser ce cours
 
-Bienvenue à ce cours sur le CSS ! Pour tirer le meilleur parti de ce contenu et acquérir une compréhension solide de la matière, suivez les étapes recommandées ci-dessous.
+Bienvenue à ce cours sur le JavaScript ! Pour tirer le meilleur parti de ce contenu et acquérir une compréhension solide de la matière, suivez les étapes recommandées ci-dessous.
 
 1. **Préparation** :
 
