@@ -20,7 +20,7 @@ Bienvenue à ce cours sur le JavaScript ! Pour tirer le meilleur parti de ce con
 
 2. **Étude systématique** :
 
-- Commencez par l'**introduction** pour comprendre le contexte du CSS.
+- Commencez par l'**introduction** pour comprendre le contexte du JavaScript.
 - Poursuivez avec les **bases** avant de passer aux concepts avancés.
 - Ne sautez pas de sections. Chaque partie est conçue pour s'appuyer sur la précédente.
 
