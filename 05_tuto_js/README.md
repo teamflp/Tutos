@@ -4,13 +4,17 @@ Auteur : [Paterne Guélablé Gnonzion](https://gnpinformatique.fr)
 
 Formateur développeur web et mobile : **PHP, Symfony, Rust ...**
 
-Linkedin : [Paterne G. G.](https://www.linkedin.com/in/gnpinformatique/)
+Linkedin: [Paterne G. G.](https://www.linkedin.com/in/gnpinformatique/)
 
 Github : [teamflp](https://github.com/teamflp)
 
 ## Procédure pour utiliser ce cours
 
+
 Bienvenue à ce cours sur le JavaScript ! Pour tirer le meilleur parti de ce contenu et acquérir une compréhension solide de la matière, suivez les étapes recommandées ci-dessous.
+
+Bienvenue à ce cours sur le `JavaScript` ! Pour tirer le meilleur parti de ce contenu et acquérir une compréhension solide de la matière, suivez les étapes recommandées ci-dessous.
+
 
 1. **Préparation** :
 
@@ -20,7 +24,11 @@ Bienvenue à ce cours sur le JavaScript ! Pour tirer le meilleur parti de ce con
 
 2. **Étude systématique** :
 
+
 - Commencez par l'**introduction** pour comprendre le contexte du JavaScript.
+
+- Commencez par l'**introduction** pour comprendre le contexte du `JavaScript`.
+
 - Poursuivez avec les **bases** avant de passer aux concepts avancés.
 - Ne sautez pas de sections. Chaque partie est conçue pour s'appuyer sur la précédente.
 
@@ -31,7 +39,11 @@ Bienvenue à ce cours sur le JavaScript ! Pour tirer le meilleur parti de ce con
 
 4. **Participez à des discussions** :
 
+
 - Rejoignez des forums ou des groupes dédiés au JavaScript pour poser des questions, partager vos connaissances ou aider d'autres apprenants.
+
+- Rejoignez des forums ou des groupes dédiés au `JavaScript` pour poser des questions, partager vos connaissances ou aider d'autres apprenants.
+
 - Partager vos réalisations ou vos défis vous permettra d'obtenir des retours constructifs.
 
 5. **Consultez des ressources supplémentaires** :
@@ -375,8 +387,6 @@ Dans l'exemple ci-dessus, les deux lignes sont identiques pour JavaScript.
 
   - Les commentaires sur plusieurs lignes peuvent être imbriqués. Cependant, il y a une particularité avec les commentaires sur plusieurs lignes en JavaScript : ils ne peuvent pas être imbriqués de manière native.
 
-        - **De manière native :**
-
       ```js
       /* Ceci est un commentaire sur plusieurs lignes
        /* qui contient un autre commentaire sur plusieurs lignes */
@@ -386,7 +396,7 @@ Dans l'exemple ci-dessus, les deux lignes sont identiques pour JavaScript.
 
       Le code ci-dessus générera une erreur de syntaxe.
 
-        - Contournement :
+      Contournement :
 
       ```js
       /* Ceci est un commentaire sur plusieurs lignes
@@ -2631,7 +2641,7 @@ Formulaire de connexion
 
 - Description: Ces propriétés permettent de récupérer ou de définir le contenu textuel d'un élément.
 
-- Différence: Bien que similaires, `.textContent` récupère le contenu de tous les éléments, y compris les éléments <script> et <style>, tandis que `.innerText` est plus conscient du style et ne retourne que le texte visible à l'utilisateur.
+- Différence: Bien que similaires, `.textContent` récupère le contenu de tous les éléments, y compris les éléments `script` et `style`, tandis que `.innerText` est plus conscient du style et ne retourne que le texte visible à l'utilisateur.
 
 ```html
 <div id="monElement"></div>

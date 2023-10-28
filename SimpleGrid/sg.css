@@ -8,14 +8,41 @@
 * @Web: https://simplegrid.io
 */
 
-/* Base */
-* {
+/* Reset */
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
-/* Reset */
+html{
+
+    /* Variable pour les couleurs */
+    --sg-primary: #007BFF;
+    --sg-secondary: #6C757D;
+    --sg-success: #28A745;
+    --sg-info: #17A2B8;
+    --sg-warning: #FFC107;
+    --sg-danger: #DC3545;
+    --sg-light: #F8F9FA;
+    --sg-dark: #343a40;
+    --sg-white: #fff;
+    --sg-gray: #6c757d;
+    --sg-gray-dark: #343a40;
+    --sg-primary-text: #fff;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #212529;
+    font-size: 16px;
+    line-height: 1.42857143;
+    padding: 0;
+    margin: 0;
+}
+
 .sg-row {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     margin-left: -15px;
     margin-right: -15px;
@@ -31,7 +58,7 @@
 /* Container */
 .sg-container {
     width: 100%;
-    max-width: 960px; /* Largeur max du container */
+    max-width: 80%; /* Largeur max du container */
     margin: 0 auto;
     padding-left: 15px; /* Pour correspondre aux gouttières des colonnes */
     padding-right: 15px; /* Pour correspondre aux gouttières des colonnes */
@@ -43,15 +70,13 @@
     display: flex;
     -ms-flex-wrap: wrap; /* IE 10 */
     flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
 }
 
 /* Gouttières */
 [class*="sg-col-"] {
     padding-left: 15px;
     padding-right: 15px;
-    -ms-flex: 0 0 100%; /* IE 10 */
+    -ms-flex: 0 0 100%; IE 10
     flex: 0 0 100%;
     max-width: 100%;
 }
@@ -102,7 +127,7 @@
 .sg-col-9 { flex: 0 0 75%; max-width: 75%; }
 .sg-col-10 { flex: 0 0 83.33%; max-width: 83.33%; }
 .sg-col-11 { flex: 0 0 91.66%; max-width: 91.66%; }
-.sg-col-12 { flex: 0 0 100%; max-width: 100%; }
+.sg-col-12 { max-width: 100%; }
 
 /* Offsets pour chaque breakpoint */
 .offset-1 { margin-left: 8.33%; }
@@ -2187,10 +2212,6 @@ fieldset[disabled].sg-btn-success:focus {
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-
-
-
-
 /* Marges globales */
 .sg-m-0 { margin: 0; }
 .sg-m-1 { margin: 1rem; } /* Correspond à 16px si root est 16px */
@@ -2349,6 +2370,40 @@ fieldset[disabled].sg-btn-success:focus {
 .sg-row > .sg-col > .sg-row {
     margin-left: -15px;
     margin-right: -15px;
+}
+
+/* Classe border */
+
+.border-red {
+    border: 1px solid var(--sg-danger);
+}
+
+.border > .border-green {
+    border: 1px solid  var(--sg-success);
+}
+
+.border > .border-blue {
+    border-color: var(--sg-primary);
+}
+
+.border > .border-yellow {
+    border-color: var(--sg-warning);
+}
+
+.border > .border-gray {
+    border-color: var(--sg-gray);
+}
+
+.border > .border-light {
+    border-color: var(--sg-light);
+}
+
+.border > .border-dark {
+    border-color: var(--sg-dark);
+}
+
+.border > .border-white {
+    border-color: var(--sg-white);
 }
 
 /* Pour les petits écrans (sm) */
