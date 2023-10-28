@@ -1,115 +1,42 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Tuto JavaScript</title>
-    <style>
-      #monDiv {
-        position: relative;
-        width: 100px;
-        height: 100px;
-        background-color: red;
-      }
-    </style>
-  </head>
-  <body>
-    <button id="monBouton">Cliquez ici</button>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercices JavaScript</title>
+</head>
+<body>
 
-    <div id="monDiv" style="border: 1px solid red">
-<!--        <p>Un paragraphe</p>
-        <p>Un autre paragraphe</p>-->
-    </div>
+<h1 style="text-align: center">Exercices JavaScript</h1>
 
-    <form id="monFormulaire">
-        <input type="text" name="username" placeholder="Nom d'utilisateur"><br>
-        <input type="password" name="password" placeholder="Mot de passe"><br>
-        <button type="submit">Se connecter</button>
-    </form>
+<!-- Exercice 6 : Partie 2 -->
+<!--Option1 avec onclick dans le bouton :
+<p id="monParagraphe">Cliquez sur le bouton pour changer la couleur de ce paragraphe.</p>
+<button onclick="changerCouleur()">Changer la couleur</button>-->
 
-    <script>
-        /*document.body.addEventListener('click', function() {
-            alert('Événement sur le body!');
-        });
-        
-        const bouton = document.getElementById('monBouton');
-        bouton.addEventListener('click', function(e) {
-            alert('Événement sur le bouton!');
-            e.stopPropagation();  // Empêche l'événement de remonter
-        });*/
-
-        /*const bouton = document.getElementById('monBouton');
-        bouton.addEventListener('click', function(e) {
-          console.log(e.target);  // L'élément qui a déclenché l'événement. e.target est le bouton dans notre cas
-        });*/
-
-        /*const bouton = document.getElementById('monBouton');
-        bouton.addEventListener('dblclick', function() {
-          alert('Le bouton a été double-cliqué.');
-        });*/
-
-       /* const bouton = document.getElementById('monBouton');
-        bouton.addEventListener('mousedown', function() {
-          alert('Le bouton de la souris a été enfoncé.');
-        });*/
+<!--Option 2 avec addEventListener :
+<p id="monParagraphe">Cliquez sur le bouton pour changer la couleur de ce paragraphe.</p>
+<button>Changer la couleur</button>-->
 
 
-        /*const bouton = document.getElementById('monBouton');
-        bouton.addEventListener('mouseup', function() {
-          alert('Le bouton de la souris a été relâché.');
-        });*/
+<!--Exercice 7 : Partie 1-->
+<!--<form id="monFormulaire">
+    Nom: <br><input type="text" id="nom"><br><br>
+    Prénom: <br><input type="text" id="prenom"><br><br>
+    Âge: <br><input type="number" id="age"><br><br>
+    Adresse e-mail: <br><input type="email" id="email"><br><br>
+    Mot de passe: <br><input type="password" id="password"><br><br>
+    <button type="button" onclick="afficherValeurs()">Soumettre</button>
+</form>-->
 
-        /*const bouton = document.getElementById('monBouton');
-        bouton.addEventListener('mouseenter', function() {
-          alert('Le curseur de la souris est entré dans le bouton.');
-        });*/
+<!--Exercice 7 : Partie 2 -->
+<!--<form>
+    Nom: <br><input type="text" id="nomDeBienvenue">
+    <button type="button" onclick="afficherBienvenue()">Afficher le message de bienvenue</button>
+</form>
 
-        /*const bouton = document.getElementById('monBouton');
-        bouton.addEventListener('mouseleave', function() {
-          alert('Le curseur de la souris a quitté le bouton.');
-        });*/
+<h2 id="messageBienvenue"></h2>-->
 
-        /*const div = document.getElementById('monDiv');
-        div.addEventListener('mousemove', function() {
-          alert('Le curseur de la souris se déplace sur le div.');
-        });*/
-
-        /*const div = document.getElementById('monDiv');
-        div.addEventListener('mouseout', function() {
-          alert('Le curseur de la souris a quitté le div.');
-        });*/
-
-       /* const div = document.getElementById('monDiv');
-        div.addEventListener('mouseover', function() {
-          alert('Le curseur de la souris est entré dans le div.');
-        });*/
-
-        /*setTimeout(function () {
-          alert("Ceci s'affiche après 2 secondes.");
-        }, 2000);*/
-
-       /* const element = document.getElementById('monDiv');
-        let position = 0;
-
-        const intervalId = setInterval(function() {
-          position += 10;
-          element.style.left = position + 'px';
-
-          if (position >= 300) { // Stop après avoir déplacé de 300 pixels
-            clearInterval(intervalId);
-          }
-        }, 50);*/
-
-        /*const element = document.getElementById('monDiv');
-
-        setTimeout(function() {
-            element.style.left = '100px';
-        }, 5000);*/
-
-        const form = document.getElementById('monFormulaire');
-        form.addEventListener('submit', function(e) {
-            e.preventDefault(); // Empêche le formulaire d'être soumis
-            alert('Formulaire soumis!');
-        });
-    </script>
-  </body>
+<!-- Exercice 1 -->
+<script src="js/exo11.js"></script>
+</body>
 </html>
