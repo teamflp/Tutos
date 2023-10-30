@@ -67,85 +67,85 @@ Bonne étude ! Rappelez-vous que l'apprentissage est un voyage, et chaque étape
 ---
 
 <!-- TOC -->
-- [Apprendre le framework Angular](#apprendre-le-framework-angular)
-  - [Procédure pour utiliser ce cours](#procédure-pour-utiliser-ce-cours)
-  - [Introduction à Angular](#introduction-à-angular)
-    - [Historique et contexte](#historique-et-contexte)
-    - [Avantages et inconvenients d'Angular](#avantages-et-inconvenients-dangular)
-      - [Avantages](#avantages)
-      - [Inconvénients](#inconvénients)
-    - [Comparaison avec d'autres frameworks/front-end](#comparaison-avec-dautres-frameworksfront-end)
-    - [Quand utiliser Angular?](#quand-utiliser-angular)
-  - [Installation et Configuration](#installation-et-configuration)
-    - [Prérequis (Node.js, npm)](#prérequis-nodejs-npm)
-    - [Installation du CLI Angular](#installation-du-cli-angular)
-    - [Création d'une nouvelle application Angular](#création-dune-nouvelle-application-angular)
-  - [Architecture d'Angular](#architecture-dangular)
-    - [Modules](#modules)
-    - [Composants](#composants)
-    - [Services](#services)
-    - [Directives](#directives)
-  - [Les Composants](#les-composants)
-    - [Structure et cycle de vie](#structure-et-cycle-de-vie)
-    - [Templates et styles](#templates-et-styles)
-    - [Communication entre composants (Input/Output)](#communication-entre-composants-inputoutput)
-  - [Services et Injection de dépendances](#services-et-injection-de-dépendances)
-    - [Création de services](#création-de-services)
-    - [Providers et injection](#providers-et-injection)
-    - [Singleton et portée](#singleton-et-portée)
-  - [Routing](#routing)
-    - [Configuration des routes](#configuration-des-routes)
-    - [Navigation entre routes](#navigation-entre-routes)
-    - [Guardiens de route (Route Guards)](#guardiens-de-route-route-guards)
-  - [Forms](#forms)
-    - [Forms Template-driven](#forms-template-driven)
-    - [Forms Reactive](#forms-reactive)
-  - [Directives](#directives-1)
-    - [Directives structurelles (NgFor, NgIf)](#directives-structurelles-ngfor-ngif)
-    - [Directives attributaires (NgClass, NgStyle)](#directives-attributaires-ngclass-ngstyle)
-    - [Directives attributaires (NgClass, NgStyle)](#directives-attributaires-ngclass-ngstyle-1)
-  - [HTTP et Communication avec les API](#http-et-communication-avec-les-api)
-    - [Le service HttpClient](#le-service-httpclient)
-    - [Interception et gestion des erreurs](#interception-et-gestion-des-erreurs)
-    - [Observable et RxJS](#observable-et-rxjs)
-  - [Pipes](#pipes)
-    - [Utilisation des pipes prédéfinis](#utilisation-des-pipes-prédéfinis)
-    - [Création de pipes personnalisés](#création-de-pipes-personnalisés)
-  - [Tests et Debugging](#tests-et-debugging)
-    - [Tests unitaires avec Jasmine et Karma](#tests-unitaires-avec-jasmine-et-karma)
-    - [Tests d'intégration](#tests-dintégration)
-    - [Debugging avec Angular DevTools](#debugging-avec-angular-devtools)
-  - [Optimisation et Performance](#optimisation-et-performance)
-    - [Change Detection et stratégies](#change-detection-et-stratégies)
-    - [Lazy Loading](#lazy-loading)
-    - [Ahead-of-Time (AOT) Compilation : Compilation anticipée](#ahead-of-time-aot-compilation--compilation-anticipée)
-  - [Ajout de libraries tierces : Angular Material, Bootstrap, JQuery, FontAwesome etc](#ajout-de-libraries-tierces--angular-material-bootstrap-jquery-fontawesome-etc)
-    - [Installation de bibliothèques tierces](#installation-de-bibliothèques-tierces)
-    - [Ajout de bibliothèques tierces globales](#ajout-de-bibliothèques-tierces-globales)
-    - [Ajoutons les icônes de FontAwesome, JQuery et Bootstrap](#ajoutons-les-icônes-de-fontawesome-jquery-et-bootstrap)
-      - [Ajout de FontAwesome](#ajout-de-fontawesome)
-      - [Ajout de Bootstrap](#ajout-de-bootstrap)
-      - [Ajout de JQuery](#ajout-de-jquery)
-      - [Installer ces librairie en une seule commande](#installer-ces-librairie-en-une-seule-commande)
-    - [Comment installer et utiliser les icons Material Design ?](#comment-installer-et-utiliser-les-icons-material-design-)
-  - [Internationalisation (i18n)](#internationalisation-i18n)
-    - [Configuration de l'internationalisation](#configuration-de-linternationalisation)
-  - [Déploiement](#déploiement)
-    - [Build et packaging](#build-et-packaging)
-    - [Déploiement sur différents serveurs (Firebase, Vercel, etc.)](#déploiement-sur-différents-serveurs-firebase-vercel-etc)
-  - [Bonnes pratiques et conventions](#bonnes-pratiques-et-conventions)
-    - [Style guide officiel](#style-guide-officiel)
-    - [Organisation du code et modularité](#organisation-du-code-et-modularité)
-  - [Évolution et avenir d'Angular](#évolution-et-avenir-dangular)
-    - [Mises à jour et migration](#mises-à-jour-et-migration)
-    - [Angular Universal et Server Side Rendering (SSR)](#angular-universal-et-server-side-rendering-ssr)
-  - [Projet pratique](#projet-pratique)
-  - [Conclusion](#conclusion)
-  - [Ressources et liens utiles](#ressources-et-liens-utiles)
-    - [Ressources officielles](#ressources-officielles)
-    - [Tutoriels et guides](#tutoriels-et-guides)
-    - [Communauté et support](#communauté-et-support)
-  - [Références](#références)
+* [Apprendre le framework Angular](#apprendre-le-framework-angular)
+  * [Procédure pour utiliser ce cours](#procédure-pour-utiliser-ce-cours)
+  * [Introduction à Angular](#introduction-à-angular)
+    * [Historique et contexte](#historique-et-contexte)
+    * [Avantages et inconvenients d'Angular](#avantages-et-inconvenients-dangular)
+      * [Avantages](#avantages)
+      * [Inconvénients](#inconvénients)
+    * [Comparaison avec d'autres frameworks/front-end](#comparaison-avec-dautres-frameworksfront-end)
+    * [Quand utiliser Angular?](#quand-utiliser-angular)
+  * [Installation et Configuration](#installation-et-configuration)
+    * [Prérequis (Node.js, npm)](#prérequis-nodejs-npm)
+    * [Installation du CLI Angular](#installation-du-cli-angular)
+    * [Création d'une nouvelle application Angular](#création-dune-nouvelle-application-angular)
+  * [Architecture d'Angular](#architecture-dangular)
+    * [Modules](#modules)
+    * [Composants](#composants)
+    * [Services](#services)
+    * [Directives](#directives)
+  * [Les Composants](#les-composants)
+    * [Structure et cycle de vie](#structure-et-cycle-de-vie)
+    * [Templates et styles](#templates-et-styles)
+    * [Communication entre composants (Input/Output)](#communication-entre-composants-inputoutput)
+  * [Services et Injection de dépendances](#services-et-injection-de-dépendances)
+    * [Création de services](#création-de-services)
+    * [Providers et injection](#providers-et-injection)
+    * [Singleton et portée](#singleton-et-portée)
+  * [Routing](#routing)
+    * [Configuration des routes](#configuration-des-routes)
+    * [Navigation entre routes](#navigation-entre-routes)
+    * [Guardiens de route (Route Guards)](#guardiens-de-route-route-guards)
+  * [Forms](#forms)
+    * [Forms Template-driven](#forms-template-driven)
+    * [Forms Reactive](#forms-reactive)
+  * [Directives](#directives-1)
+    * [Directives structurelles (NgFor, NgIf)](#directives-structurelles-ngfor-ngif)
+    * [Directives attributaires (NgClass, NgStyle)](#directives-attributaires-ngclass-ngstyle)
+    * [Directives attributaires (NgClass, NgStyle)](#directives-attributaires-ngclass-ngstyle-1)
+  * [HTTP et Communication avec les API](#http-et-communication-avec-les-api)
+    * [Le service HttpClient](#le-service-httpclient)
+    * [Interception et gestion des erreurs](#interception-et-gestion-des-erreurs)
+    * [Observable et RxJS](#observable-et-rxjs)
+  * [Pipes](#pipes)
+    * [Utilisation des pipes prédéfinis](#utilisation-des-pipes-prédéfinis)
+    * [Création de pipes personnalisés](#création-de-pipes-personnalisés)
+  * [Tests et Debugging](#tests-et-debugging)
+    * [Tests unitaires avec Jasmine et Karma](#tests-unitaires-avec-jasmine-et-karma)
+    * [Tests d'intégration](#tests-dintégration)
+    * [Debugging avec Angular DevTools](#debugging-avec-angular-devtools)
+  * [Optimisation et Performance](#optimisation-et-performance)
+    * [Change Detection et stratégies](#change-detection-et-stratégies)
+    * [Lazy Loading](#lazy-loading)
+    * [Ahead-of-Time (AOT) Compilation : Compilation anticipée](#ahead-of-time-aot-compilation--compilation-anticipée)
+  * [Ajout de libraries tierces : Angular Material, Bootstrap, JQuery, FontAwesome etc](#ajout-de-libraries-tierces--angular-material-bootstrap-jquery-fontawesome-etc)
+    * [Installation de bibliothèques tierces](#installation-de-bibliothèques-tierces)
+    * [Ajout de bibliothèques tierces globales](#ajout-de-bibliothèques-tierces-globales)
+    * [Ajoutons les icônes de FontAwesome, JQuery et Bootstrap](#ajoutons-les-icônes-de-fontawesome-jquery-et-bootstrap)
+      * [Ajout de FontAwesome](#ajout-de-fontawesome)
+      * [Ajout de Bootstrap](#ajout-de-bootstrap)
+      * [Ajout de JQuery](#ajout-de-jquery)
+      * [Installer ces librairie en une seule commande](#installer-ces-librairie-en-une-seule-commande)
+    * [Comment installer et utiliser les icons Material Design ?](#comment-installer-et-utiliser-les-icons-material-design-)
+  * [Internationalisation (i18n)](#internationalisation-i18n)
+    * [Configuration de l'internationalisation](#configuration-de-linternationalisation)
+  * [Déploiement](#déploiement)
+    * [Build et packaging](#build-et-packaging)
+    * [Déploiement sur différents serveurs (Firebase, Vercel, etc.)](#déploiement-sur-différents-serveurs-firebase-vercel-etc)
+  * [Bonnes pratiques et conventions](#bonnes-pratiques-et-conventions)
+    * [Style guide officiel](#style-guide-officiel)
+    * [Organisation du code et modularité](#organisation-du-code-et-modularité)
+  * [Évolution et avenir d'Angular](#évolution-et-avenir-dangular)
+    * [Mises à jour et migration](#mises-à-jour-et-migration)
+    * [Angular Universal et Server Side Rendering (SSR)](#angular-universal-et-server-side-rendering-ssr)
+  * [Projet pratique](#projet-pratique)
+  * [Conclusion](#conclusion)
+  * [Ressources et liens utiles](#ressources-et-liens-utiles)
+    * [Ressources officielles](#ressources-officielles)
+    * [Tutoriels et guides](#tutoriels-et-guides)
+    * [Communauté et support](#communauté-et-support)
+  * [Références](#références)
 <!-- TOC -->
 
 ---
@@ -1441,6 +1441,56 @@ Les processus de déploiement pour d'autres plateformes comme `Netlify`, `AWS S3
 - Configurer la CLI ou l'interface de la plateforme.
 - Pointer vers le dossier `dist/`.
 - Suivre les étapes spécifiques à cette plateforme pour le déploiement.
+
+**Déployer sur GitHub Pages** :
+
+  - Créez un nouveau dépôt GitHub.
+  - Ajoutez le dépôt distant à votre projet local.
+  - Poussez votre code vers le dépôt distant.
+
+
+**Installez le package `gh-pages`** :  vous pouvez utiliser `gh-pages` pour faciliter le déploiement sur GitHub Pages.
+      
+  ```bash
+  npm install -g gh-pages
+  ```
+**Construisez votre application Angular pour la production** : 
+Avant de déployer, vous devez construire votre projet Angular en mode production. Cela générera des fichiers statiques optimisés dans le répertoire `dist/`. 
+
+  
+À partir de la version 12 d'Angular, l'option `--prod` a été remplacée par `--configuration production`. Voici comment vous devriez construire votre projet pour la production avec Angular 12 et versions ultérieures :
+       
+```bash
+ng build --configuration production --base-href "https://[nom-utilisateur].github.io/[nom-repo]/"
+```
+Remplacez `[nom-utilisateur]` par votre nom d'utilisateur GitHub et `[nom-repo]` par le nom de votre dépôt GitHub.
+
+
+**Déployez sur GitHub Pages :**
+Utilisez la commande gh-pages pour déployer le contenu du dossier `dist/` sur la branche `gh-pages` de votre dépôt.
+      
+```bash
+gh-pages -d dist/[nom-de-votre-app]
+```
+Remplacez `[nom-du-projet]` par le nom de votre projet Angular (généralement le nom du répertoire dans `dist/`).
+
+![img_1.png](img_1.png)
+
+**Configurez votre dépôt pour utiliser GitHub Pages** :
+
+* Allez sur la page de votre dépôt sur GitHub.
+* Cliquez sur l'onglet "Settings" (ou "Paramètres").
+* Faites défiler jusqu'à la section "GitHub Pages".
+* Dans la section "Source", sélectionnez la branche `gh-pages` et enregistrez.
+
+**Accédez à votre site déployé sur GitHub Pages à l'adresse suivante** : `https://[nom-utilisateur].github.io/[nom-repo]/`.
+
+![img_2.png](img_2.png)
+
+
+N'oubliez pas de vérifier si tout fonctionne comme prévu. Parfois, des chemins relatifs ou d'autres configurations peuvent nécessiter des ajustements pour fonctionner correctement sur GitHub Pages.
+
+Notez également que GitHub Pages est conçu pour des projets statiques. Si votre projet Angular nécessite un backend ou des services qui ne sont pas statiques, vous devrez envisager d'autres options de déploiement.
 
 En conclusion, le déploiement d'une application Angular est un processus simple grâce aux outils et aux plateformes disponibles. Assurez-vous toujours de tester votre application dans un environnement de production avant de la déployer afin d'éviter d'éventuels problèmes.
 
