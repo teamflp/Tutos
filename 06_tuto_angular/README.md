@@ -10,7 +10,6 @@ Linkedin: [Paterne G. G.](https://www.linkedin.com/in/gnpinformatique/)
 
 Github : [teamflp](https://github.com/teamflp)
 
-
 ## Procédure pour utiliser ce cours
 
 Bienvenue à ce cours sur le TypeScript ! Pour tirer le meilleur parti de ce contenu et acquérir une compréhension solide de la matière, suivez les étapes recommandées ci-dessous.
@@ -67,86 +66,86 @@ Bonne étude ! Rappelez-vous que l'apprentissage est un voyage, et chaque étape
 ---
 
 <!-- TOC -->
-* [Apprendre le framework Angular](#apprendre-le-framework-angular)
-  * [Procédure pour utiliser ce cours](#procédure-pour-utiliser-ce-cours)
-  * [Introduction à Angular](#introduction-à-angular)
-    * [Historique et contexte](#historique-et-contexte)
-    * [Avantages et inconvenients d'Angular](#avantages-et-inconvenients-dangular)
-      * [Avantages](#avantages)
-      * [Inconvénients](#inconvénients)
-    * [Comparaison avec d'autres frameworks/front-end](#comparaison-avec-dautres-frameworksfront-end)
-    * [Quand utiliser Angular?](#quand-utiliser-angular)
-  * [Installation et Configuration](#installation-et-configuration)
-    * [Prérequis (Node.js, npm)](#prérequis-nodejs-npm)
-    * [Installation du CLI Angular](#installation-du-cli-angular)
-    * [Création d'une nouvelle application Angular](#création-dune-nouvelle-application-angular)
-  * [Architecture d'Angular](#architecture-dangular)
-    * [Modules](#modules)
-    * [Composants](#composants)
-    * [Services](#services)
-    * [Directives](#directives)
-  * [Les Composants](#les-composants)
-    * [Structure et cycle de vie](#structure-et-cycle-de-vie)
-    * [Templates et styles](#templates-et-styles)
-    * [Communication entre composants (Input/Output)](#communication-entre-composants-inputoutput)
-  * [Services et Injection de dépendances](#services-et-injection-de-dépendances)
-    * [Création de services](#création-de-services)
-    * [Providers et injection](#providers-et-injection)
-    * [Singleton et portée](#singleton-et-portée)
-  * [Routing](#routing)
-    * [Configuration des routes](#configuration-des-routes)
-    * [Navigation entre routes](#navigation-entre-routes)
-    * [Guardiens de route (Route Guards)](#guardiens-de-route-route-guards)
-  * [Forms](#forms)
-    * [Forms Template-driven](#forms-template-driven)
-    * [Forms Reactive](#forms-reactive)
-  * [Directives](#directives-1)
-    * [Directives structurelles (NgFor, NgIf)](#directives-structurelles-ngfor-ngif)
-    * [Directives attributaires (NgClass, NgStyle)](#directives-attributaires-ngclass-ngstyle)
-    * [Directives attributaires (NgClass, NgStyle)](#directives-attributaires-ngclass-ngstyle-1)
-  * [HTTP et Communication avec les API](#http-et-communication-avec-les-api)
-    * [Le service HttpClient](#le-service-httpclient)
-    * [Interception et gestion des erreurs](#interception-et-gestion-des-erreurs)
-    * [Observable et RxJS](#observable-et-rxjs)
-  * [Pipes](#pipes)
-    * [Utilisation des pipes prédéfinis](#utilisation-des-pipes-prédéfinis)
-    * [Création de pipes personnalisés](#création-de-pipes-personnalisés)
-  * [Tests et Debugging](#tests-et-debugging)
-    * [Tests unitaires avec Jasmine et Karma](#tests-unitaires-avec-jasmine-et-karma)
-    * [Tests d'intégration](#tests-dintégration)
-    * [Debugging avec Angular DevTools](#debugging-avec-angular-devtools)
-  * [Optimisation et Performance](#optimisation-et-performance)
-    * [Change Detection et stratégies](#change-detection-et-stratégies)
-    * [Lazy Loading](#lazy-loading)
-    * [Ahead-of-Time (AOT) Compilation : Compilation anticipée](#ahead-of-time-aot-compilation--compilation-anticipée)
-  * [Ajout de libraries tierces : Angular Material, Bootstrap, JQuery, FontAwesome etc](#ajout-de-libraries-tierces--angular-material-bootstrap-jquery-fontawesome-etc)
-    * [Installation de bibliothèques tierces](#installation-de-bibliothèques-tierces)
-    * [Ajout de bibliothèques tierces globales](#ajout-de-bibliothèques-tierces-globales)
-    * [Ajoutons les icônes de FontAwesome, JQuery et Bootstrap](#ajoutons-les-icônes-de-fontawesome-jquery-et-bootstrap)
-      * [Ajout de FontAwesome](#ajout-de-fontawesome)
-      * [Ajout de Bootstrap](#ajout-de-bootstrap)
-      * [Ajout de JQuery](#ajout-de-jquery)
-      * [Installer ces librairie en une seule commande](#installer-ces-librairie-en-une-seule-commande)
-    * [Comment installer et utiliser les icons Material Design ?](#comment-installer-et-utiliser-les-icons-material-design-)
-  * [Internationalisation (i18n)](#internationalisation-i18n)
-    * [Configuration de l'internationalisation](#configuration-de-linternationalisation)
-  * [Déploiement](#déploiement)
-    * [Build et packaging](#build-et-packaging)
-    * [Déploiement sur différents serveurs (Firebase, Vercel, etc.)](#déploiement-sur-différents-serveurs-firebase-vercel-etc)
-  * [Bonnes pratiques et conventions](#bonnes-pratiques-et-conventions)
-    * [Style guide officiel](#style-guide-officiel)
-    * [Organisation du code et modularité](#organisation-du-code-et-modularité)
-  * [Évolution et avenir d'Angular](#évolution-et-avenir-dangular)
-    * [Mises à jour et migration](#mises-à-jour-et-migration)
-    * [Angular Universal et Server Side Rendering (SSR)](#angular-universal-et-server-side-rendering-ssr)
-  * [Projet pratique](#projet-pratique)
-  * [Conclusion](#conclusion)
-  * [Ressources et liens utiles](#ressources-et-liens-utiles)
-    * [Ressources officielles](#ressources-officielles)
-    * [Tutoriels et guides](#tutoriels-et-guides)
-    * [Communauté et support](#communauté-et-support)
-  * [Références](#références)
-<!-- TOC -->
+
+- [Apprendre le framework Angular](#apprendre-le-framework-angular)
+  - [Procédure pour utiliser ce cours](#procédure-pour-utiliser-ce-cours)
+  - [Introduction à Angular](#introduction-à-angular)
+    - [Historique et contexte](#historique-et-contexte)
+    - [Avantages et inconvenients d'Angular](#avantages-et-inconvenients-dangular)
+      - [Avantages](#avantages)
+      - [Inconvénients](#inconvénients)
+    - [Comparaison avec d'autres frameworks/front-end](#comparaison-avec-dautres-frameworksfront-end)
+    - [Quand utiliser Angular?](#quand-utiliser-angular)
+  - [Installation et Configuration](#installation-et-configuration)
+    - [Prérequis (Node.js, npm)](#prérequis-nodejs-npm)
+    - [Installation du CLI Angular](#installation-du-cli-angular)
+    - [Création d'une nouvelle application Angular](#création-dune-nouvelle-application-angular)
+  - [Architecture d'Angular](#architecture-dangular)
+    - [Modules](#modules)
+    - [Composants](#composants)
+    - [Services](#services)
+    - [Directives](#directives)
+  - [Les Composants](#les-composants)
+    - [Structure et cycle de vie](#structure-et-cycle-de-vie)
+    - [Templates et styles](#templates-et-styles)
+    - [Communication entre composants (Input/Output)](#communication-entre-composants-inputoutput)
+  - [Services et Injection de dépendances](#services-et-injection-de-dépendances)
+    - [Création de services](#création-de-services)
+    - [Providers et injection](#providers-et-injection)
+    - [Singleton et portée](#singleton-et-portée)
+  - [Routing](#routing)
+    - [Configuration des routes](#configuration-des-routes)
+    - [Navigation entre routes](#navigation-entre-routes)
+    - [Guardiens de route (Route Guards)](#guardiens-de-route-route-guards)
+  - [Forms](#forms)
+    - [Forms Template-driven](#forms-template-driven)
+    - [Forms Reactive](#forms-reactive)
+  - [Directives](#directives-1)
+    - [Directives structurelles (NgFor, NgIf)](#directives-structurelles-ngfor-ngif)
+    - [Directives attributaires (NgClass, NgStyle)](#directives-attributaires-ngclass-ngstyle)
+    - [Directives attributaires (NgClass, NgStyle)](#directives-attributaires-ngclass-ngstyle-1)
+  - [HTTP et Communication avec les API](#http-et-communication-avec-les-api)
+    - [Le service HttpClient](#le-service-httpclient)
+    - [Interception et gestion des erreurs](#interception-et-gestion-des-erreurs)
+    - [Observable et RxJS](#observable-et-rxjs)
+  - [Pipes](#pipes)
+    - [Utilisation des pipes prédéfinis](#utilisation-des-pipes-prédéfinis)
+    - [Création de pipes personnalisés](#création-de-pipes-personnalisés)
+  - [Tests et Debugging](#tests-et-debugging)
+    - [Tests unitaires avec Jasmine et Karma](#tests-unitaires-avec-jasmine-et-karma)
+    - [Tests d'intégration](#tests-dintégration)
+    - [Debugging avec Angular DevTools](#debugging-avec-angular-devtools)
+  - [Optimisation et Performance](#optimisation-et-performance)
+    - [Change Detection et stratégies](#change-detection-et-stratégies)
+    - [Lazy Loading](#lazy-loading)
+    - [Ahead-of-Time (AOT) Compilation : Compilation anticipée](#ahead-of-time-aot-compilation--compilation-anticipée)
+  - [Ajout de libraries tierces : Angular Material, Bootstrap, JQuery, FontAwesome etc](#ajout-de-libraries-tierces--angular-material-bootstrap-jquery-fontawesome-etc)
+    - [Installation de bibliothèques tierces](#installation-de-bibliothèques-tierces)
+    - [Ajout de bibliothèques tierces globales](#ajout-de-bibliothèques-tierces-globales)
+    - [Ajoutons les icônes de FontAwesome, JQuery et Bootstrap](#ajoutons-les-icônes-de-fontawesome-jquery-et-bootstrap)
+      - [Ajout de FontAwesome](#ajout-de-fontawesome)
+      - [Ajout de Bootstrap](#ajout-de-bootstrap)
+      - [Ajout de JQuery](#ajout-de-jquery)
+      - [Installer ces librairie en une seule commande](#installer-ces-librairie-en-une-seule-commande)
+    - [Comment installer et utiliser les icons Material Design ?](#comment-installer-et-utiliser-les-icons-material-design-)
+  - [Internationalisation (i18n)](#internationalisation-i18n)
+    - [Configuration de l'internationalisation](#configuration-de-linternationalisation)
+  - [Déploiement](#déploiement)
+    - [Build et packaging](#build-et-packaging)
+    - [Déploiement sur différents serveurs (Firebase, Vercel, etc.)](#déploiement-sur-différents-serveurs-firebase-vercel-etc)
+  - [Bonnes pratiques et conventions](#bonnes-pratiques-et-conventions)
+    - [Style guide officiel](#style-guide-officiel)
+    - [Organisation du code et modularité](#organisation-du-code-et-modularité)
+  - [Évolution et avenir d'Angular](#évolution-et-avenir-dangular)
+    - [Mises à jour et migration](#mises-à-jour-et-migration)
+    - [Angular Universal et Server Side Rendering (SSR)](#angular-universal-et-server-side-rendering-ssr)
+  - [Projet pratique](#projet-pratique)
+  - [Conclusion](#conclusion)
+  - [Ressources et liens utiles](#ressources-et-liens-utiles)
+    - [Ressources officielles](#ressources-officielles)
+    - [Tutoriels et guides](#tutoriels-et-guides)
+    - [Communauté et support](#communauté-et-support)
+  - [Références](#références)
 
 ---
 
@@ -236,15 +235,15 @@ Pour démarrer avec Angular, il est nécessaire de passer par quelques étapes p
 Avant d'installer Angular, il y a certains prérequis que vous devez avoir sur votre machine.
 
 1. **Node.js** : Angular nécessite Node.js pour exécuter les scripts qui permettent de gérer et d'exécuter votre application.
-Pour installer`Node.js`, rendez-vous sur le site [officiel de Node.js](https://nodejs.org/) et téléchargez la dernière version stable (LTS).
-Une fois l'installation terminée, vous pouvez vérifier la version de Node.js installée avec la commande :
+   Pour installer`Node.js`, rendez-vous sur le site [officiel de Node.js](https://nodejs.org/) et téléchargez la dernière version stable (LTS).
+   Une fois l'installation terminée, vous pouvez vérifier la version de Node.js installée avec la commande :
 
 ```bash
 node -v
 ```
 
 2. **npm (Node Package Manager)** : Il est généralement installé avec Node.js. Il s'agit d'un gestionnaire de paquets qui vous permettra d'installer des bibliothèques, des outils et des frameworks pour vos projets.
-Pour vérifier la version de npm installée, utilisez la commande :
+   Pour vérifier la version de npm installée, utilisez la commande :
 
 ```bash
 npm -v
@@ -492,15 +491,13 @@ ng g s nom-du-service
 Cela génère un fichier de service avec une structure de base. Par exemple, pour un service nommé `data`, cela ressemblerait à :
 
 ```typescript
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class DataService {
-
-  constructor() { }
-
+  constructor() {}
 }
 ```
 
@@ -537,25 +534,25 @@ Le système de routage d'Angular permet de naviguer d'une vue à l'autre à mesu
 - **path**: une chaîne de caractères qui représente l'URL de la route.
 
 - **component**: le composant qui doit être affiché lorsque cette route est activée.
-Exemple :
+  Exemple :
 
 ```typescript
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { HomeComponent } from "./home/home.component";
+import { AboutComponent } from "./about/about.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
+  { path: "", redirectTo: "/home", pathMatch: "full" },
+  { path: "home", component: HomeComponent },
+  { path: "about", component: AboutComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 ```
 
 Dans cet exemple, nous avons trois routes : une route par défaut qui redirige vers `/home`, et deux routes pour les composants `HomeComponent` et `AboutComponent`.
@@ -567,8 +564,7 @@ Dans cet exemple, nous avons trois routes : une route par défaut qui redirige v
 2. Pour créer des liens entre vos routes, utilisez la directive `routerLink`. Par exemple :
 
 ```html
-<a routerLink="/home">Accueil</a>
-<a routerLink="/about">À propos</a>
+<a routerLink="/home">Accueil</a> <a routerLink="/about">À propos</a>
 ```
 
 Pour une navigation programmatique, injectez le service Router dans votre composant et utilisez la méthode navigate :
@@ -588,28 +584,33 @@ Les "`Route Guards`" sont utilisés pour protéger l'accès à certaines routes.
 Voici un exemple simple de Route Guard qui vérifie si un utilisateur est connecté :
 
 ```typescript
-import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { Injectable } from "@angular/core";
+import {
+  CanActivate,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  Router,
+} from "@angular/router";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class AuthGuard implements CanActivate {
-
   constructor(private router: Router) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean {
-      // On remplace cette logique par une vérification d'authentification réelle
-      const isLoggedIn = false; 
-      
-      if (isLoggedIn) {
-        return true;
-      } else {
-        this.router.navigate(['/login']);
-        return false;
-      }
+    state: RouterStateSnapshot
+  ): boolean {
+    // On remplace cette logique par une vérification d'authentification réelle
+    const isLoggedIn = false;
+
+    if (isLoggedIn) {
+      return true;
+    } else {
+      this.router.navigate(["/login"]);
+      return false;
+    }
   }
 }
 ```
@@ -627,7 +628,7 @@ Il existe différents types de guards, tels que :
 - **CanLoad** : Vérifie si un module peut être chargé de manière paresseuse (lazy-loaded).
 - `Resolve` : Effectue des opérations avant que la route ne soit activée.
 - **CanActivateChild** : Vérifie si les enfants d'une route peuvent être activés.
-Chacun de ces guards est utilisé pour un scénario différent et peut aider à sécuriser et améliorer l'expérience utilisateur dans votre application Angular.
+  Chacun de ces guards est utilisé pour un scénario différent et peut aider à sécuriser et améliorer l'expérience utilisateur dans votre application Angular.
 
 ## Forms
 
@@ -643,13 +644,13 @@ Caractéristiques principales :
 - Ils utilisent des directives telles que ngModel pour la liaison bidirectionnelle.
 - Moins de code côté TypeScript, mais plus de code côté template.
 - Plus facile à mettre en place pour des scénarios simples.
-Exemple :
+  Exemple :
 
 Dans le template :
 
 ```html
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-  <input type="text" name="name" ngModel>
+  <input type="text" name="name" ngModel />
   <button type="submit">Submit</button>
 </form>
 ```
@@ -672,12 +673,12 @@ Caractéristiques principales :
 - Utilise des classes telles que FormControl, FormGroup, et FormArray pour définir la structure et la logique du formulaire.
 - Les validations sont également définies côté TypeScript.
 - Plus de contrôle, plus dynamique et plus testable.
-Exemple :
+  Exemple :
 
 Dans le composant :
 
 ```typescript
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from "@angular/forms";
 
 export class MyComponent implements OnInit {
   myForm: FormGroup;
@@ -686,7 +687,7 @@ export class MyComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      name: ['']
+      name: [""],
     });
   }
 
@@ -700,7 +701,7 @@ Dans le template :
 
 ```html
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-  <input type="text" formControlName="name">
+  <input type="text" formControlName="name" />
   <button type="submit">Submit</button>
 </form>
 ```
@@ -728,32 +729,24 @@ Les `directives` sont une fonctionnalité essentielle d'Angular qui permet de `m
 Les directives structurelles modifient la structure du DOM, soit en ajoutant/supprimant des éléments, soit en manipulant leur rendu.
 
 1. **`NgFor`** : Permet de répéter un élément pour chaque élément d'une collection.
-Syntaxe :
+   Syntaxe :
 
 ```html
-<div *ngFor="let item of items">
-  {{ item }}
-</div>
+<div *ngFor="let item of items">{{ item }}</div>
 ```
 
 2. **`NgIf`** : Permet d'afficher ou de masquer un élément en fonction d'une condition.
-Syntaxe :
+   Syntaxe :
 
 ```html
-<div *ngIf="condition">
-  Affiché si la condition est vraie
-</div>
+<div *ngIf="condition">Affiché si la condition est vraie</div>
 ```
 
 Avec une clause else:
 
 ```html
-<div *ngIf="condition; else elseBlock">
-  Affiché si la condition est vraie
-</div>
-<ng-template #elseBlock>
-  Affiché si la condition est fausse
-</ng-template>
+<div *ngIf="condition; else elseBlock">Affiché si la condition est vraie</div>
+<ng-template #elseBlock> Affiché si la condition est fausse </ng-template>
 ```
 
 Il est important de noter le symbole `*` avant le nom de la directive, ce qui indique une modification structurelle du `DOM`.
@@ -763,25 +756,21 @@ Il est important de noter le symbole `*` avant le nom de la directive, ce qui in
 Les directives attributaires ne modifient pas la structure du DOM, mais modifient l'apparence ou le comportement d'un élément.
 
 1. **`NgClass`** : Permet d'ajouter ou de supprimer des classes CSS en fonction d'une condition.
-Syntaxe :
+   Syntaxe :
 
 ```html
-<div [ngClass]="{'active': isActive, 'disabled': isDisabled}">
-  ...
-</div>
+<div [ngClass]="{'active': isActive, 'disabled': isDisabled}">...</div>
 ```
 
 Dans cet exemple, la classe `active` sera appliquée si `isActive` est vrai, et la classe disabled sera appliquée si isDisabled est vrai.
 
 2. **`NgStyle`** : Permet de modifier les styles en ligne d'un élément en fonction d'une condition ou d'une expression.
-Syntaxe :
+   Syntaxe :
 
 Option 1 :
 
 ```html
-<div [ngStyle]="{'color': isActive ? 'green' : 'red'}">
-  ...
-</div>
+<div [ngStyle]="{'color': isActive ? 'green' : 'red'}">...</div>
 ```
 
 Dans ce exemple, la couleur du texte sera <span style="color: green">**verte**</span> si `isActive` est `true`, et <span style="color: red">rouge</span> si `isActive` est `false`.
@@ -789,9 +778,7 @@ Dans ce exemple, la couleur du texte sera <span style="color: green">**verte**</
 Option 2 :
 
 ```html
-<div [ngStyle]="{'color': fontColor, 'background-color': bgColor}">
-    ...
-</div>
+<div [ngStyle]="{'color': fontColor, 'background-color': bgColor}">...</div>
 ```
 
 Dans ce exemple, la couleur du texte sera définie par la valeur de la variable `fontColor`, et la couleur de fond sera définie par la variable `bgColor`.
@@ -811,31 +798,31 @@ Exemple d'utilisation :
 1. Importez le `HttpClientModule` dans votre module :
 
 ```typescript
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   imports: [
-    HttpClientModule
+    HttpClientModule,
     // autres imports...
   ],
   // ...
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
 1. Injectez `HttpClient` dans votre service ou composant :
 
 ```typescript
-import { HttpClient } from '@angular/common/http';
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class MyService {
   constructor(private http: HttpClient) {}
 
   fetchData() {
-    return this.http.get('https://api.example.com/data'); // On retourne l'observable retourné par la méthode get()
+    return this.http.get("https://api.example.com/data"); // On retourne l'observable retourné par la méthode get()
   }
 }
 ```
@@ -847,20 +834,23 @@ L'interception permet de traiter ou de modifier les `requêtes/responses HTTP`. 
 Exemple d'intercepteur :
 
 ```typescript
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import {
-  HttpEvent, HttpInterceptor, HttpHandler, HttpRequest
-} from '@angular/common/http';
+  HttpEvent,
+  HttpInterceptor,
+  HttpHandler,
+  HttpRequest,
+} from "@angular/common/http";
 
 @Injectable()
 export class MyInterceptor implements HttpInterceptor {
-
-  intercept(req: HttpRequest<any>, next: HttpHandler):
-    Observable<HttpEvent<any>> {
-
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
     // Cloner la requête pour ajouter un en-tête
     const authReq = req.clone({
-      setHeaders: { Authorization: 'Bearer token' }
+      setHeaders: { Authorization: "Bearer token" },
     });
 
     // Passer la requête clonée à la prochaine chaîne.
@@ -872,14 +862,14 @@ export class MyInterceptor implements HttpInterceptor {
 Pour utiliser cet intercepteur, vous devez le fournir dans le tableau providers de votre module :
 
 ```typescript
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
 
 @NgModule({
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }
-  ]
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true },
+  ],
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
 Pour la gestion des erreurs, utilisez le pipe catchError fourni par RxJS :
@@ -914,16 +904,14 @@ Caractéristiques principales :
 - Exemple d'utilisation d'un Observable:
 
 ```typescript
-import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { of } from "rxjs";
+import { map } from "rxjs/operators";
 
 const numbers = of(1, 2, 3, 4, 5);
 
-const squaredNumbers = numbers.pipe(
-  map(value => value * value)
-);
+const squaredNumbers = numbers.pipe(map((value) => value * value));
 
-squaredNumbers.subscribe(x => console.log(x));
+squaredNumbers.subscribe((x) => console.log(x));
 ```
 
 Dans cet exemple, nous avons un Observable qui émet une séquence de nombres. En utilisant l'opérateur map, nous transformons ces nombres en carrés.
@@ -1032,17 +1020,15 @@ Exemple de pipe personnalisé :
 Supposons que nous voulons un pipe qui inverse une chaîne de caractères :
 
 ```typescript
-import { Pipe, ReversePipe } from '@angular/core';
+import { Pipe, ReversePipe } from "@angular/core";
 
 @Pipe({
-  name: 'reverse'
+  name: "reverse",
 })
 export class ReversePipe implements PipeTransform {
-
   transform(value: string): string {
-    return value.split('').reverse().join('');
+    return value.split("").reverse().join("");
   }
-
 }
 ```
 
@@ -1064,7 +1050,7 @@ N'oubliez pas d'ajouter vos pipes personnalisés à la déclaration de votre mod
   ],
   // ...
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
 ## Tests et Debugging
@@ -1086,16 +1072,16 @@ Le testing est une part essentielle du développement d'applications, garantissa
 Exemple de test unitaire :
 
 ```typescript
-import { MyComponent } from './my.component';
+import { MyComponent } from "./my.component";
 
-describe('MyComponent', () => {
+describe("MyComponent", () => {
   let component: MyComponent;
 
   beforeEach(() => {
     component = new MyComponent();
   });
 
-  it('should do something', () => {
+  it("should do something", () => {
     const result = component.someMethod();
     expect(result).toBe(expectedValue);
   });
@@ -1117,26 +1103,26 @@ Avec Angular, vous utilisez souvent le `TestBed` pour configurer ces tests d'int
 Exemple de test d'intégration :
 
 ```typescript
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MyComponent } from './my.component';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { MyComponent } from "./my.component";
 
-describe('MyComponent (integrated test)', () => {
+describe("MyComponent (integrated test)", () => {
   let component: MyComponent;
   let fixture: ComponentFixture<MyComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ MyComponent ]
+      declarations: [MyComponent],
     });
 
     fixture = TestBed.createComponent(MyComponent);
     component = fixture.componentInstance;
   });
 
-  it('should display the component', () => {
+  it("should display the component", () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Expected Text');
+    expect(compiled.querySelector("h1").textContent).toContain("Expected Text");
   });
 });
 ```
@@ -1169,14 +1155,14 @@ Stratégies de détection des changements :
 - **OnPush**: Cette stratégie permet d'optimiser la détection des changements en la limitant aux composants dont les entrées ont effectivement changé. Vous pouvez définir cette stratégie en définissant la propriété changeDetection de la métadonnée `@Component` :
 
 ```typescript
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 @Component({
-  selector: 'my-component',
-  template: '...',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: "my-component",
+  template: "...",
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MyComponent { }
+export class MyComponent {}
 ```
 
 Avec cette stratégie, la détection des changements pour le composant ne sera exécutée que si l'une de ses entrées `@Input()` change.
@@ -1193,10 +1179,10 @@ Mise en œuvre du Lazy Loading :
 ```typescript
 const routes: Routes = [
   {
-    path: 'my-feature',
-    loadChildren: () => import('./my-feature/my-feature.module')
-      .then(m => m.MyFeatureModule)
-  }
+    path: "my-feature",
+    loadChildren: () =>
+      import("./my-feature/my-feature.module").then((m) => m.MyFeatureModule),
+  },
 ];
 ```
 
@@ -1239,7 +1225,7 @@ npm i nom-de-la-bibliotheque
 Une fois installée, vous pouvez importer la bibliothèque dans votre code TypeScript :
 
 ```typescript
-import { SomeLibrary } from 'some-library';
+import { SomeLibrary } from "some-library";
 ```
 
 ### Ajout de bibliothèques tierces globales
@@ -1292,7 +1278,7 @@ Certaines bibliothèques tierces doivent être ajoutées globalement à votre ap
 "scripts": [
   "node_modules/jquery/dist/jquery.min.js",
   "node_modules/bootstrap/dist/js/bootstrap.min.js"
-  ""      
+  ""
 ]
 ```
 
@@ -1316,14 +1302,12 @@ Cette commande installera la bibliothèque, ajoutera les fichiers globaux, et co
 2. Importez `MatIconModule` dans votre module principal qui est généralement `AppModule`:
 
 ```typescript
-import { MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
-  imports: [
-    MatIconModule
-  ]
+  imports: [MatIconModule],
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
 2. Utilisez les icônes Material Design dans votre application :
@@ -1342,15 +1326,15 @@ L'internationalisation est le processus de conception d'une application pour qu'
 
 1. **Configuration de la langue par défaut** :
 
-    Dans le fichier `angular.json`, ajoutez la propriété `i18nLocale` à la configuration de build par défaut :
+   Dans le fichier `angular.json`, ajoutez la propriété `i18nLocale` à la configuration de build par défaut :
 
-    ```json
-    "configurations": {
-        "production": {
-            "i18nLocale": "fr"
-        }
-    }
-    ```
+   ```json
+   "configurations": {
+       "production": {
+           "i18nLocale": "fr"
+       }
+   }
+   ```
 
 ## Déploiement
 
@@ -1360,11 +1344,11 @@ Après avoir développé et testé votre application Angular, la prochaine étap
 
 1. **Build** :
 
-    Utilisez la CLI Angular pour créer une version de production optimisée de votre application :
+   Utilisez la CLI Angular pour créer une version de production optimisée de votre application :
 
-    ```bash
-    ng build --prod
-    ```
+   ```bash
+   ng build --prod
+   ```
 
 Cela générera un dossier `dist` contenant les fichiers de votre application prêts à être déployés.
 Cette commande effectue plusieurs optimisations :
@@ -1378,55 +1362,55 @@ Les fichiers de sortie se trouvent dans le dossier `dist/`.
 
 2. **Packaging** :
 
-    Les fichiers dans le dossier `dist/` sont prêts à être déployés. Vous pouvez les zip pour un transfert facile ou les transférer directement sur votre serveur de production.
+   Les fichiers dans le dossier `dist/` sont prêts à être déployés. Vous pouvez les zip pour un transfert facile ou les transférer directement sur votre serveur de production.
 
 ### Déploiement sur différents serveurs (Firebase, Vercel, etc.)
 
 1. **Firebase** :
 
-    Firebase Hosting offre un hébergement web rapide et sécurisé pour votre application web.
+   Firebase Hosting offre un hébergement web rapide et sécurisé pour votre application web.
 
    Installez Firebase CLI :
 
-    ```bash
-        npm install -g firebase-tools
-    ```
+   ```bash
+       npm install -g firebase-tools
+   ```
 
-    Connectez-vous à votre compte Firebase :
+   Connectez-vous à votre compte Firebase :
 
-     ```bash
-        firebase login
-     ```
+   ```bash
+      firebase login
+   ```
 
-    Initialisez votre projet :
+   Initialisez votre projet :
 
-    ```bash
-        firebase init
-    ```
+   ```bash
+       firebase init
+   ```
 
    Suivez les étapes et sélectionnez `Hosting`. Pointez vers le dossier `dist/nom-de-votre-app`.
 
-    Déployez votre application :
+   Déployez votre application :
 
-     ```bash
-          firebase deploy
-     ```
+   ```bash
+        firebase deploy
+   ```
 
 2. **Vercel** :
 
-    Vercel est une plateforme de déploiement qui permet de déployer des applications Angular en quelques minutes.
+   Vercel est une plateforme de déploiement qui permet de déployer des applications Angular en quelques minutes.
 
-    Installez Vercel CLI :
+   Installez Vercel CLI :
 
-    ```bash
-        npm install -g vercel
-    ```
+   ```bash
+       npm install -g vercel
+   ```
 
-    Déployez votre application :
+   Déployez votre application :
 
-    ```bash
-        cd dist/nom-de-votre-app
-    ```
+   ```bash
+       cd dist/nom-de-votre-app
+   ```
 
 Suivez les étapes et sélectionnez le dossier `dist/nom-de-votre-app`.
 
@@ -1444,49 +1428,48 @@ Les processus de déploiement pour d'autres plateformes comme `Netlify`, `AWS S3
 
 **Déployer sur GitHub Pages** :
 
-  - Créez un nouveau dépôt GitHub.
-  - Ajoutez le dépôt distant à votre projet local.
-  - Poussez votre code vers le dépôt distant.
+- Créez un nouveau dépôt GitHub.
+- Ajoutez le dépôt distant à votre projet local.
+- Poussez votre code vers le dépôt distant.
 
+**Installez le package `gh-pages`** : vous pouvez utiliser `gh-pages` pour faciliter le déploiement sur GitHub Pages.
 
-**Installez le package `gh-pages`** :  vous pouvez utiliser `gh-pages` pour faciliter le déploiement sur GitHub Pages.
-      
-  ```bash
-  npm install -g gh-pages
-  ```
-**Construisez votre application Angular pour la production** : 
-Avant de déployer, vous devez construire votre projet Angular en mode production. Cela générera des fichiers statiques optimisés dans le répertoire `dist/`. 
+```bash
+npm install -g gh-pages
+```
 
-  
+**Construisez votre application Angular pour la production** :
+Avant de déployer, vous devez construire votre projet Angular en mode production. Cela générera des fichiers statiques optimisés dans le répertoire `dist/`.
+
 À partir de la version 12 d'Angular, l'option `--prod` a été remplacée par `--configuration production`. Voici comment vous devriez construire votre projet pour la production avec Angular 12 et versions ultérieures :
-       
+
 ```bash
 ng build --configuration production --base-href "https://[nom-utilisateur].github.io/[nom-repo]/"
 ```
-Remplacez `[nom-utilisateur]` par votre nom d'utilisateur GitHub et `[nom-repo]` par le nom de votre dépôt GitHub.
 
+Remplacez `[nom-utilisateur]` par votre nom d'utilisateur GitHub et `[nom-repo]` par le nom de votre dépôt GitHub.
 
 **Déployez sur GitHub Pages :**
 Utilisez la commande gh-pages pour déployer le contenu du dossier `dist/` sur la branche `gh-pages` de votre dépôt.
-      
+
 ```bash
 gh-pages -d dist/[nom-de-votre-app]
 ```
+
 Remplacez `[nom-du-projet]` par le nom de votre projet Angular (généralement le nom du répertoire dans `dist/`).
 
 ![img_1.png](img_1.png)
 
 **Configurez votre dépôt pour utiliser GitHub Pages** :
 
-* Allez sur la page de votre dépôt sur GitHub.
-* Cliquez sur l'onglet "Settings" (ou "Paramètres").
-* Faites défiler jusqu'à la section "GitHub Pages".
-* Dans la section "Source", sélectionnez la branche `gh-pages` et enregistrez.
+- Allez sur la page de votre dépôt sur GitHub.
+- Cliquez sur l'onglet "Settings" (ou "Paramètres").
+- Faites défiler jusqu'à la section "GitHub Pages".
+- Dans la section "Source", sélectionnez la branche `gh-pages` et enregistrez.
 
 **Accédez à votre site déployé sur GitHub Pages à l'adresse suivante** : `https://[nom-utilisateur].github.io/[nom-repo]/`.
 
 ![img_2.png](img_2.png)
-
 
 N'oubliez pas de vérifier si tout fonctionne comme prévu. Parfois, des chemins relatifs ou d'autres configurations peuvent nécessiter des ajustements pour fonctionner correctement sur GitHub Pages.
 
@@ -1504,69 +1487,68 @@ Angular possède un guide de style officiel qui fournit des recommandations sur 
 
 1. **Nomenclature des fichiers** :
 
-    - feature.type.ts
-    - Exemples : heroes.component.ts, hero.service.ts, hero.model.ts
+   - feature.type.ts
+   - Exemples : heroes.component.ts, hero.service.ts, hero.model.ts
 
 2. **Dossiers par fonctionnalité** :
 
-    - Organisez le code en dossiers basés sur les fonctionnalités, pas les rôles.
-    - Par exemple, au lieu d'avoir un dossier pour les modèles et un autre pour les composants, avez un dossier heroes avec les composants, les services et les modèles liés aux héros.
+   - Organisez le code en dossiers basés sur les fonctionnalités, pas les rôles.
+   - Par exemple, au lieu d'avoir un dossier pour les modèles et un autre pour les composants, avez un dossier heroes avec les composants, les services et les modèles liés aux héros.
 
 3. **Utilisation de modules** :
 
-    - Utilisez des modules pour regrouper des fonctionnalités similaires.
-    - Évitez les modules avec trop de fournisseurs. Si un module spécifie de nombreux fournisseurs, il peut être nécessaire de le refondre en modules plus petits.
+   - Utilisez des modules pour regrouper des fonctionnalités similaires.
+   - Évitez les modules avec trop de fournisseurs. Si un module spécifie de nombreux fournisseurs, il peut être nécessaire de le refondre en modules plus petits.
 
 4. **Services Singleton** :
 
-    - Utilisez le décorateur providedIn pour s'assurer que les services sont des singletons à travers l'application.
+   - Utilisez le décorateur providedIn pour s'assurer que les services sont des singletons à travers l'application.
 
-    ```typescript
-    @Injectable({
-      providedIn: 'root',
-    })
-   
-    export class MyService { }
-    ```
+   ```typescript
+   @Injectable({
+     providedIn: "root",
+   })
+   export class MyService {}
+   ```
 
 5. **Evitez any** :
 
-    - Utilisez des types forts et évitez l'utilisation du type any sauf en dernier recours.
+   - Utilisez des types forts et évitez l'utilisation du type any sauf en dernier recours.
 
 6. **Conventions de nommage** :
 
-    - Utilisez des noms descriptifs et cohérents pour les fichiers et les classes.
-    - Utilisez des noms de classe en PascalCase et des noms de fichiers en kebab-case.
+   - Utilisez des noms descriptifs et cohérents pour les fichiers et les classes.
+   - Utilisez des noms de classe en PascalCase et des noms de fichiers en kebab-case.
 
 7. **Commentaires** :
 
-    - Commentez le code qui pourrait être difficile à comprendre ou qui a une importance particulière pour l'architecture.
-    - Le [guide de style officiel d'Angular](https://angular.io/guide/styleguide) fournit une liste exhaustive de conventions, et il est fortement recommandé de le consulter régulièrement.
+   - Commentez le code qui pourrait être difficile à comprendre ou qui a une importance particulière pour l'architecture.
+   - Le [guide de style officiel d'Angular](https://angular.io/guide/styleguide) fournit une liste exhaustive de conventions, et il est fortement recommandé de le consulter régulièrement.
 
 ### Organisation du code et modularité
 
 1. **Modules** :
 
-    - Utilisez des modules pour encapsuler des fonctionnalités distinctes.
-    - Profitez du Lazy Loading pour charger des modules uniquement lorsque c'est nécessaire, améliorant ainsi les performances.
+   - Utilisez des modules pour encapsuler des fonctionnalités distinctes.
+   - Profitez du Lazy Loading pour charger des modules uniquement lorsque c'est nécessaire, améliorant ainsi les performances.
 
 2. **Services** :
 
-    - Encapsulez la logique métier et les appels HTTP dans des services pour séparer les préoccupations et réutiliser le code.
+   - Encapsulez la logique métier et les appels HTTP dans des services pour séparer les préoccupations et réutiliser le code.
 
 3. **Composants** :
 
-    - Gardez les composants légers et axés sur la présentation. Déléguez la logique métier aux services.
-    - Privilégiez une architecture basée sur des composants pour améliorer la réutilisabilité et la maintenabilité.
+   - Gardez les composants légers et axés sur la présentation. Déléguez la logique métier aux services.
+   - Privilégiez une architecture basée sur des composants pour améliorer la réutilisabilité et la maintenabilité.
 
 4. **Directives et Pipes** :
 
-    - Créez des directives personnalisées pour encapsuler des comportements DOM réutilisables.
-    - Utilisez des pipes pour les transformations de données spécifiques à la vue.
+   - Créez des directives personnalisées pour encapsuler des comportements DOM réutilisables.
+   - Utilisez des pipes pour les transformations de données spécifiques à la vue.
 
 5. **Gestion d'état** :
 
-    - Pour les applications de grande taille, envisagez d'utiliser une bibliothèque de gestion d'état comme NgRx ou Akita pour gérer et suivre l'état de l'application de manière prévisible.
+   - Pour les applications de grande taille, envisagez d'utiliser une bibliothèque de gestion d'état comme NgRx ou Akita pour gérer et suivre l'état de l'application de manière prévisible.
 
 En fin de compte, l'organisation du code et le respect des conventions et des bonnes pratiques contribuent à la qualité globale du projet, à la réduction des bugs et à une meilleure collaboration entre les développeurs.
 
@@ -1578,22 +1560,22 @@ Angular, depuis son introduction en tant qu'Angular 2 en 2016, a connu de nombre
 
 1. **Régularité des Mises à Jour** :
 
-    - L'équipe Angular a adopté un cycle de publication régulier, avec des mises à jour majeures prévues tous les six mois. Cela donne aux développeurs une bonne idée de quand attendre de nouvelles fonctionnalités ou des modifications importantes.
+   - L'équipe Angular a adopté un cycle de publication régulier, avec des mises à jour majeures prévues tous les six mois. Cela donne aux développeurs une bonne idée de quand attendre de nouvelles fonctionnalités ou des modifications importantes.
 
 2. **Facilité de Migration** :
 
-    - Angular propose des outils comme le Angular [Update Guide](https://update.angular.io/) pour aider les développeurs à migrer leurs applications vers la version la plus récente. Ce guide offre des instructions étape par étape en fonction de la version actuelle et de la version cible.
-    - Les mises à jour mineures sont généralement rétrocompatibles, rendant le processus de mise à niveau plus simple.
+   - Angular propose des outils comme le Angular [Update Guide](https://update.angular.io/) pour aider les développeurs à migrer leurs applications vers la version la plus récente. Ce guide offre des instructions étape par étape en fonction de la version actuelle et de la version cible.
+   - Les mises à jour mineures sont généralement rétrocompatibles, rendant le processus de mise à niveau plus simple.
 
 ### Angular Universal et Server Side Rendering (SSR)
 
 1. **Amélioration des Performances** :
 
-    - Angular Universal permet le rendu côté serveur (SSR) des applications Angular, ce qui signifie que le serveur génère une vue HTML entièrement rendue au premier chargement. Cela améliore le temps de chargement initial et est particulièrement bénéfique pour le SEO, car les robots des moteurs de recherche peuvent indexer l'application plus facilement.
+   - Angular Universal permet le rendu côté serveur (SSR) des applications Angular, ce qui signifie que le serveur génère une vue HTML entièrement rendue au premier chargement. Cela améliore le temps de chargement initial et est particulièrement bénéfique pour le SEO, car les robots des moteurs de recherche peuvent indexer l'application plus facilement.
 
 2. **Développements Futurs** :
 
-    - Avec l'importance croissante de la performance et du SEO, on peut s'attendre à voir d'autres améliorations et des optimisations d'Angular Universal à l'avenir.
+   - Avec l'importance croissante de la performance et du SEO, on peut s'attendre à voir d'autres améliorations et des optimisations d'Angular Universal à l'avenir.
 
 ## Projet pratique
 
