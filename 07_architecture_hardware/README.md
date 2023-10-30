@@ -1,6 +1,6 @@
 # Architecture Hardware : Table des Matières
 
-![img_8.png](img_8.png)
+![img_8.png](img/img_8.png)
 
 ## 1. Introduction à l'architecture matérielle
 * **1.1.** Définition et importance de l'architecture hardware
@@ -107,7 +107,7 @@ Les tubes à vide ont permis de construire les premiers ordinateurs électroniqu
 
 ## 2. Les composants fondamentaux
 
-![img_9.png](img_9.png)
+![img_9.png](img/img_9.png)
 
 ### 2.1. La carte mère
 La carte mère est souvent considérée comme le "cœur" d'un ordinateur. Elle sert de plateforme principale pour la connexion de tous les composants internes. Elle est équipée de plusieurs connecteurs pour le CPU, la RAM, le stockage et les périphériques d'entrée/sortie. Le BIOS ou UEFI, qui est le firmware de démarrage, réside également sur la carte mère.
@@ -123,7 +123,7 @@ Le stockage fait référence aux dispositifs où les données sont conservées �
 
 ## 3. Les systèmes d'entrée/sortie
 
-![img_11.png](img_11.png)
+![img_11.png](img/img_11.png)
 
 ### 3.1. Cartes graphiques (GPU)
 Les cartes graphiques, également connues sous le nom de GPU (Graphics Processing Units), sont essentielles pour le rendu des images et des vidéos. Contrairement au CPU qui est conçu pour des tâches générales, le GPU est optimisé pour les opérations graphiques et le calcul parallèle. Il existe différentes architectures de GPU populaires sur le marché, telles que NVIDIA's Turing ou AMD's RDNA. Ces cartes sont non seulement cruciales pour les jeux vidéo, mais aussi pour des tâches professionnelles comme le design graphique, la modélisation 3D, et même certaines applications de deep learning.
@@ -157,7 +157,7 @@ Les protocoles d'interconnexion déterminent comment les différents composants 
 
 ## 5. Les systèmes de refroidissement
 
-![img_13.png](img_13.png)
+![img_13.png](img/img_13.png)
 
 ### 5.1. Refroidissement passif et actif
 Le refroidissement est essentiel pour garantir le bon fonctionnement et la durabilité des composants informatiques, en particulier le CPU et le GPU. Il existe deux types principaux de refroidissement :
@@ -169,7 +169,7 @@ Le refroidissement liquide est une technique avancée qui utilise un liquide, g�
 
 ## 6. Alimentation électrique et gestion de l'énergie
 
-![img_14.png](img_14.png)
+![img_14.png](img/img_14.png)
 
 ### 6.1. Blocs d'alimentation
 Le bloc d'alimentation, souvent appelé PSU (Power Supply Unit), est un composant essentiel de tout ordinateur. Il convertit l'électricité du secteur en tensions utilisables pour alimenter les différents composants de l'ordinateur. Un bon PSU assure non seulement la stabilité du système, mais contribue également à sa longévité en fournissant une alimentation propre et stable. Les PSU sont souvent classés en fonction de leur efficacité énergétique et sont équipés de différents connecteurs pour répondre aux besoins des divers composants.
@@ -179,7 +179,7 @@ La gestion de l'énergie est cruciale pour maximiser les performances tout en mi
 
 ## 7. Architectures avancées et tendances futures
 
-![img_15.png](img_15.png)
+![img_15.png](img/img_15.png)
 
 ### 7.1. Multi-cœur et parallélisme
 Avec les avancées technologiques, les CPU sont passés d'une architecture monocœur à multicœur, permettant une augmentation significative des performances. Un CPU multicœur contient plusieurs cœurs de processeur sur une seule puce, permettant à plusieurs threads d'être exécutés simultanément. Cela se traduit par une meilleure gestion des tâches et une capacité à traiter de grandes quantités de données en parallèle. Les applications modernes et les systèmes d'exploitation sont optimisés pour tirer parti de cette architecture multicœur, offrant une expérience utilisateur plus fluide et réactive.
@@ -192,7 +192,7 @@ L'informatique quantique est une avancée technologique passionnante qui promet 
 
 ## 8. Sécurité et fiabilité du matériel
 
-![img_16.png](img_16.png)
+![img_16.png](img/img_16.png)
 
 ### 8.1. Menaces matérielles et vulnérabilités
 Les systèmes informatiques modernes, malgré leur sophistication, sont confrontés à une myriade de menaces matérielles. Ces menaces peuvent compromettre la sécurité des données et la performance du système.
