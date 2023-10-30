@@ -2,57 +2,49 @@
 
 ![img_8.png](img/img_8.png)
 
-## 1. Introduction à l'architecture matérielle
-* **1.1.** Définition et importance de l'architecture hardware
-* **1.2.** Histoire et évolution de l'architecture des ordinateurs
 
-## 2. Les composants fondamentaux
-* **2.1.** La carte mère
-    - Fonction et composants principaux
-* **2.2.** Le processeur (CPU)
-    - Architecture, fréquence, cœurs, threads
-* **2.3.** La mémoire vive (RAM)
-    - Types, fonctionnement, et importance
-* **2.4.** Le stockage
-    - Disques durs HDD, SSD, NVMe
 
-## 3. Les systèmes d'entrée/sortie
-* **3.1.** Cartes graphiques (GPU)
-    - Fonctions, architectures populaires
-* **3.2.** Ports et connecteurs
-    - USB, HDMI, DisplayPort, etc.
-* **3.3.** Périphériques d'entrée et de sortie
-    - Claviers, souris, écrans, imprimantes
-
-## 4. Architecture des bus et interconnexion
-* **4.1.** Bus système, bus de données, bus d'adresse
-* **4.2.** Protocoles d'interconnexion : PCI, PCI-Express
-
-## 5. Les systèmes de refroidissement
-* **5.1.** Refroidissement passif et actif
-* **5.2.** Solutions de refroidissement liquide
-
-## 6. Alimentation électrique et gestion de l'énergie
-* **6.1.** Blocs d'alimentation
-* **6.2.** Gestion de l'énergie et efficacité
-
-## 7. Architectures avancées et tendances futures
-* **7.1.** Multi-cœur et parallélisme
-* **7.2.** Architectures ARM vs x86
-* **7.3.** Ordinateurs quantiques et nouvelles technologies
-
-## 8. Sécurité et fiabilité du matériel
-* **8.1.** Menaces matérielles et vulnérabilités
-    - Attaques par canal auxiliaire, Meltdown, Spectre, etc.
-* **8.2.** Techniques de protection matérielle
-    - Mécanismes d'isolation, chiffrement matériel, TPM
-* **8.3.** Redondance et tolérance aux pannes
-    - RAID, ECC, et autres techniques de fiabilité
-
-## 9. Conclusion et perspectives
-* **9.1.** Les défis futurs de l'architecture hardware
-* **9.2.** Innovations attendues et domaines de recherche
-
+<!-- TOC -->
+* [Architecture Hardware : Table des Matières](#architecture-hardware--table-des-matières)
+  * [1. Introduction à l'architecture matérielle](#1-introduction-à-larchitecture-matérielle)
+    * [1.1. Définition et importance de l'architecture hardware](#11-définition-et-importance-de-larchitecture-hardware)
+    * [1.2. Histoire et évolution de l'architecture des ordinateurs](#12-histoire-et-évolution-de-larchitecture-des-ordinateurs)
+      * [1.2.1. Les précurseurs mécaniques](#121-les-précurseurs-mécaniques)
+      * [1.2.2. L'ère des tubes à vide (1940s-1950s)](#122-lère-des-tubes-à-vide-1940s-1950s)
+      * [1.2.3. L'avènement des transistors (1950s-1960s)](#123-lavènement-des-transistors-1950s-1960s)
+      * [1.2.4. L'ère des circuits intégrés et des microprocesseurs (1970s-1980s)](#124-lère-des-circuits-intégrés-et-des-microprocesseurs-1970s-1980s)
+      * [1.2.5. L'évolution vers le multicœur et la parallélisation (2000s à aujourd'hui)](#125-lévolution-vers-le-multicœur-et-la-parallélisation-2000s-à-aujourdhui)
+      * [1.2.6. Vers l'avenir : au-delà du silicium](#126-vers-lavenir--au-delà-du-silicium)
+  * [2. Les composants fondamentaux](#2-les-composants-fondamentaux)
+    * [2.1. La carte mère](#21-la-carte-mère)
+    * [2.2. Le processeur (CPU)](#22-le-processeur-cpu)
+    * [2.3. La mémoire vive (RAM)](#23-la-mémoire-vive-ram)
+    * [2.4. Le stockage](#24-le-stockage)
+  * [3. Les systèmes d'entrée/sortie](#3-les-systèmes-dentréesortie)
+    * [3.1. Cartes graphiques (GPU)](#31-cartes-graphiques-gpu)
+    * [3.2. Ports et connecteurs](#32-ports-et-connecteurs)
+    * [3.3. Périphériques d'entrée et de sortie](#33-périphériques-dentrée-et-de-sortie)
+  * [4. Architecture des bus et interconnexion](#4-architecture-des-bus-et-interconnexion)
+    * [4.1. Bus système, bus de données, bus d'adresse](#41-bus-système-bus-de-données-bus-dadresse)
+    * [4.2. Protocoles d'interconnexion : PCI, PCI-Express](#42-protocoles-dinterconnexion--pci-pci-express)
+  * [5. Les systèmes de refroidissement](#5-les-systèmes-de-refroidissement)
+    * [5.1. Refroidissement passif et actif](#51-refroidissement-passif-et-actif)
+    * [5.2. Solutions de refroidissement liquide](#52-solutions-de-refroidissement-liquide)
+  * [6. Alimentation électrique et gestion de l'énergie](#6-alimentation-électrique-et-gestion-de-lénergie)
+    * [6.1. Blocs d'alimentation](#61-blocs-dalimentation)
+    * [6.2. Gestion de l'énergie et efficacité](#62-gestion-de-lénergie-et-efficacité)
+  * [7. Architectures avancées et tendances futures](#7-architectures-avancées-et-tendances-futures)
+    * [7.1. Multi-cœur et parallélisme](#71-multi-cœur-et-parallélisme)
+    * [7.2. Architectures ARM vs x86](#72-architectures-arm-vs-x86)
+    * [7.3. Ordinateurs quantiques et nouvelles technologies](#73-ordinateurs-quantiques-et-nouvelles-technologies)
+  * [8. Sécurité et fiabilité du matériel](#8-sécurité-et-fiabilité-du-matériel)
+    * [8.1. Menaces matérielles et vulnérabilités](#81-menaces-matérielles-et-vulnérabilités)
+    * [8.2. Techniques de protection matérielle](#82-techniques-de-protection-matérielle)
+    * [8.3. Redondance et tolérance aux pannes](#83-redondance-et-tolérance-aux-pannes)
+  * [9. Conclusion et perspectives](#9-conclusion-et-perspectives)
+    * [9.1. Les défis futurs de l'architecture hardware](#91-les-défis-futurs-de-larchitecture-hardware)
+    * [9.2. Innovations attendues et domaines de recherche](#92-innovations-attendues-et-domaines-de-recherche)
+<!-- TOC -->
 ---
 
 ## 1. Introduction à l'architecture matérielle
