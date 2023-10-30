@@ -25,6 +25,9 @@ Cette boucle parcourt les nombres de `1` à `100`. Elle utilise l'opérateur mod
 ## EXO 2 : Votes municipaux
 
 ```js[..](..)
+
+```js
+
 // Demandez à l'utilisateur de saisir son année de naissance
 // parsInt() convertit la chaîne de caractères en nombre entier
 let anneeNaissance = parseInt(prompt("Veuillez entrer votre année de naissance :"));

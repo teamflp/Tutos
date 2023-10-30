@@ -10,7 +10,15 @@ Github : [teamflp](https://github.com/teamflp)
 
 ## Procédure pour utiliser ce cours
 
+<<<<<<< HEAD
 Bienvenue à ce cours sur le `JavaScript` ! Pour tirer le meilleur parti de ce contenu et acquérir une compréhension solide de la matière, suivez les étapes recommandées ci-dessous.
+=======
+
+Bienvenue à ce cours sur le JavaScript ! Pour tirer le meilleur parti de ce contenu et acquérir une compréhension solide de la matière, suivez les étapes recommandées ci-dessous.
+
+Bienvenue à ce cours sur le `JavaScript` ! Pour tirer le meilleur parti de ce contenu et acquérir une compréhension solide de la matière, suivez les étapes recommandées ci-dessous.
+
+>>>>>>> recovered_angular_tutorial
 
 1. **Préparation** :
 
@@ -20,7 +28,15 @@ Bienvenue à ce cours sur le `JavaScript` ! Pour tirer le meilleur parti de ce c
 
 2. **Étude systématique** :
 
+<<<<<<< HEAD
 - Commencez par l'**introduction** pour comprendre le contexte du `JavaScript`.
+=======
+
+- Commencez par l'**introduction** pour comprendre le contexte du JavaScript.
+
+- Commencez par l'**introduction** pour comprendre le contexte du `JavaScript`.
+
+>>>>>>> recovered_angular_tutorial
 - Poursuivez avec les **bases** avant de passer aux concepts avancés.
 - Ne sautez pas de sections. Chaque partie est conçue pour s'appuyer sur la précédente.
 
@@ -31,7 +47,15 @@ Bienvenue à ce cours sur le `JavaScript` ! Pour tirer le meilleur parti de ce c
 
 4. **Participez à des discussions** :
 
+<<<<<<< HEAD
 - Rejoignez des forums ou des groupes dédiés au `JavaScript` pour poser des questions, partager vos connaissances ou aider d'autres apprenants.
+=======
+
+- Rejoignez des forums ou des groupes dédiés au JavaScript pour poser des questions, partager vos connaissances ou aider d'autres apprenants.
+
+- Rejoignez des forums ou des groupes dédiés au `JavaScript` pour poser des questions, partager vos connaissances ou aider d'autres apprenants.
+
+>>>>>>> recovered_angular_tutorial
 - Partager vos réalisations ou vos défis vous permettra d'obtenir des retours constructifs.
 
 5. **Consultez des ressources supplémentaires** :
