@@ -2,80 +2,139 @@
 
 ![img.png](img/img.png)
 
+Auteur : [Paterne Guélablé Gnonzion](https://gnpinformatique.fr)
 
+Formateur développeur web et mobile : **PHP, Symfony, Rust ...**
 
-<!-- TOC -->
-* [APPRENDRE À CODER AVEC PHP](#apprendre-à-coder-avec-php)
-  * [Introduction](#introduction)
-    * [**1.1. Historique de PHP**](#11-historique-de-php)
-    * [**1.2. Avantages  et inconvénients de PHP**](#12-avantages--et-inconvénients-de-php)
-  * [Installation et configuration](#installation-et-configuration)
-    * [**2.1. Exigences système**](#21-exigences-système)
-    * [**2.2. Installation sur Windows**](#22-installation-sur-windows)
-    * [**2.3. Installation sur Linux**](#23-installation-sur-linux)
-    * [**2.4. Configuration du serveur Apache**](#24-configuration-du-serveur-apache)
-    * [**2.5. Les serveurs web alternatifs**](#25-les-serveurs-web-alternatifs)
-  * [Les bases de PHP](#les-bases-de-php)
-    * [**3.1. Structure d'un script PHP**](#31-structure-dun-script-php)
-    * [**3.2. Les commentaires**](#32-les-commentaires)
-    * [**3.3.** Variables et types de données](#33-variables-et-types-de-données)
-    * [**3.4.** Opérateurs](#34-opérateurs)
-    * [**3.5.** Structures de contrôle (if, for, while, switch)](#35-structures-de-contrôle-if-for-while-switch)
-  * [PHP Procédural](#php-procédural)
-    * [4.1. Concepts de base](#41-concepts-de-base)
-    * [**4.2.** Fonctions](#42-fonctions)
-    * [**4.3.** Gestion des erreurs](#43-gestion-des-erreurs)
-    * [**4.4.** Inclusion de fichiers](#44-inclusion-de-fichiers)
-  * [Programmation Orientée Objet (POO) en PHP](#programmation-orientée-objet-poo-en-php)
-    * [5.1. Introduction à la POO](#51-introduction-à-la-poo)
-    * [5.2. Classes et objets](#52-classes-et-objets)
-    * [**5.3 Les visibilités**](#53-les-visibilités)
-    * [**5.4.** Propriétés et méthodes](#54-propriétés-et-méthodes)
-    * [**5.5.** Héritage et polymorphisme](#55-héritage-et-polymorphisme)
-    * [**5.6.** Encapsulation et visibilité](#56-encapsulation-et-visibilité)
-    * [**5.7.** Espaces de noms et autoloading](#57-espaces-de-noms-et-autoloading)
-  * [**6.** Interfaces](#6-interfaces)
-      * [**Déclaration d'une interface**](#déclaration-dune-interface)
-  * [**7.** Traits](#7-traits)
-    * [**7.1.** Déclaration d'un trait](#71-déclaration-dun-trait)
-    * [**7.2.** Utilisation d'un trait](#72-utilisation-dun-trait)
-    * [**7.3.** Résolution des conflits de noms](#73-résolution-des-conflits-de-noms)
-    * [**7.4.** Aliases de méthodes de trait](#74-aliases-de-méthodes-de-trait)
-  * [Fonctions PHP](#fonctions-php)
-    * [**8.1.** Création et utilisation](#81-création-et-utilisation)
-    * [**8.2.** Fonctions natives](#82-fonctions-natives)
-    * [**8.3.** Passage de paramètres](#83-passage-de-paramètres)
-    * [**8.4.** Retour de valeurs](#84-retour-de-valeurs)
-  * [Gestion des formulaires](#gestion-des-formulaires)
-    * [**9.1.** Récupération des données](#91-récupération-des-données)
-    * [**9.2.** Validation des données](#92-validation-des-données)
-    * [**9.3.** Sécurisation des entrées utilisateur](#93-sécurisation-des-entrées-utilisateur)
-  * [PHP et bases de données](#php-et-bases-de-données)
-    * [**10.1.** Connexion à une base de données](#101-connexion-à-une-base-de-données)
-      * [**Connexion à une base de données MySQL avec mysqli**](#connexion-à-une-base-de-données-mysql-avec-mysqli)
-      * [**Connexion à une base de données MySQL avec PDO**](#connexion-à-une-base-de-données-mysql-avec-pdo)
-    * [**10.2.** Requêtes SQL avec PHP](#102-requêtes-sql-avec-php)
-      * [**Exécution d'une requête SQL avec mysqli**](#exécution-dune-requête-sql-avec-mysqli)
-      * [**Exécution d'une requête SQL avec PDO**](#exécution-dune-requête-sql-avec-pdo)
-    * [**10.3.** Sécurité des bases de données](#103-sécurité-des-bases-de-données)
-      * [**Injection SQL**](#injection-sql)
-      * [**Requêtes préparées**](#requêtes-préparées)
-  * [Sessions et cookies](#sessions-et-cookies)
-    * [**11.1.** Gestion des sessions](#111-gestion-des-sessions)
-    * [**11.2.** Utilisation des cookies](#112-utilisation-des-cookies)
-  * [Sécurité en PHP](#sécurité-en-php)
-    * [**12.1.** Prévention des injections SQL](#121-prévention-des-injections-sql)
-    * [**12.2.** Prévention des attaques XSS](#122-prévention-des-attaques-xss)
-    * [**12.3.** Gestion sécurisée des mots de passe](#123-gestion-sécurisée-des-mots-de-passe)
-  * [Frameworks PHP populaires](#frameworks-php-populaires)
-  * [Débogage et optimisation](#débogage-et-optimisation)
-    * [**14.1.** Outils de débogage](#141-outils-de-débogage)
-    * [**14.2.** Optimisation des performances](#142-optimisation-des-performances)
-  * [Conclusion](#conclusion)
-  * [Références](#références)
-<!-- TOC -->
+Linkedin: [Paterne G. G.](https://www.linkedin.com/in/gnpinformatique/)
+
+Github : [teamflp](https://github.com/teamflp)
+
+## Procédure pour utiliser ce cours
+
+Bienvenue à ce cours sur le PHP ! Pour tirer le meilleur parti de ce contenu et acquérir une compréhension solide de la matière, suivez les étapes recommandées ci-dessous.
+
+Bienvenue à ce cours sur le `PHP` ! Pour tirer le meilleur parti de ce contenu et acquérir une compréhension solide de la matière, suivez les étapes recommandées ci-dessous.
+
+1. **Préparation** :
+
+- Assurez-vous d'avoir les prérequis : connaissance basique du HTML.
+- Installez un bon éditeur de code (comme [Visual Studio Code](https://code.visualstudio.com/)).
+- Configurez un navigateur moderne pour les tests (Chrome, Firefox, Safari, etc.).
+
+2. **Étude systématique** :
+
+- Commencez par l'**introduction** pour comprendre le contexte du `PHP`.
+- Poursuivez avec les **bases** avant de passer aux concepts avancés.
+- Ne sautez pas de sections. Chaque partie est conçue pour s'appuyer sur la précédente.
+
+3. **Pratiquez régulièrement** :
+
+- Après chaque section, prenez le temps de coder et de tester ce que vous avez appris.
+- Utilisez les exemples fournis et essayez de les modifier ou de les améliorer.
+
+4. **Participez à des discussions** :
+
+- Rejoignez des forums ou des groupes dédiés au JavaScript pour poser des questions, partager vos connaissances ou aider d'autres apprenants.
+
+- Rejoignez des forums ou des groupes dédiés au `PHP` pour poser des questions, partager vos connaissances ou aider d'autres apprenants.
+
+- Partager vos réalisations ou vos défis vous permettra d'obtenir des retours constructifs.
+
+5. **Consultez des ressources supplémentaires** :
+
+- Explorez les **ressources et outils** mentionnés à la fin du cours pour approfondir vos connaissances et améliorer vos compétences.
+
+6. **Mettez en pratique** :
+
+- Essayez de créer un petit projet web à partir de zéro, en appliquant tout ce que vous avez appris.
+- Cela renforcera votre compréhension et vous donnera une idée des domaines dans lesquels vous pourriez avoir besoin de plus d'entraînement.
+
+7. **Revenez régulièrement** :
+
+- La technologie et les normes évoluent. Revenez périodiquement pour mettre à jour vos connaissances ou rafraîchir certains concepts.
+
+8. **Évaluez vos progrès** :
+
+- Testez régulièrement vos connaissances. Cela peut être à travers des quiz en ligne, des défis de codage ou des revues de code avec des pairs.
+
+Bonne étude ! Rappelez-vous que l'apprentissage est un voyage, et chaque étape vous rapproche de la maîtrise du PHP.
+
 ---
 
+<!-- TOC -->
+
+- [APPRENDRE À CODER AVEC PHP](#apprendre-à-coder-avec-php)
+  - [Procédure pour utiliser ce cours](#procédure-pour-utiliser-ce-cours)
+  - [Introduction](#introduction)
+    - [**1.1. Historique de PHP**](#11-historique-de-php)
+    - [**1.2. Avantages et inconvénients de PHP**](#12-avantages-et-inconvénients-de-php)
+  - [Installation et configuration](#installation-et-configuration)
+    - [**2.1. Exigences système**](#21-exigences-système)
+    - [**2.2. Installation sur Windows**](#22-installation-sur-windows)
+    - [**2.3. Installation sur Linux**](#23-installation-sur-linux)
+    - [**2.4. Configuration du serveur Apache**](#24-configuration-du-serveur-apache)
+    - [**2.5. Les serveurs web alternatifs**](#25-les-serveurs-web-alternatifs)
+  - [Les bases de PHP](#les-bases-de-php)
+    - [**3.1. Structure d'un script PHP**](#31-structure-dun-script-php)
+    - [**3.2. Les commentaires**](#32-les-commentaires)
+    - [**3.3.** Variables et types de données](#33-variables-et-types-de-données)
+    - [**3.4.** Opérateurs](#34-opérateurs)
+    - [**3.5.** Structures de contrôle (if, for, while, switch)](#35-structures-de-contrôle-if-for-while-switch)
+  - [PHP Procédural](#php-procédural)
+    - [4.1. Concepts de base](#41-concepts-de-base)
+    - [**4.2.** Fonctions](#42-fonctions)
+    - [**4.3.** Gestion des erreurs](#43-gestion-des-erreurs)
+    - [**4.4.** Inclusion de fichiers](#44-inclusion-de-fichiers)
+  - [Programmation Orientée Objet (POO) en PHP](#programmation-orientée-objet-poo-en-php)
+    - [5.1. Introduction à la POO](#51-introduction-à-la-poo)
+    - [5.2. Classes et objets](#52-classes-et-objets)
+    - [**5.3 Les visibilités**](#53-les-visibilités)
+    - [**5.4.** Propriétés et méthodes](#54-propriétés-et-méthodes)
+    - [**5.5.** Héritage et polymorphisme](#55-héritage-et-polymorphisme)
+    - [**5.6.** Encapsulation et visibilité](#56-encapsulation-et-visibilité)
+    - [**5.7.** Espaces de noms et autoloading](#57-espaces-de-noms-et-autoloading)
+  - [**6.** Interfaces](#6-interfaces)
+      - [**Déclaration d'une interface**](#déclaration-dune-interface)
+  - [**7.** Traits](#7-traits)
+    - [**7.1.** Déclaration d'un trait](#71-déclaration-dun-trait)
+    - [**7.2.** Utilisation d'un trait](#72-utilisation-dun-trait)
+    - [**7.3.** Résolution des conflits de noms](#73-résolution-des-conflits-de-noms)
+    - [**7.4.** Aliases de méthodes de trait](#74-aliases-de-méthodes-de-trait)
+  - [Fonctions PHP](#fonctions-php)
+    - [**8.1.** Création et utilisation](#81-création-et-utilisation)
+    - [**8.2.** Fonctions natives](#82-fonctions-natives)
+    - [**8.3.** Passage de paramètres](#83-passage-de-paramètres)
+    - [**8.4.** Retour de valeurs](#84-retour-de-valeurs)
+  - [Gestion des formulaires](#gestion-des-formulaires)
+    - [**9.1.** Récupération des données](#91-récupération-des-données)
+    - [**9.2.** Validation des données](#92-validation-des-données)
+    - [**9.3.** Sécurisation des entrées utilisateur](#93-sécurisation-des-entrées-utilisateur)
+  - [PHP et bases de données](#php-et-bases-de-données)
+    - [**10.1.** Connexion à une base de données](#101-connexion-à-une-base-de-données)
+      - [**Connexion à une base de données MySQL avec mysqli**](#connexion-à-une-base-de-données-mysql-avec-mysqli)
+      - [**Connexion à une base de données MySQL avec PDO**](#connexion-à-une-base-de-données-mysql-avec-pdo)
+    - [**10.2.** Requêtes SQL avec PHP](#102-requêtes-sql-avec-php)
+      - [**Exécution d'une requête SQL avec mysqli**](#exécution-dune-requête-sql-avec-mysqli)
+      - [**Exécution d'une requête SQL avec PDO**](#exécution-dune-requête-sql-avec-pdo)
+    - [**10.3.** Sécurité des bases de données](#103-sécurité-des-bases-de-données)
+      - [**Injection SQL**](#injection-sql)
+      - [**Requêtes préparées**](#requêtes-préparées)
+  - [Sessions et cookies](#sessions-et-cookies)
+    - [**11.1.** Gestion des sessions](#111-gestion-des-sessions)
+    - [**11.2.** Utilisation des cookies](#112-utilisation-des-cookies)
+  - [Sécurité en PHP](#sécurité-en-php)
+    - [**12.1.** Prévention des injections SQL](#121-prévention-des-injections-sql)
+    - [**12.2.** Prévention des attaques XSS](#122-prévention-des-attaques-xss)
+    - [**12.3.** Gestion sécurisée des mots de passe](#123-gestion-sécurisée-des-mots-de-passe)
+  - [Frameworks PHP populaires](#frameworks-php-populaires)
+  - [Débogage et optimisation](#débogage-et-optimisation)
+    - [**14.1.** Outils de débogage](#141-outils-de-débogage)
+    - [**14.2.** Optimisation des performances](#142-optimisation-des-performances)
+  - [Conclusion](#conclusion)
+  - [Références](#références)
+
+---
 
 ## Introduction
 
@@ -85,7 +144,7 @@ PHP, qui signifie `PHP Hypertext Preprocessor`, est un langage de `script` côt�
 
 Au départ, `PHP` était simplement un ensemble de scripts personnels écrits par Rasmus Lerdorf pour gérer sa page d'accueil. Il a ensuite été repensé et réécrit par `Zeev Suraski` et `Andi Gutmans` pour devenir un moteur de script complet, le` Zend Engine`. Depuis lors, `PHP` a connu plusieurs versions majeures, chacune apportant son lot d'améliorations et de nouvelles fonctionnalités. Aujourd'hui, il alimente d'importants sites web comme `Facebook`, `Wikipedia` et `WordPress`.
 
-### **1.2. Avantages  et inconvénients de PHP**
+### **1.2. Avantages et inconvénients de PHP**
 
 PHP possède de nombreux avantages qui expliquent sa popularité :
 
@@ -126,26 +185,25 @@ sudo apt install php
 Pour d'autres distributions, consultez la documentation appropriée ou utilisez le gestionnaire de paquets spécifique à votre distribution.
 
 ### **2.4. Configuration du serveur Apache**
-1. Assurez-vous que le module PHP est activé dans Apache. Dans le fichier `httpd.conf`, vérifiez la présence de la ligne: `LoadModule php_module` `modules/mod_php.so`
-2. Dites à `Apache` de traiter les fichiers `.php` avec `PHP`. Ajoutez la ligne suivante : 
 
-    ```bash
-    AddType application/x-httpd-php .php
-    ```
+1. Assurez-vous que le module PHP est activé dans Apache. Dans le fichier `httpd.conf`, vérifiez la présence de la ligne: `LoadModule php_module` `modules/mod_php.so`
+2. Dites à `Apache` de traiter les fichiers `.php` avec `PHP`. Ajoutez la ligne suivante :
+
+   ```bash
+   AddType application/x-httpd-php .php
+   ```
 
 3. Indiquez à Apache où se trouve le fichier php.ini en ajoutant la ligne suivante :
 
-    ```bash
-    PHPIniDir "C:/php"
-    ```
+   ```bash
+   PHPIniDir "C:/php"
+   ```
 
 (Adaptez le chemin en fonction de l'emplacement de votre installation PHP sur Windows. Sur Linux, cette étape peut ne pas être nécessaire.)
-
 
 4. Redémarrez le serveur Apache pour que les modifications prennent effet.
 
 Une fois ces étapes terminées, votre serveur Apache devrait être configuré pour exécuter des scripts PHP!
-
 
 Notez que les instructions ci-dessus sont générales et peuvent varier en fonction de la version de PHP, du système d'exploitation ou du serveur web que vous utilisez. Consultez toujours la documentation officielle pour obtenir des instructions spécifiques à votre configuration.
 
@@ -154,24 +212,27 @@ Notez que les instructions ci-dessus sont générales et peuvent varier en fonct
 Outre l'installation manuelle de PHP et d'un serveur web comme Apache ou Nginx, il existe des solutions prêtes à l'emploi qui regroupent généralement PHP, un serveur web et une base de données, simplifiant considérablement la mise en place d'un environnement de développement local pour PHP. Voici quelques-unes des plus populaires :
 
 1. **WampServer (Windows)** :
-    - **Description** : WampServer est une plateforme Windows qui permet de développer des applications web dynamiques avec Apache2, PHP et MySQL.
-    - **Avantages** : Installation facile, interface utilisateur graphique pour gérer les services et les configurations, possibilité de basculer entre différentes versions de PHP.
-    - **Lien** : [Site officiel de WampServer](http://www.wampserver.com/)
+
+   - **Description** : WampServer est une plateforme Windows qui permet de développer des applications web dynamiques avec Apache2, PHP et MySQL.
+   - **Avantages** : Installation facile, interface utilisateur graphique pour gérer les services et les configurations, possibilité de basculer entre différentes versions de PHP.
+   - **Lien** : [Site officiel de WampServer](http://www.wampserver.com/)
 
 2. **MAMP (Macintosh, Windows)** :
-    - **Description** : MAMP est une solution gratuite, locale de serveur qui peut être installée sur macOS et Windows avec quelques clics.
-    - **Avantages** : Facilité d'utilisation, versions Pro disponibles avec des fonctionnalités supplémentaires, interface utilisateur graphique.
-    - **Lien** : [Site officiel de MAMP](https://www.mamp.info/)
+
+   - **Description** : MAMP est une solution gratuite, locale de serveur qui peut être installée sur macOS et Windows avec quelques clics.
+   - **Avantages** : Facilité d'utilisation, versions Pro disponibles avec des fonctionnalités supplémentaires, interface utilisateur graphique.
+   - **Lien** : [Site officiel de MAMP](https://www.mamp.info/)
 
 3. **XAMPP (Cross-platform)** :
-    - **Description** : XAMPP est une distribution Apache facile à installer qui contient MariaDB, PHP et Perl.
-    - **Avantages** : Multi-plateforme (Windows, Linux, macOS), panneau de contrôle pour gérer les services, nombreux modules et composants inclus.
-    - **Lien** : [Site officiel de XAMPP](https://www.apachefriends.org/)
+
+   - **Description** : XAMPP est une distribution Apache facile à installer qui contient MariaDB, PHP et Perl.
+   - **Avantages** : Multi-plateforme (Windows, Linux, macOS), panneau de contrôle pour gérer les services, nombreux modules et composants inclus.
+   - **Lien** : [Site officiel de XAMPP](https://www.apachefriends.org/)
 
 4. **Laragon (Windows)** :
-    - **Description** : Laragon est un environnement de développement rapide et riche en fonctionnalités pour Windows.
-    - **Avantages** : Mise en route rapide, légèreté, isolation des projets, excellent pour développer avec Laravel.
-    - **Lien** : [Site officiel de Laragon](https://laragon.org/)
+   - **Description** : Laragon est un environnement de développement rapide et riche en fonctionnalités pour Windows.
+   - **Avantages** : Mise en route rapide, légèreté, isolation des projets, excellent pour développer avec Laravel.
+   - **Lien** : [Site officiel de Laragon](https://laragon.org/)
 
 Ces solutions sont particulièrement pratiques pour les développeurs qui souhaitent éviter la configuration manuelle des différents composants nécessaires à un environnement de développement PHP complet. Elles permettent une mise en place rapide et sont souvent accompagnées d'outils pour faciliter la gestion des services et des configurations.
 
@@ -186,15 +247,15 @@ Un script PHP est généralement inséré dans un fichier HTML et est encadré p
 ```html
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Titre de la page</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Mon premier script PHP</h1>
     <?php
         echo "Bonjour le monde!";
     ?>
-</body>
+  </body>
 </html>
 ```
 
@@ -209,13 +270,13 @@ ou la syntaxe alternative :
 ```html
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Titre de la page</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Mon premier script PHP</h1>
     <?= "Hello World ?">
-</body>
+  </body>
 </html>
 ```
 
@@ -235,14 +296,14 @@ Il existe 3 types de commentaires :
 ```php
 <?php
     // Ceci est un commentaire sur une seule ligne
-    
+
     # Ceci est un commentaire sur une seule ligne
-    
+
     /*
         Ceci est un commentaire
         sur plusieurs lignes
     */
-    
+
     /**
      * Ceci est un commentaire de documentation
      */
@@ -308,11 +369,13 @@ PHP propose une variété d'opérateurs pour effectuer des opérations sur les v
 Expliquons-les en détail :
 
 **Arithmétiques** : Ces opérateurs sont utilisés pour effectuer des opérations arithmétiques.
+
 - `+` : addition
 - `-` : soustraction
 - `*` : multiplication
 - `/` : division
 - `%` : modulo (reste de la division)
+
 ```php
 <?php
     $a = 10;
@@ -326,6 +389,7 @@ Expliquons-les en détail :
 ```
 
 **Comparaison** : Ces opérateurs sont utilisés pour comparer deux valeurs.
+
 - `==` : égal à
 - `===` : identique (égal et du même type)
 - `!=` : différent de
@@ -351,9 +415,11 @@ Expliquons-les en détail :
 ```
 
 **Logiques** : Ces opérateurs sont utilisés pour effectuer des opérations logiques.
+
 - `&&` : ET logique
 - `||` : OU logique
 - `!` : NOT logique
+
 ```php
 <?php
     $a = 10;
@@ -365,8 +431,10 @@ Expliquons-les en détail :
 ```
 
 **Affectation** : Ces opérateurs sont utilisés pour attribuer des valeurs.
+
 - `=` : affectation
 - `+=`, `-=`, `*=`, `/=`, `%=` : affectation avec opération
+
 ```php
 <?php
     $a = 10;
@@ -380,8 +448,10 @@ Expliquons-les en détail :
 ```
 
 **Incrémentation** :
+
 - `++` : incrémente de 1
 - `--` : décrémente de 1
+
 ```php
 <?php
     $a = 10;
@@ -391,7 +461,9 @@ Expliquons-les en détail :
 ```
 
 **Concaténation** :
+
 - `.` : concatène deux chaînes de caractères
+
 ```php
 <?php
     $a = "Hello";
@@ -401,10 +473,12 @@ Expliquons-les en détail :
 ```
 
 **Ternaire** :
+
 - `? :` : opérateur ternaire (condition ? valeur_si_vrai : valeur_si_faux)
 - `??` : opérateur de fusion null (valeur1 ?? valeur2)
 - `??=` : opérateur de coalescence null (variable ??= valeur)
 - `?->` : opérateur de navigation null (variable?->propriété)
+
 ```php
 <?php
     $a = 10;
@@ -417,8 +491,10 @@ Expliquons-les en détail :
 ```
 
 **Tableau** :
+
 - `[]` : utilisé pour définir un tableau ou accéder à un élément du tableau
 - `=>` : utilisé pour définir une clé et une valeur dans un tableau associatif
+
 ```php
 <?php
     $a = [1, 2, 3]; // Définit un tableau
@@ -432,7 +508,9 @@ Expliquons-les en détail :
 ```
 
 **Type** :
+
 - `instanceof` : permet de déterminer si un objet est une instance d'une classe particulière ou d'une classe héritée d'une classe spécifique. Il peut également vérifier si un objet implémente une interface particulière.
+
 ```php
 <?php
     $a = new Personne();
@@ -441,7 +519,9 @@ Expliquons-les en détail :
 ```
 
 **Exponentiation** :
+
 - `**` : élévation à la puissance
+
 ```php
 <?php
     $a = 2;
@@ -451,7 +531,9 @@ Expliquons-les en détail :
 ```
 
 **Opérateur de fusion null** :
+
 - `??` : retourne la première valeur non null
+
 ```php
 <?php
     $a = null;
@@ -461,7 +543,9 @@ Expliquons-les en détail :
 ```
 
 **Opérateur de coalescence null** :
+
 - `??=` : affecte la valeur de droite si la valeur de gauche est null
+
 ```php
 <?php
     $a = null;
@@ -471,7 +555,9 @@ Expliquons-les en détail :
 ```
 
 **Opérateur de navigation null** :
+
 - `?->` : accède à une propriété ou une méthode d'un objet, mais ne déclenche pas d'erreur si l'objet est null
+
 ```php
 <?php
     $a = null;
@@ -487,6 +573,7 @@ Les structures de contrôle permettent de contrôler le flux d'exécution du cod
 Permet de tester une condition et d'exécuter du code en fonction du résultat de cette condition.
 
 **if** :
+
 ```php
 <?php
     if (condition) {
@@ -504,6 +591,7 @@ Exemple concrêt :
 ```
 
 **if / else** :
+
 ```php
 <?php
     if (condition) {
@@ -515,6 +603,7 @@ Exemple concrêt :
 ```
 
 Exemple :
+
 ```php
 <?php
     $age = 25;
@@ -527,6 +616,7 @@ Exemple :
 ```
 
 **if / elseif / else** :
+
 ```php
 <?php
     if (condition) {
@@ -538,7 +628,9 @@ Exemple :
     }
 ?>
 ```
+
 Exemple :
+
 ```php
 <?php
     $age = 25;
@@ -563,6 +655,7 @@ Exemple :
 ```
 
 Exemple :
+
 ```php
 <?php
     for ($i = 0; $i < 10; $i++) {
@@ -582,6 +675,7 @@ Exemple :
 ```
 
 Exemple :
+
 ```php
 <?php
     $i = 0;
@@ -603,6 +697,7 @@ Exemple :
 ```
 
 Exemple :
+
 ```php
 <?php
     $i = 0;  // 1. Initialisation d'une variable $i à 0.
@@ -628,6 +723,7 @@ Exemple :
 - **Incrémentation** : La valeur de `$i` est augmentée de `1` à chaque itération de la boucle.
 
 - **Condition de boucle** : Après avoir exécuté le corps de la boucle, la condition `$i < 10` est vérifiée.
+
   - Si la condition est vraie, le corps de la boucle est à nouveau exécuté.
   - Si elle est fausse, la boucle s'arrête.
 
@@ -644,6 +740,7 @@ Exemple :
 ```
 
 Exemple :
+
 ```php
 <?php
     $hobbies = ["Football", "Cinéma", "Musique"]; // Définit un tableau
@@ -651,7 +748,7 @@ Exemple :
         echo $hobby;                         // Affiche les éléments du tableau
     }
 ?>
-```   
+```
 
 Dans cet exemple, la variable `$hobby` contient la valeur de l'élément courant du tableau à chaque itération de la boucle.
 
@@ -673,6 +770,7 @@ Dans cet exemple, la variable `$hobby` contient la valeur de l'élément courant
 ```
 
 Exemple :
+
 ```php
 <?php
     $age = 25;
@@ -692,12 +790,15 @@ Exemple :
 Dans cet exemple, le script vérifie la valeur de la variable `$age` et exécute le code correspondant à la valeur trouvée. Si aucune des valeurs ne correspond, le code par défaut est exécuté.
 
 ## PHP Procédural
+
 Le PHP procédural est une approche de programmation qui utilise des fonctions et des instructions pour effectuer des tâches. Il est linéaire et n'utilise pas de concepts avancés tels que des classes ou des objets.
 
 ### 4.1. Concepts de base
+
 Les concepts de base du PHP procédural incluent la définition de variables, l'utilisation des structures de contrôle et l'écriture de fonctions simples.
 
 **Exemple :**
+
 ```php
 <?php
   $a = 5;
@@ -707,11 +808,13 @@ Les concepts de base du PHP procédural incluent la définition de variables, l'
   }
 ?>
 ```
+
 ### **4.2.** Fonctions
 
 Les fonctions sont des blocs de code réutilisables conçus pour effectuer une action spécifique.
 
 **Exemple :**
+
 ```php
 <?php
   function addition($a, $b) {
@@ -728,6 +831,7 @@ Dans ce exemple, on définit une fonction `addition` qui prend deux paramètres 
 La gestion des erreurs permet d'identifier et de réagir à des conditions d'erreur lors de l'exécution du script.
 
 Exemple :
+
 ```php
 <?php
   set_error_handler(function($severity, $message, $file, $line) {
@@ -758,9 +862,7 @@ Les directives `include`, `require` `require_once` sont tous des instructions qu
 
 1. La directive **`require_once`** est utilisée pour inclure et exécuter le contenu d'un fichier. Si le fichier a déjà été inclus dans le script en cours d'exécution, il ne sera pas inclus à nouveau. Cela peut être utile pour éviter de définir plusieurs fois les mêmes variables ou les mêmes fonctions, ce qui pourrait entraîner des erreurs dans le script.
 
-
 2. La directive **`require`** est similaire à require_once, mais elle n'empêche pas le fichier d'être inclus plusieurs fois. Si le fichier est inclus plusieurs fois, cela peut entraîner des erreurs dans le script, car les variables et les fonctions définies dans ce fichier seront redéfinies plusieurs fois.
-
 
 3. La directive **`include`** est également similaire à require et `require_once`, mais elle génère une erreur de type "`warning`" si le fichier n'est pas trouvé, au lieu de générer une erreur "fatal" comme c'est le cas avec les deux autres directives. Cela signifie que le script continuera à s'exécuter même si le fichier inclus est introuvable.
 
@@ -768,34 +870,41 @@ En résumé, la directive `require_once` est recommandée lorsque vous souhaitez
 
 L'avantage de l'inclusion de fichiers est qu'elle permet de réutiliser le code PHP stocké dans d'autres fichiers. Cela permet de réduire la quantité de code à écrire et de faciliter la maintenance du code.
 
-Exemple avec `include` : 
+Exemple avec `include` :
+
 ```php
 <?php
   include "fichier.php";
 ```
 
-Exemple avec `require` : 
+Exemple avec `require` :
+
 ```php
 <?php
   require "fichier.php";
 ```
 
-Exemple avec `require_once` : 
+Exemple avec `require_once` :
+
 ```php
 <?php
   require_once "data_base.php"; // Inclut le fichier data_base.php (importnt pour le script)
 ```
 
 ## Programmation Orientée Objet (POO) en PHP
+
 La programmation orientée objet est un paradigme de programmation qui utilise des "objets" pour modéliser des données et des comportements. PHP supporte la POO, ce qui permet de créer un code plus modulaire et réutilisable.
 
 ### 5.1. Introduction à la POO
+
 La POO en PHP permet de structurer le code de manière plus naturelle et intuitive, en représentant des concepts et des entités du monde réel.
 
 ### 5.2. Classes et objets
+
 Les classes sont des plans pour créer des objets, qui sont des instances de ces classes.
 
 **Exemple :**
+
 ```php
 <?php
 class Voiture {
@@ -814,11 +923,13 @@ echo $maVoiture->couleur; // Affiche "rouge"
 Dans cet exemple, on définit une classe `Voiture` qui contient une propriété `couleur` et une méthode `__construct` qui est appelée lorsqu'un objet est créé à partir de cette classe. On crée ensuite un objet `$maVoiture` à partir de cette classe et on affiche la valeur de la propriété `couleur` de cet objet.
 
 ### **5.3 Les visibilités**
+
 En programmation orientée objet en PHP, la visibilité des propriétés et méthodes d'une classe est un concept fondamental qui détermine comment et où les éléments d'une classe peuvent être utilisés. Il existe trois niveaux de visibilité :
 
 - **`public`** :
-   - Les membres déclarés comme `public` sont accessibles de partout.
-   - C'est le niveau de visibilité le moins restrictif.
+  - Les membres déclarés comme `public` sont accessibles de partout.
+  - C'est le niveau de visibilité le moins restrictif.
+
 ```php
 class Vehicule {
    public $couleur;
@@ -834,8 +945,8 @@ $voiture->afficherCouleur(); // Affiche 'rouge'
 ```
 
 - **`protected`** :
-   - Les membres déclarés comme `protected` ne sont accessibles que depuis la classe elle-même et ses classes dérivées.
-   - Cela permet de préserver l'encapsulation tout en autorisant l'héritage.
+  - Les membres déclarés comme `protected` ne sont accessibles que depuis la classe elle-même et ses classes dérivées.
+  - Cela permet de préserver l'encapsulation tout en autorisant l'héritage.
 
 ```php
 class Vehicule {
@@ -856,9 +967,10 @@ $voiture = new Voiture();
 // $voiture->vitesseMax = 200; // Erreur : Accès protégé
 $voiture->afficherVitesseMax(); // Fonctionne si vitesseMax est défini dans Vehicule
 ```
+
 - **`private`** :
-   - Les membres déclarés comme `private` sont strictement confinés à la classe qui les a définis.
-   - Cela offre un haut niveau d'encapsulation, protégeant les données et les comportements internes de la classe contre les interférences extérieures.
+  - Les membres déclarés comme `private` sont strictement confinés à la classe qui les a définis.
+  - Cela offre un haut niveau d'encapsulation, protégeant les données et les comportements internes de la classe contre les interférences extérieures.
 
 ```php
 class Vehicule {
@@ -885,6 +997,7 @@ Ces exemples illustrent la manière dont les différentes visibilités affectent
 Les `propriétés` ou `attributs` sont des _variables_ dans une classe. Les méthodes sont des fonctions qui définissent des comportements de la classe.
 
 Exemple :
+
 ```php
 <?php
 class Voiture {
@@ -919,6 +1032,7 @@ Dans cet exemple, on définit une classe `Voiture` qui contient une propriété 
 - **Héritage** : permet à une classe d'hériter des propriétés et méthodes d'une autre classe. Le polymorphisme est la capacité de traiter des objets de classes différentes de manière interchangeable.
 
 Exemple :
+
 ```php
 <?php
 class Véhicule {
@@ -940,11 +1054,12 @@ $maVoiture->démarrer(); // Affiche "La voiture démarre"
 
 Dans cet exemple, on définit une classe `Véhicule` qui contient une méthode `démarrer`. On définit ensuite une classe `Voiture` qui hérite de la classe `Véhicule` et qui redéfinit la méthode `démarrer`. On crée ensuite un objet `$maVoiture` à partir de la classe `Voiture` et on appelle la méthode `démarrer` pour démarrer la voiture.
 
-- **Polyformisme** : 
+- **Polyformisme** :
 
 Le polymorphisme est un concept clé de la programmation orientée objet (POO) qui se rapporte à la capacité de différentes classes d'être utilisées de manière interchangeable, même si chacune d'elles pourrait implémenter la même méthode ou propriété de différentes manières. Cela est souvent réalisé via l'héritage ou l'implémentation d'interfaces.
 
 Exemple :
+
 ```php
 <?php
 class Vehicle {
@@ -985,6 +1100,7 @@ Une injection de dépendance est un concept de programmation qui permet de rendr
 L'encapsulation est le regroupement des données avec les méthodes qui les manipulent. La visibilité (public, protected, private) définit comment ces éléments sont accessibles depuis l'extérieur de la classe.
 
 Exemple :
+
 ```php
 <?php
 class Voiture {
@@ -1048,8 +1164,8 @@ Les `interfaces` en PHP définissent des méthodes qui doivent être implément�
 - Une `interface` peut être utilisée comme type de paramètre ou de retour de fonction.
 - Une `interface` peut contenir des constantes, mais pas de propriétés.
 
-
 #### **Déclaration d'une interface**
+
 Une interface est déclarée avec le mot-clé `interface`:
 
 ```php
@@ -1080,7 +1196,7 @@ class Voiture implements Mouvement {
 Utilisation d'une interface
 
 Une fois `l'interface implémentée`, on peut créer des instances de la classe et utiliser les méthodes définies :
-    
+
 ```php
 $maVoiture = new Voiture();
 $maVoiture->demarrer(); // Affiche "La voiture démarre"
@@ -1092,7 +1208,6 @@ Les interfaces sont particulièrement utiles pour fournir un ensemble de méthod
 ## **7.** Traits
 
 Les traits en PHP sont un mécanisme de réutilisation de code dans les langages à simple héritage comme PHP. Un trait est similaire à une classe, mais il est destiné à grouper des fonctionnalités de manière fine et cohérente.
-
 
 Ils permettent de réutiliser des morceaux de code dans plusieurs classes. Les traits peuvent avoir des méthodes et des attributs, et peuvent être utilisés pour éviter certains problèmes de l'héritage multiple.
 
@@ -1155,6 +1270,7 @@ Dans cet exemple, on définit deux traits `Loggable` et `FileLogger` qui contien
 Si deux traits utilisés dans une classe ont une méthode du même nom, on peut utiliser l'opérateur `as` pour spécifier quelle méthode doit être utilisée :
 
 Avec l'`alias`, il est possible de renommer les méthodes des traits pour éviter des conflits ou pour plus de clarté :
+
 ```php
 class User {
     use Loggable, FileLogger {
@@ -1190,7 +1306,7 @@ function saluer($nom) {
 
 // Utilisation de la fonction
 saluer("Alice");     // Affiche "Bonjour, Alice!"
-saluer("Bob");       // Affiche "Bonjour, Bob!"  
+saluer("Bob");       // Affiche "Bonjour, Bob!"
 saluer("Charlie");   // Affiche "Bonjour, Charlie!"
 ```
 
@@ -1201,6 +1317,7 @@ Dans cet exemple, on définit une fonction `saluer` qui prend un paramètre `$no
 `PHP` possède une large bibliothèque de fonctions `natives` qui peuvent être utilisées pour diverses opérations comme le travail sur les chaînes de caractères, les tableaux, les fichiers, etc.
 
 Exemple 1 :
+
 ```php
 <?php
     $nom = "Alice";
@@ -1212,6 +1329,7 @@ Exemple 1 :
 Dans cet exemple, on utilise la fonction `strtoupper` pour convertir la chaîne `$nom` en majuscules.
 
 Exemple 2 :
+
 ```php
 <?php
     $hobbies = ["Football", "Cinéma", "Musique"]; // Définit un tableau
@@ -1223,6 +1341,7 @@ Exemple 2 :
 Dans cet exemple, on utilise la fonction `implode` pour convertir le tableau `$hobbies` en chaîne.
 
 Exemple 3 :
+
 ```php
 $texte = "Bonjour le monde!";
 echo str_replace("le monde", "Alice", $texte);
@@ -1238,6 +1357,7 @@ Pour plus d'informations sur les fonctions natives de PHP, consultez la [documen
 Les paramètres sont des variables utilisées pour passer des valeurs aux fonctions. En PHP, les paramètres peuvent être passés par valeur (comportement par défaut) ou par référence en utilisant le symbole `&`.
 
 Exemple 1 :
+
 ```php
 function ajouter_un(&$nombre) {
     $nombre++;
@@ -1255,6 +1375,7 @@ Dans cet exemple, on définit une fonction `ajouter_un` qui prend un paramètre 
 Une fonction peut retourner une valeur à l'aide de l'instruction `return`. Dès que return est exécuté, la fonction est terminée et la valeur est retournée à l'appelant.
 
 Exemple :
+
 ```php
 function addition($a, $b) {
     return $a + $b; // Retourne la somme de $a et $b
@@ -1290,6 +1411,7 @@ $email = $_POST['email'];
 Avant de traiter ou de stocker des données, il est crucial de les valider pour s'assurer qu'elles répondent à certains critères.
 
 Exemple 1 :
+
 ```php
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo "L'adresse email est valide.";
@@ -1301,6 +1423,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 Dans cet exemple, on utilise la fonction `filter_var` pour valider l'adresse email `$email`. Si l'adresse email est valide, on affiche un message de confirmation. Sinon, on affiche un message d'erreur.
 
 Exemple 2 :
+
 ```php
 if (filter_var($url, FILTER_VALIDATE_URL)) {
     echo "L'URL est valide.";
@@ -1312,6 +1435,7 @@ if (filter_var($url, FILTER_VALIDATE_URL)) {
 Dans cet exemple, on utilise la fonction `filter_var` pour valider l'URL `$url`. Si l'URL est valide, on affiche un message de confirmation. Sinon, on affiche un message d'erreur.
 
 Exemple 3 :
+
 ```php
 if (filter_var($ip, FILTER_VALIDATE_IP)) {
     echo "L'adresse IP est valide.";
@@ -1329,6 +1453,7 @@ Pour plus d'informations sur les filtres, consultez la [documentation officielle
 Ils ne faut jamais faire confiance aux données envoyées par les utilisateurs. Il est important d'assainir et de sécuriser ces données avant de les utiliser.
 
 Exemple 1 :
+
 ```php
 $nom = htmlspecialchars($_POST['nom']);
 ```
@@ -1336,6 +1461,7 @@ $nom = htmlspecialchars($_POST['nom']);
 Dans cet exemple, on utilise la fonction `htmlspecialchars` pour convertir les caractères spéciaux en entités HTML. Cela permet d'éviter les attaques XSS (Cross-Site Scripting).
 
 Exemple 2 :
+
 ```php
 $nom = filter_var($_POST['nom'], FILTER_SANITIZE_STRING);
 ```
@@ -1350,6 +1476,7 @@ C'est en ce moment l'utilisation de la fonction `filter_var` est très important
 `FILTER_SANITIZE_STRING` qui permet de supprimer les balises HTML et les caractères spéciaux de la chaîne `$nom`.
 
 Exemple 3 : Assainissement d'une chaîne pour l'échapper avant de l'insérer dans une base de données
+
 ```php
 // Assainissement d'une chaîne pour l'échapper avant de l'insérer dans une base de données
 $nom_securise = mysqli_real_escape_string($connection, $nom);
@@ -1487,6 +1614,7 @@ La sécurité est primordiale lors de l'interaction avec les bases de données p
 L'injection SQL est une technique d'attaque qui consiste à insérer du code SQL malveillant dans une requête SQL via les entrées utilisateur.
 
 Exemple :
+
 ```php
 // Injection SQL
 $sql = "SELECT * FROM utilisateurs WHERE email = '" . $_POST['email'] . "' AND mot_de_passe = '" . $_POST['mot_de_passe'] . "'";
@@ -1502,6 +1630,7 @@ Une requête préparée est une requête SQL qui est préparée et compilée par
 Elle permet d'éviter les injections SQL et d'améliorer les performances en exécutant plusieurs fois la même requête.
 
 Exemple :
+
 ```php
 // Requête préparée
 $sql = "SELECT * FROM utilisateurs WHERE email = ? AND mot_de_passe = ?";
@@ -1510,6 +1639,7 @@ $requete->bind_param("ss", $_POST['email'], $_POST['mot_de_passe']); // Lie les 
 $requete->execute(); // Exécute la requête
 $resultat = $requete->get_result(); // Récupère le résultat de la requête
 ```
+
 - **`$sql`** : contient la requête SQL à exécuter.
 - **`$requete`** : contient la requête préparée.
 - **`$requete->bind_param("ss", $_POST['email'], $_POST['mot_de_passe']);`** : lie les paramètres à la requête.
@@ -1518,7 +1648,7 @@ $resultat = $requete->get_result(); // Récupère le résultat de la requête
 
 Les deux `ss` dans la méthode `bind_param` indiquent que les deux paramètres sont des chaînes de caractères. Si les paramètres étaient des entiers, on aurait utilisé deux `ii` à la place.
 
-ou 
+ou
 
 ```php
 // Utilisation des requêtes préparées avec PDO pour prévenir les injections SQL
@@ -1612,6 +1742,7 @@ $resultat = $statement->fetchAll();
 Dans cet exemple, on utilise PDO pour prévenir les injections SQL. On utilise la méthode `prepare` pour préparer la requête SQL. On utilise ensuite la méthode `execute` pour exécuter la requête SQL en passant le nom d'utilisateur en paramètre. On utilise ensuite la méthode `fetchAll` pour récupérer le résultat de la requête.
 
 ### **12.2.** Prévention des attaques XSS
+
 Les attaques par scripts intersites (`XSS`) se produisent lorsque des scripts malveillants sont injectés dans des pages web. Utiliser la fonction htmlspecialchars() pour échapper à l'entrée des utilisateurs est une méthode pour prévenir les XSS.
 
 ```php
@@ -1636,8 +1767,9 @@ if (password_verify('motDePasseSecret', $motDePasseHash)) {
 }
 ```
 
-Il existe différentes méthodes de hashage de mots de passe : 
-- `PASSWORD_DEFAULT` : utilise l'algorithme `bcrypt` (par défaut depuis PHP 5.5.0). 
+Il existe différentes méthodes de hashage de mots de passe :
+
+- `PASSWORD_DEFAULT` : utilise l'algorithme `bcrypt` (par défaut depuis PHP 5.5.0).
 - `PASSWORD_BCRYPT` : utilise l'algorithme `bcrypt`.
 - `PASSWORD_ARGON2I` : utilise l'algorithme `Argon2i` (disponible depuis PHP 7.2.0).
 - `PASSWORD_ARGON2ID` : utilise l'algorithme `Argon2id` (disponible depuis PHP 7.3.0).
@@ -1647,11 +1779,10 @@ Il existe différentes méthodes de hashage de mots de passe :
 Toujours rester informé des meilleures pratiques de sécurité et les mettre en œuvre pour protéger vos applications PHP des menaces potentielles.
 
 ## Frameworks PHP populaires
+
 - **Laravel** : est un framework PHP open-source basé sur le modèle MVC (Modèle-Vue-Contrôleur) pour le développement d'applications web. Site officiel : https://laravel.com/
 
-
 - **Symfony** : est un framework PHP open-source basé sur le modèle MVC (Modèle-Vue-Contrôleur) pour le développement d'applications web. Site officiel : https://symfony.com/
- 
 
 - **CodeIgniter** : est un framework PHP open-source basé sur le modèle MVC (Modèle-Vue-Contrôleur) pour le développement d'applications web. Site officiel : https://codeigniter.com/
 
@@ -1712,52 +1843,3 @@ Ainsi, PHP reste un choix solide pour le développement web, soutenu par une com
 - [PHP](https://www.php.net/)
 - [Wikipédia](https://fr.wikipedia.org/wiki/PHP)
 - [PHP 8.0](https://www.php.net/releases/8.0/fr.php)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
